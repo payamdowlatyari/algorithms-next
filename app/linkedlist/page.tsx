@@ -3,16 +3,16 @@
 import {Accordion, AccordionItem, Divider} from "@nextui-org/react";
 import CodeSnippet from "../components/CodeSnippet";
 import Problem from "../components/Problem";
-import { algorithmsListArray } from "../constant/algorithmsList";
+import { linkedList } from "../constant/algorithmsList";
 
-export default function Array () {
+export default function LinkedList () {
 
     return ( 
         <Accordion variant="splitted">
-            {algorithmsListArray.map((item, index) => (
+            {linkedList.map((item, index) => (
                 <AccordionItem key={index} aria-label={item.title} title={item.title}>
                     <Problem problem={item.problem}/>
-                    <Divider className="my-2" />
+                    <Divider className="my-4" />
                     <CodeSnippet codeSample={item.code}/>
                 </AccordionItem>
             ))}

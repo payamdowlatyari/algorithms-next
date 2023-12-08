@@ -8,7 +8,7 @@ export default function Problem({problem}: any)  {
 const { theme, setTheme } = useTheme()
 
   return (
-      <div className="demo text-sm">
+      <div className="demo text-sm p-2">
         <CodeBlock
           language='text'
           text={problem}
