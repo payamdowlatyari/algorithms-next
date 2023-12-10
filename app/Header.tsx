@@ -9,12 +9,16 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuItems = [
     {
+      title: "Data Structures",
+      href: "/datastructure"
+    },
+    {
       title: "Array",
       href : "/array"
     },
     {
       title: "Tree",
-      href: "tree"
+      href: "/tree"
     },
     {
       title: "Dynamic Programming",
@@ -22,8 +26,8 @@ export default function Header() {
     },
     {
       title: "Linked List",
-      href: "linkedlist"
-    }
+      href: "/linkedlist"
+    },
   ];
     return ( 
       <Navbar onMenuOpenChange={setIsMenuOpen}>
@@ -42,14 +46,13 @@ export default function Header() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
         </NavbarContent>
-        <NavbarMenu className="items-center">
+        <NavbarMenu className="items-center flex content-center">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               color="foreground" 
-              className="w-full text-2xl sm:text-4xl"
+              className="w-full p-1 text-2xl sm:text-4xl transition ease-in-out delay-150 hover:bg-foreground hover:text-background duration-500"
               href={item.href}
-              size="lg"
             >
               {item.title}
             </Link>

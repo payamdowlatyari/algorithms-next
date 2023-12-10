@@ -1,7 +1,7 @@
 'use client'
 
 import {useTheme} from "next-themes";
-import { CopyBlock, atomOneDark, atomOneLight } from "react-code-blocks";
+import { CopyBlock, hybrid, github} from "react-code-blocks";
 
 export default function CodeSnippet({codeSample}: any)  {
 
@@ -13,7 +13,7 @@ export default function CodeSnippet({codeSample}: any)  {
             language='tsx'
             text={codeSample}
             showLineNumbers={true}
-            theme={theme === 'dark' ? atomOneDark : atomOneLight}
+            theme={theme === 'dark' ? hybrid : github}
             codeBlock
             />
         </div>

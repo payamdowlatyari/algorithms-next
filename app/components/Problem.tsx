@@ -1,7 +1,7 @@
 'use client'
 
 import {useTheme} from "next-themes";
-import { CodeBlock, atomOneDark, atomOneLight } from "react-code-blocks";
+import { CodeBlock, hybrid, github } from "react-code-blocks";
 
 export default function Problem({problem}: any)  {
 
@@ -13,7 +13,7 @@ const { theme, setTheme } = useTheme()
           language='text'
           text={problem}
           showLineNumbers={false}
-          theme={theme === 'dark' ? atomOneDark : atomOneLight}
+          theme={theme === 'dark' ? hybrid : github}
         />
       </div>
   );
