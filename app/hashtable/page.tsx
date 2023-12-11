@@ -5,15 +5,15 @@ import CodeSnippet from "../components/CodeSnippet";
 import Problem from "../components/Problem";
 import { algorithmsList } from "../constant/algorithmsList";
 
-export default function DynamicProgramming () {
+export default function HashTable () {
 
-    const isDataStructure = (item: any) => {
-        return item.tags.includes('Data Structure') 
+    const isHashTable= (item: any) => {
+        return item.tags.includes('Hash Table') 
     }
 
     return ( 
         <Accordion variant="splitted">
-            {algorithmsList.filter(isDataStructure).map((item, index) => (
+            {algorithmsList.filter(isHashTable).map((item, index) => (
                 <AccordionItem key={index} aria-label={item.title} title={item.title}>
                     <Problem problem={item.problem}/>
                     <Divider className="my-4" />

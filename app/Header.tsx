@@ -28,6 +28,10 @@ export default function Header() {
       title: "Linked List",
       href: "/linkedlist"
     },
+    {
+      title: "Hash Table",
+      href: "/hashtable"
+    },
   ];
     return ( 
       <Navbar onMenuOpenChange={setIsMenuOpen}>

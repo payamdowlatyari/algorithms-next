@@ -1,9 +1,11 @@
 'use client'
 
 import { Card, CardBody, CardFooter, Link } from "@nextui-org/react";
-import { MdDataArray, MdDynamicForm, MdOutlineViewArray} from "react-icons/md";
-import { TbBinaryTree, TbTransformFilled, TbTournament, TbLayoutBoardSplit} from "react-icons/tb";
+import { MdDataArray, MdDynamicForm } from "react-icons/md";
+import { TbBinaryTree, TbTransformFilled } from "react-icons/tb";
 import { BiCategoryAlt } from "react-icons/bi";
+import { FaSlackHash } from "react-icons/fa";
+
 export default function Home() {
 
   return (
@@ -75,6 +77,19 @@ export default function Home() {
             </CardBody>
             <CardFooter className="justify-center mb-5">
             <span className="text-4xl text-warning text-center">Linked List</span>
+            </CardFooter>
+          </Card>
+
+          <Card shadow="sm">
+            <CardBody
+              className="w-full m-1 mt-5"
+              ><Link href="hashtable" 
+              className="text-9xl justify-center text-red-500">
+                <FaSlackHash /> 
+                </Link>
+            </CardBody>
+            <CardFooter className="justify-center mb-5">
+            <span className="text-4xl text-red-500 text-center">Hash Table</span>
             </CardFooter>
           </Card>
 

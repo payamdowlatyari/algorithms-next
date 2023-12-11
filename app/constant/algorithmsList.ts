@@ -1,8 +1,9 @@
-export const algorithmsListArray = [
+export const algorithmsList = [
 
     {
         id: '1',
         title: 'Two Sum',
+        tags : ['Array', 'Hash Table'],
         problem: 
         `Given an array of integers nums and an integer target, 
         return indices of the two numbers such that they add up to target.
@@ -49,6 +50,7 @@ export const algorithmsListArray = [
     {
         id: '2',
         title: 'Contains Duplicate',
+        tags : ['Array', 'Two Pointers'],
         problem: 
         `Given an integer array nums, return true if any value appears at least twice in the array, 
         and return false if every element is distinct.
@@ -87,6 +89,7 @@ export const algorithmsListArray = [
         {
             id: '3',
             title: 'Product Except Self',
+            tags : ['Array'],
             problem: 
             `Given an integer array nums, return an array answer such that answer[i] 
             is equal to the product of all the elements of nums except nums[i].
@@ -132,6 +135,7 @@ export const algorithmsListArray = [
             {
                 id: '4',
                 title: 'The Sign of an Array',
+                tags : ['Array'],
                 problem: 
                 `There is a function signFunc(x) that returns:
 
@@ -184,6 +188,7 @@ export const algorithmsListArray = [
             {
                 id: '5',
                 title: 'Arithmetic Progression',
+                tags : ['Array'],
                 problem: 
                 `A sequence of numbers is called an arithmetic progression if the 
                 difference between any two consecutive elements is the same.
@@ -226,6 +231,7 @@ export const algorithmsListArray = [
             {
                 id: '6',
                 title: 'Maximum Sub-array',
+                tags : ['Array', 'Divide and Conquer', 'Dynamic Programming'],
                 problem: 
                 `Given an integer array nums, find the 
                 subarray with the largest sum, and return its sum.
@@ -270,6 +276,7 @@ export const algorithmsListArray = [
             {
                 id: '7',
                 title: 'First Missing Possitive',
+                tags : ['Array'],
                 problem: 
                 `Given an unsorted integer array nums, return the smallest missing positive integer.
                 You must implement an algorithm that runs in O(n) time and uses O(1) auxiliary space.
@@ -318,6 +325,7 @@ export const algorithmsListArray = [
             {
                 id: '8',
                 title: 'Find Peak Element',
+                tags : ['Array', 'Binary Search'],
                 problem: 
                 `A peak element is an element that is strictly greater than its neighbors.
 
@@ -363,6 +371,7 @@ export const algorithmsListArray = [
             {
                 id: '9',
                 title: 'Coin Change',
+                tags : ['Array', 'Dynamic Programming'],
                 problem: 
                 `You are given an integer array coins representing coins of different 
                 denominations and an integer amount representing a total amount of money.
@@ -415,6 +424,7 @@ export const algorithmsListArray = [
             {
                 id: '10',
                 title: 'Best Time to Buy and Sell Stocks',
+                tags : ['Array', 'Dynamic Programming'],
                 problem: 
                 `You are given an array prices where prices[i] is the price 
                 of a given stock on the ith day.
@@ -461,28 +471,11 @@ export const algorithmsListArray = [
                 }
                 `
             },
-];
 
-export const algorithmsListTree = [
-    {
-        id: '1',
-        title: 'Tree',
-        problem: 
-        `Implement a Binary Tree`,
-        code: 
-        `// Definition for a binary tree node
-        class TreeNode {
-                constructor(val, left, right) {
-                    this.val = (val === undefined ? 0 : val);
-                    this.left = (left === undefined ? null : left);
-                    this.right = (right === undefined ? null : right);
-                }
-        }
-        `
-    },
-    {
-        id: '2',
+        {
+        id: '11',
         title: 'Tree Travarsal',
+        tags : ['Tree', 'Recursion'],
         problem: 
         `Implement three types of tree travarsals`,
         code: 
@@ -520,8 +513,9 @@ export const algorithmsListTree = [
         `
     },
     {
-        id: '3',
+        id: '12',
         title: 'Invert Binary Tree',
+        tags : ['Tree', 'Recursion'],
         problem: 
         `Given the root of a binary tree, invert the tree, and return its root.
 
@@ -554,8 +548,9 @@ export const algorithmsListTree = [
         }
         `},
         {
-        id: '4',
+        id: '13',
         title: 'Maximum Depth of Binary Tree',
+        tags : ['Tree', 'DFS'],
         problem: 
         `Given the root of a binary tree, return its maximum depth.
         A binary tree's maximum depth is the number of nodes along the 
@@ -592,14 +587,11 @@ export const algorithmsListTree = [
         return maxDepth;
         }
         `
-    }
-];
-
-export const linkedList = [
-
+    },
     {
-        id: '1',
+        id: '14',
         title: 'Linked List',
+        tags : ['Linked list', 'Class'],
         problem: 
         `Implement a singly linked-list`,
         code: 
@@ -676,8 +668,9 @@ export const linkedList = [
         `
     },
     {
-        id: '2',
+        id: '15',
         title: 'Merge Two Linked Lists',
+        tags : ['Linked List', 'Class'],
         problem: 
         `You are given the heads of two sorted linked lists list1 and list2.
         Merge the two lists in a one sorted list. 
@@ -724,8 +717,9 @@ export const linkedList = [
         }
         `},
         {
-        id: '3',
+        id: '16',
         title: 'Reverse Linked List',
+        tags : ['Linked List'],
         problem: 
         `Given the head of a singly linked list, reverse the list, and return the reversed list.
 
@@ -762,14 +756,11 @@ export const linkedList = [
             return prev;
         }
         `
-    }
-];
-
-export const dynamicProgramming = [
-
+    },
     {
-        id: '1',
+        id: '17',
         title: 'Longest Common Subsequence',
+        tags : ['Dynamic Programming', 'String'],
         problem: 
         `Given two strings text1 and text2, return the length of their longest common subsequence. 
         If there is no common subsequence, return 0.
@@ -825,8 +816,9 @@ export const dynamicProgramming = [
           `
         },
         {
-        id: '2',
+        id: '18',
         title: 'Climbing Stairs',
+        tags : ['Dynamic Programming'],
         problem: 
         `You are climbing a staircase. It takes n steps to reach the top.
         Each time you can either climb 1 or 2 steps. 
@@ -877,26 +869,63 @@ export const dynamicProgramming = [
             }
         }
         `
-    }
-];
-
-
-export const graphList = [
+    },
     {
-        id: '1',
-        title: 'Graph',
+        id: '19',
+        title: 'Trapping Rainwater',
+        tags : ['Dynamic Programming', 'Two Pointers'],
         problem: 
-        `Implement a Graph`,
+        `Given n non-negative integers representing an elevation map where the width 
+        of each bar is 1, compute how much water it can trap after raining.
+
+        Example 1:
+        Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+        Output: 6
+        Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. 
+        In this case, 6 units of rain water (blue section) are being trapped.
+
+        Example 2:
+        Input: height = [4,2,0,3,2,5]
+        Output: 9 
+
+        Constraints:
+        n == height.length
+        1 <= n <= 2 * 104
+        0 <= height[i] <= 105
+        `,
         code: 
-        ``
-    }
-];
-
-
-export const hashTableList = [
+        `/**
+        * @param {number[]} height
+        * @return {number}
+        */
+       export default function trap(height) {
+       
+         let left = 0, right = height.length - 1, volume = 0;
+       
+         let maxLeft = 0, maxRight = 0;
+       
+         while (left < right) {
+           if (height[left] <= height[right]) {
+               if (height[left] >= maxLeft) {
+                   maxLeft = height[left]
+               } else volume += maxLeft - height[left]
+               left++
+           } else {
+               if (height[right] >= maxRight) {
+                   maxRight = height[right]
+               } else volume += maxRight - height[right]
+               right--
+           }  
+         }
+       
+         return volume;
+       }
+       `
+    },
     {
-        id: '1',
+        id: '20',
         title: 'Hash Table',
+        tags : ['Class', 'Hash Table', 'Data Structure'],
         problem: 
         `Implement a Hash Table`,
         code: 
@@ -946,13 +975,11 @@ export const hashTableList = [
             }
         }
         `
-    }
-];
-
-export const dataStructures = [
+    },
     {
-        id: '1',
+        id: '21',
         title: 'Linked List',
+        tags : ['Class', 'Linked List', 'Data Structure'],
         problem: 
         `Implement a singly linked-list`,
         code: 
@@ -1020,8 +1047,9 @@ export const dataStructures = [
         `
     },
     {
-        id: '2',
+        id: '22',
         title: 'Stack',
+        tags : ['Class', 'Linked List', 'Stack', 'Data Structure'],
         problem: 
         `Implement a Stack`,
         code: 
@@ -1055,8 +1083,9 @@ export const dataStructures = [
         `
     },
     {
-        id: '3',
+        id: '23',
         title: 'Queue',
+        tags : ['Class', 'Linked List', 'Queue', 'Data Structure'],
         problem: 
         `Implement a Queue`,
         code: 
@@ -1088,5 +1117,84 @@ export const dataStructures = [
             }
         }
         `
+    },
+    {
+        id: '24',
+        title: 'Compare Two Strings with Backspace',
+        tags : ['String', 'Two Pointers', 'Stack'],
+        problem : 
+            `Given two strings s and t, return true if they are equal 
+            when both are typed into empty text editors. 
+            '#' means a backspace character.
+
+            Note that after backspacing an empty text, the text will continue empty.
+
+            Example 1:
+
+            Input: s = "ab#c", t = "ad#c"
+            Output: true
+            Explanation: Both s and t become "ac".
+
+            Example 2:
+
+            Input: s = "ab##", t = "c#d#"
+            Output: true
+            Explanation: Both s and t become "".
+
+            Example 3:
+
+            Input: s = "a#c", t = "b"
+            Output: false
+            Explanation: s becomes "c" while t becomes "b".
+
+            Constraints:
+
+            1 <= s.length, t.length <= 200
+            s and t only contain lowercase letters and '#' characters.        
+
+            Follow up: Can you solve it in O(n) time and O(1) space?    
+        `,
+        code: 
+        `/**
+        * @param {string} s
+        * @param {string} t
+        * @return {boolean}
+        */
+       var backspaceCompare = function(s, t) {
+            function processString(str) {
+               const result = [];
+               for (const char of str) {
+                   if (char === '#') {
+                       result.pop(); 
+                   } else {
+                       result.push(char);
+                   }
+               }
+               return result.join('');
+           }
+       
+           const processedS = processString(s);
+           const processedT = processString(t);
+       
+           return processedS === processedT;
+       }
+       `
+    },
+    {
+        id: '25',
+        title: 'Tree',
+        tags : ['Tree', 'Data Structure'],
+        problem: 
+        `Implement a Binary Tree`,
+        code: 
+        `// Definition for a binary tree node
+        class TreeNode {
+                constructor(val, left, right) {
+                    this.val = (val === undefined ? 0 : val);
+                    this.left = (left === undefined ? null : left);
+                    this.right = (right === undefined ? null : right);
+                }
+        }
+        `
     }
-];
+]

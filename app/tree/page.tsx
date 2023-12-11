@@ -3,13 +3,18 @@
 import {Accordion, AccordionItem, Divider} from "@nextui-org/react";
 import CodeSnippet from "../components/CodeSnippet";
 import Problem from "../components/Problem";
-import { algorithmsListTree } from "../constant/algorithmsList";
+import { algorithmsList } from "../constant/algorithmsList";
 
 export default function Tree () {
 
+    const isTree = (item: any) => {
+        return item.tags.includes('Tree') 
+    }
+
     return ( 
         <Accordion variant="splitted">
-            {algorithmsListTree.map((item, index) => (
+
+            {algorithmsList.filter(isTree).map((item, index) => (
                 <AccordionItem key={index} aria-label={item.title} title={item.title}>
                     <Problem problem={item.problem}/>
                     <Divider className="my-4" />
