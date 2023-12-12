@@ -13,7 +13,7 @@ export default function LinkedList () {
 
 
     return ( 
-        <Accordion variant="splitted">
+        <Accordion variant="splitted" className="font-mono">
             {algorithmsList.filter(isLinkedList).map((item, index) => (
                 <AccordionItem key={index} aria-label={item.title} title={item.title}>
                     <Problem problem={item.problem}/>

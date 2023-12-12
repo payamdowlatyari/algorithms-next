@@ -32,17 +32,21 @@ export default function Header() {
       title: "Hash Table",
       href: "/hashtable"
     },
+    {
+      title: "String",
+      href: "/string"
+    },
   ];
     return ( 
       <Navbar onMenuOpenChange={setIsMenuOpen}>
-        <NavbarContent className="gap-4" justify="start">
+        <NavbarContent className="gap-4 font-mono" justify="start">
         <NavbarBrand>
             <Link 
             color="foreground" 
             href="/" 
-            className="font-semibold uppercase"
+            className="font-semibold"
             >
-            Algorithms
+            Algorithms for Life
             </Link>
           </NavbarBrand>
           <ThemeSwitcher/>
@@ -50,7 +54,7 @@ export default function Header() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
         </NavbarContent>
-        <NavbarMenu className="items-center flex content-center">
+        <NavbarMenu className="items-center flex content-center font-mono">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link

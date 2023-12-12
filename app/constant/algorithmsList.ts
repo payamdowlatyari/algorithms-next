@@ -325,7 +325,7 @@ export const algorithmsList = [
             {
                 id: '8',
                 title: 'Find Peak Element',
-                tags : ['Array', 'Binary Search'],
+                tags : ['Array', 'Search'],
                 problem: 
                 `A peak element is an element that is strictly greater than its neighbors.
 
@@ -929,49 +929,57 @@ export const algorithmsList = [
         problem: 
         `Implement a Hash Table`,
         code: 
-        `class HashTable {
-            constructor(size = 2) {
-                this.buckets = new Array(size);
-                this.collisions = 0;
+        `export default class HashTable {
+            constructor(size) {
+              this.values = {};
+              this.numberOfValues = 0;
+              this.size = size;
             }
-        
-            hash(key) {
-        
-                let hashVal = 0;
-                const stringTypeKey = key + type of key; 
-        
-                for (let i = 0; i < stringTypeKey.length; i++) {
-                    const charCode = stringTypeKey.charCodeAt(i)
-                    hashVal += charCode << (i * 8);
+          
+            add(key, value) {
+              const hash = this.calculateHash(key);
+              if(!this.values.hasOwnProperty(hash)) {
+                this.values[hash] = {};
+              }
+              if(!this.values[hash].hasOwnProperty(key)) {
+                this.numberOfValues++;
+              }
+              this.values[hash][key] = value;
+            }
+          
+            remove(key) {
+              const hash = this.calculateHash(key);
+              if(this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) {
+                delete this.values[hash][key];
+                this.numberOfValues--;
+              }
+            }
+          
+            calculateHash(key) {
+              return key.toString().length % this.size;
+            }
+          
+            search(key) {
+              const hash = this.calculateHash(key);
+              if(this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) {
+                return this.values[hash][key];
+              } else {
+                return null;
+              }
+            }
+          
+            length() {
+              return this.numberOfValues;
+            }
+          
+            print() {
+              let string = '';
+              for(const value in this.values) {
+                for(const key in this.values[value]) {
+                  string += this.values[value][key] ;
                 }
-                return hashVal;
-            }
-        
-            getIndex(key) {
-                return (this.hash(key) % this.buckets.length);
-            }
-        
-            set(key, value) {
-                const index = this.getIndex(key);
-        
-                if (this.buckets[index]) {
-                    this.buckets[index].push({key, value});
-                
-                if (this.buckets[index].length > 1) {this.collisions++;}
-                } 
-                else this.buckets[index] = [{key, value}];
-                return this;
-            }
-        
-            get(key) {
-                const index = this.getIndex(key)
-        
-                for (let i = 0; i < this.buckets[index].length; i++) {
-                    const input = this.buckets[index][i];
-                    
-                    if (input.key === key) 
-                        return input.value;
-                }
+              }
+              console.log(string.trim());
             }
         }
         `
@@ -1091,31 +1099,30 @@ export const algorithmsList = [
         code: 
         `// implementing a queue using a linked-list
         class Queue {
-            constructor(){
-            this.list = new LinkedList();
+            constructor() {
+              this.queue = [];
             }
-        
-            add(data) {
-            this.list.addLast(data);
+          
+            enqueue(value) {
+              this.queue.push(value);
             }
-        
-            remove() {
-            return this.list.removeFirst();
+          
+            dequeue() {
+              return this.queue.shift();
             }
-        
+          
             peek() {
-            if(this.isEmpty()) { return; }
-            return this.list.head.data;
+              return this.queue[0];
             }
-        
-            isEmpty() {
-            return !this.list.size();
+          
+            length() {
+              return this.queue.length;
             }
-        
-            removeBy(query) {
-            return this.list.delete(query);
+          
+            print() {
+              console.log(this.queue.join(' '));
             }
-        }
+          }
         `
     },
     {
@@ -1196,5 +1203,1162 @@ export const algorithmsList = [
                 }
         }
         `
-    }
+    },
+    {
+        id: '26',
+        title: 'Binary Search',
+        tags : ['Array', 'Search'],
+        problem : 
+        `Given an array of integers nums which is sorted in ascending order, 
+        and an integer target, write a function to search target in nums. 
+        If target exists, then return its index. Otherwise, return -1.
+        
+        You must write an algorithm with O(log n) runtime complexity.
+
+        Example 1:
+        Input: nums = [-1,0,3,5,9,12], target = 9
+        Output: 4
+        Explanation: 9 exists in nums and its index is 4
+
+        Example 2:
+        Input: nums = [-1,0,3,5,9,12], target = 2
+        Output: -1
+        Explanation: 2 does not exist in nums so return -1
+
+        Constraints:
+        1 <= nums.length <= 10^4
+        -10^4 < nums[i], target < 10^4
+        All the integers in nums are unique.
+        nums is sorted in ascending order.
+        `,
+        code: 
+        `const binarySerach = (nums, l, r, t) => {
+
+            if (r >= l) {
+                let m = l + Math.floor((r - l) / 2);
+        
+                if (nums[m] === t) return m;
+        
+                if (nums[m] > t) 
+                    return binarySerach(nums, l, m - 1, t);
+                
+                return binarySerach(nums, m + 1, r, t);
+            } 
+            return -1;
+        }
+        
+        /**
+         * @param {number[]} nums
+         * @param {number} target
+         * @return {number}
+         */
+        export default function search(nums, target) {
+        
+            if (nums.length === 1 && target === nums[0]) return 0;
+        
+            return binarySerach(nums, 0, nums.length - 1, target);    
+        }
+        `
+    },
+    {
+        id: '27',
+        title: 'Array',
+        tags : ['Class', 'Array', 'Data Structure'],
+        problem: 
+        `Implement an array class with all neccessary methods`,
+        code: 
+        `class MyArray {
+            constructor() {
+              this.array = [];
+            }
+          
+            add(data) {
+              this.array.push(data);
+            }
+          
+            remove(data) {
+              this.array = this.array.filter(current => current !== data);
+            }
+          
+            search(data) {
+              const foundIndex = this.array.indexOf(data);
+              if(~foundIndex) {
+                return foundIndex;
+              }
+          
+              return null;
+            }
+          
+            getAtIndex(index) {
+              return this.array[index];
+            }
+          
+            length() {
+              return this.array.length;
+            }
+          
+            print() {
+              console.log(this.array.join(' '));
+            }
+          }
+          `
+    },
+    {
+        id: '28',
+        title: 'Binary Search Tree',
+        tags : ['Class', 'Tree', 'Data Structure'],
+        problem: 
+        `Implement a Binary Search Tree class with all neccessary methods`,
+        code: 
+        `function Node(data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+          }
+          
+          class BinarySearchTree {
+            constructor() {
+              this.root = null;
+            }
+          
+            add(data) {
+              const node = new Node(data);
+              if(!this.root) {
+                this.root = node;
+              } else {
+                let current = this.root;
+                while(current) {
+                  if(node.data < current.data) {
+                    if(!current.left) {
+                      current.left = node;
+                      break;
+                    }
+                    current = current.left;
+                  } else if (node.data > current.data) {
+                    if(!current.right) {
+                      current.right = node;
+                      break;
+                    }
+                    current = current.right;
+                  } else {
+                    break;
+                  }
+                }
+              }
+            }
+          
+            remove(data) {
+              const that = this;
+              const removeNode = (node, data) => {
+                if(!node) {
+                  return null;
+                }
+                if(data === node.data) {
+                  if(!node.left && !node.right) {
+                    return null;
+                  }
+                  if(!node.left) {
+                    return node.right;
+                  }
+                  if(!node.right) {
+                    return node.left;
+                  }
+                  // 2 children
+                  const temp = that.getMin(node.right);
+                  node.data = temp;
+                  node.right = removeNode(node.right, temp);
+                  return node;
+                } else if(data < node.data) {
+                  node.left = removeNode(node.left, data);
+                  return node;
+                } else {
+                  node.right = removeNode(node.right, data);
+                  return node;
+                }
+              };
+              this.root = removeNode(this.root, data);
+            }
+          
+            contains(data) {
+              let current = this.root;
+              while(current) {
+                if(data === current.data) {
+                  return true;
+                }
+                if(data < current.data) {
+                  current = current.left;
+                } else {
+                  current = current.right;
+                }
+              }
+              return false;
+            }
+          
+            _preOrder(node, fn) {
+              if(node) {
+                if(fn) {
+                  fn(node);
+                }
+                this._preOrder(node.left, fn);
+                this._preOrder(node.right, fn);
+              }
+            }
+          
+            _inOrder(node, fn) {
+              if(node) {
+                this._inOrder(node.left, fn);
+                if(fn) {
+                  fn(node);
+                }
+                this._inOrder(node.right, fn);
+              }
+            }
+          
+            _postOrder(node, fn) {
+              if(node) {
+                this._postOrder(node.left, fn);
+                this._postOrder(node.right, fn);
+                if(fn) {
+                  fn(node);
+                }
+              }
+            }
+          
+            traverseDFS(fn, method) {
+              const current = this.root;
+              if(method) {
+                this[_method](current, fn);
+              } else {
+                this._preOrder(current, fn);
+              }
+            }
+          
+            traverseBFS(fn) {
+              this.queue = [];
+              this.queue.push(this.root);
+              while(this.queue.length) {
+                const node = this.queue.shift();
+                if(fn) {
+                  fn(node);
+                }
+                if(node.left) {
+                  this.queue.push(node.left);
+                }
+                if(node.right) {
+                  this.queue.push(node.right);
+                }
+              }
+            }
+          
+            print() {
+              if(!this.root) {
+                return console.log('No root node found');
+              }
+              const newline = new Node('|');
+              const queue = [this.root, newline];
+              let string = '';
+              while(queue.length) {
+                const node = queue.shift();
+                string += node.data.toString();
+                if(node === newline && queue.length) {
+                  queue.push(newline);
+                }
+                if(node.left) {
+                  queue.push(node.left);
+                }
+                if(node.right) {
+                  queue.push(node.right);
+                }
+              }
+              console.log(string.slice(0, -2).trim());
+            }
+          
+            printByLevel() {
+              if(!this.root) {
+                return console.log('No root node found');
+              }
+              const newline = new Node('\n');
+              const queue = [this.root, newline];
+              let string = '';
+              while(queue.length) {
+                const node = queue.shift();
+                string += node.data.toString() + (node.data !== '\n' ? ' ' : '');
+                if(node === newline && queue.length) {
+                  queue.push(newline);
+                }
+                if(node.left) {
+                  queue.push(node.left);
+                }
+                if(node.right) {
+                  queue.push(node.right);
+                }
+              }
+              console.log(string.trim());
+            }
+          
+            getMin(node) {
+              if(!node) {
+                node = this.root;
+              }
+              while(node.left) {
+                node = node.left;
+              }
+              return node.data;
+            }
+          
+            getMax(node) {
+              if(!node) {
+                node = this.root;
+              }
+              while(node.right) {
+                node = node.right;
+              }
+              return node.data;
+            }
+          
+            _getHeight(node) {
+              if(!node) {
+                return -1;
+              }
+              const left = this._getHeight(node.left);
+              const right = this._getHeight(node.right);
+              return Math.max(left, right) + 1;
+            }
+          
+            getHeight(node) {
+              if(!node) {
+                node = this.root;
+              }
+              return this._getHeight(node);
+            }
+          
+            _isBalanced(node) {
+              if(!node) {
+                return true;
+              }
+              const heigthLeft = this._getHeight(node.left);
+              const heigthRight = this._getHeight(node.right);
+              const diff = Math.abs(heigthLeft - heigthRight);
+              if(diff > 1) {
+                return false;
+              } else {
+                return this._isBalanced(node.left) && this._isBalanced(node.right);
+              }
+            }
+          
+            isBalanced(node) {
+              if(!node) {
+                node = this.root;
+              }
+              return this._isBalanced(node);
+            }
+          
+            _checkHeight(node) {
+              if(!node) {
+                return 0;
+              }
+              const left = this._checkHeight(node.left);
+              if(left === -1) {
+                return -1;
+              }
+              const right = this._checkHeight(node.right);
+              if(right === -1) {
+                return -1;
+              }
+              const diff = Math.abs(left - right);
+              if(diff > 1) {
+                return -1;
+              } else {
+                return Math.max(left, right) + 1;
+              }
+            }
+          
+            isBalancedOptimized(node) {
+              if(!node) {
+                node = this.root;
+              }
+              if(!node) {
+                return true;
+              }
+              if(this._checkHeight(node) === -1) {
+                return false;
+              } else {
+                return true;
+              }
+            }
+          }
+        `
+    },
+    {
+        id: '29',
+        title: 'Doubly Linked List',
+        tags : ['Class', 'Linked List', 'Data Structure'],
+        problem: 
+        `Implement a Doubly Linked List class with all neccessary methods`,
+        code:
+        `function Node(data) {
+            this.data = data;
+            this.previous = null;
+            this.next = null;
+          }
+          
+          class DoublyLinkedList {
+            constructor() {
+              this.head = null;
+              this.tail = null;
+              this.numberOfValues = 0;
+            }
+          
+            add(data) {
+              const node = new Node(data);
+              if(!this.head) {
+                this.head = node;
+                this.tail = node;
+              } else {
+                node.previous = this.tail;
+                this.tail.next = node;
+                this.tail = node;
+              }
+              this.numberOfValues++;
+            }
+          
+            remove(data) {
+              let current = this.head;
+              while(current) {
+                if(current.data === data) {
+                  if(current === this.head && current === this.tail) {
+                    this.head = null;
+                    this.tail = null;
+                  } else if(current === this.head) {
+                    this.head = this.head.next;
+                    this.head.previous = null;
+                  } else if(current === this.tail) {
+                    this.tail = this.tail.previous;
+                    this.tail.next = null;
+                  } else {
+                    current.previous.next = current.next;
+                    current.next.previous = current.previous;
+                  }
+                  this.numberOfValues--;
+                }
+                current = current.next;
+              }
+            }
+          
+            insertAfter(data, toNodeData) {
+              let current = this.head;
+              while(current) {
+                if(current.data === toNodeData) {
+                  const node = new Node(data);
+                  if(current === this.tail) {
+                    this.add(data);
+                  } else {
+                    current.next.previous = node;
+                    node.previous = current;
+                    node.next = current.next;
+                    current.next = node;
+                    this.numberOfValues++;
+                  }
+                }
+                current = current.next;
+              }
+            }
+          
+            traverse(fn) {
+              let current = this.head;
+              while(current) {
+                if(fn) {
+                  fn(current);
+                }
+                current = current.next;
+              }
+            }
+          
+            traverseReverse(fn) {
+              let current = this.tail;
+              while(current) {
+                if(fn) {
+                  fn(current);
+                }
+                current = current.previous;
+              }
+            }
+          
+            length() {
+              return this.numberOfValues;
+            }
+          
+            print() {
+              let string = '';
+              let current = this.head;
+              while(current) {
+                string += current.data;
+                current = current.next;
+              }
+              console.log(string.trim());
+            }
+          }
+        `
+    },
+    {
+        id: '30',
+        title: 'Graph',
+        tags : ['Class', 'Graph', 'Data Structure'],
+        problem: 
+        `Implement a Graph class with all neccessary methods`,
+        code:
+        `class Graph {
+            constructor() {
+              this.vertices = [];
+              this.edges = [];
+              this.numberOfEdges = 0;
+            }
+          
+            addVertex(vertex) {
+              this.vertices.push(vertex);
+              this.edges[vertex] = [];
+            }
+          
+            removeVertex(vertex) {
+              const index = this.vertices.indexOf(vertex);
+              if(~index) {
+                this.vertices.splice(index, 1);
+              }
+              while(this.edges[vertex].length) {
+                const adjacentVertex = this.edges[vertex].pop();
+                this.removeEdge(adjacentVertex, vertex);
+              }
+            }
+          
+            addEdge(vertex1, vertex2) {
+              this.edges[vertex1].push(vertex2);
+              this.edges[vertex2].push(vertex1);
+              this.numberOfEdges++;
+            }
+          
+            removeEdge(vertex1, vertex2) {
+              const index1 = this.edges[vertex1] ? this.edges[vertex1].indexOf(vertex2) : -1;
+              const index2 = this.edges[vertex2] ? this.edges[vertex2].indexOf(vertex1) : -1;
+              if(~index1) {
+                this.edges[vertex1].splice(index1, 1);
+                this.numberOfEdges--;
+              }
+              if(~index2) {
+                this.edges[vertex2].splice(index2, 1);
+              }
+            }
+          
+            size() {
+              return this.vertices.length;
+            }
+          
+            relations() {
+              return this.numberOfEdges;
+            }
+          
+            traverseDFS(vertex, fn) {
+              if(!~this.vertices.indexOf(vertex)) {
+                return console.log('Vertex not found');
+              }
+              const visited = [];
+              this._traverseDFS(vertex, visited, fn);
+            }
+          
+            _traverseDFS(vertex, visited, fn) {
+              visited[vertex] = true;
+              if(this.edges[vertex] !== undefined) {
+                fn(vertex);
+              }
+              for(let i = 0; i < this.edges[vertex].length; i++) {
+                if(!visited[this.edges[vertex][i]]) {
+                  this._traverseDFS(this.edges[vertex][i], visited, fn);
+                }
+              }
+            }
+          
+            traverseBFS(vertex, fn) {
+              if(!~this.vertices.indexOf(vertex)) {
+                return console.log('Vertex not found');
+              }
+              const queue = [];
+              queue.push(vertex);
+              const visited = [];
+              visited[vertex] = true;
+          
+              while(queue.length) {
+                vertex = queue.shift();
+                fn(vertex);
+                for(let i = 0; i < this.edges[vertex].length; i++) {
+                  if(!visited[this.edges[vertex][i]]) {
+                    visited[this.edges[vertex][i]] = true;
+                    queue.push(this.edges[vertex][i]);
+                  }
+                }
+              }
+            }
+          
+            pathFromTo(vertexSource, vertexDestination) {
+              if(!~this.vertices.indexOf(vertexSource)) {
+                return console.log('Vertex not found');
+              }
+              const queue = [];
+              queue.push(vertexSource);
+              const visited = [];
+              visited[vertexSource] = true;
+              const paths = [];
+          
+              while(queue.length) {
+                const vertex = queue.shift();
+                for(let i = 0; i < this.edges[vertex].length; i++) {
+                  if(!visited[this.edges[vertex][i]]) {
+                    visited[this.edges[vertex][i]] = true;
+                    queue.push(this.edges[vertex][i]);
+                    // save paths between vertices
+                    paths[this.edges[vertex][i]] = vertex;
+                  }
+                }
+              }
+              if(!visited[vertexDestination]) {
+                return undefined;
+              }
+          
+              const path = [];
+              for(var j = vertexDestination; j != vertexSource; j = paths[j]) {
+                path.push(j);
+              }
+              path.push(j);
+              return path.reverse().join('-');
+            }
+          
+            print() {
+              console.log(this.vertices.map(function(vertex) {
+                return (vertex + ' -> ' + this.edges[vertex].join(', ')).trim();
+              }, this).join(' | '));
+            }
+          }
+        `
+    },
+    {
+        id: '31',
+        title: 'Set',
+        tags : ['Class', 'Data Structure'],
+        problem: 
+        `Implement a Set class with all neccessary methods`,
+        code:
+        `class Set {
+            constructor() {
+              this.values = [];
+              this.numberOfValues = 0;
+            }
+          
+            add(value) {
+              if(!~this.values.indexOf(value)) {
+                this.values.push(value);
+                this.numberOfValues++;
+              }
+            }
+          
+            remove(value) {
+              const index = this.values.indexOf(value);
+              if(~index) {
+                this.values.splice(index, 1);
+                this.numberOfValues--;
+              }
+            }
+          
+            contains(value) {
+              return this.values.indexOf(value) !== -1;
+            }
+          
+            union(set) {
+              const newSet = new Set();
+              set.values.forEach(value => {
+                newSet.add(value);
+              });
+              this.values.forEach(value => {
+                newSet.add(value);
+              });
+              return newSet;
+            }
+          
+            intersect(set) {
+              const newSet = new Set();
+              this.values.forEach(value => {
+                if(set.contains(value)) {
+                  newSet.add(value);
+                }
+              });
+              return newSet;
+            }
+          
+            difference(set) {
+              const newSet = new Set();
+              this.values.forEach(value => {
+                if(!set.contains(value)) {
+                  newSet.add(value);
+                }
+              });
+              return newSet;
+            }
+          
+            isSubset(set) {
+              return set.values.every(function(value) {
+                return this.contains(value);
+              }, this);
+            }
+          
+            length() {
+              return this.numberOfValues;
+            }
+          
+            print() {
+              console.log(this.values.join(' '));
+            }
+          }
+        `
+    },
+    {
+        id: '32',
+        title: 'Trie',
+        tags : ['Class', 'Data Structure', 'String'],
+        problem: 
+        `Implement a Trie class with all neccessary methods`,
+        code:
+        `function Node(data) {
+            this.data = data;
+            this.isWord = false;
+            this.prefixes = 0;
+            this.children = {};
+          }
+          
+          class Trie {
+            constructor() {
+              this.root = new Node('');
+            }
+          
+            add(word) {
+              if(!this.root) {
+                return null;
+              }
+              this._addNode(this.root, word);
+            }
+          
+            _addNode(node, word) {
+              if(!node || !word) {
+                return null;
+              }
+              node.prefixes++;
+              const letter = word.charAt(0);
+              let child = node.children[letter];
+              if(!child) {
+                child = new Node(letter);
+                node.children[letter] = child;
+              }
+              const remainder = word.substring(1);
+              if(!remainder) {
+                child.isWord = true;
+              }
+              this._addNode(child, remainder);
+            }
+          
+            remove(word) {
+              if(!this.root) {
+                return;
+              }
+              if(this.contains(word)) {
+                this._removeNode(this.root, word);
+              }
+            }
+          
+            _removeNode(node, word) {
+              if(!node || !word) {
+                return;
+              }
+              node.prefixes--;
+              const letter = word.charAt(0);
+          
+              const child = node.children[letter];
+              if(child) {
+                const remainder = word.substring(1);
+                if(remainder) {
+                  if(child.prefixes === 1) {
+                    delete node.children[letter];
+                  } else {
+                    this._removeNode(child, remainder);
+                  }
+                } else {
+                  if(child.prefixes === 0) {
+                    delete node.children[letter];
+                  } else {
+                    child.isWord = false;
+                  }
+                }
+              }
+            }
+          
+            contains(word) {
+              if(!this.root) {
+                return false;
+              }
+              return this._contains(this.root, word);
+            }
+          
+            _contains(node, word) {
+              if(!node || !word) {
+                return false;
+              }
+              const letter = word.charAt(0);
+              const child = node.children[letter];
+              if(child) {
+                const remainder = word.substring(1);
+                if(!remainder && child.isWord) {
+                  return true;
+                } else {
+                  return this._contains(child, remainder);
+                }
+              } else {
+                return false;
+              }
+            }
+          
+            countWords() {
+              if(!this.root) {
+                return console.log('No root node found');
+              }
+              const queue = [this.root];
+              let counter = 0;
+              while(queue.length) {
+                const node = queue.shift();
+                if(node.isWord) {
+                  counter++;
+                }
+                for(const child in node.children) {
+                  if(node.children.hasOwnProperty(child)) {
+                    queue.push(node.children[child]);
+                  }
+                }
+              }
+              return counter;
+            }
+          
+            getWords() {
+              const words = [];
+              const word = '';
+              this._getWords(this.root, words, word);
+              return words;
+            }
+          
+            _getWords(node, words, word) {
+              for(const child in node.children) {
+                if(node.children.hasOwnProperty(child)) {
+                  word += child;
+                  if (node.children[child].isWord) {
+                    words.push(word);
+                  }
+                  this._getWords(node.children[child], words, word);
+                  word = word.substring(0, word.length - 1);
+                }
+              }
+            }
+          
+            print() {
+              if(!this.root) {
+                return console.log('No root node found');
+              }
+              const newline = new Node('|');
+              const queue = [this.root, newline];
+              let string = '';
+              while(queue.length) {
+                const node = queue.shift();
+                string += node.data.toString();
+                if(node === newline && queue.length) {
+                  queue.push(newline);
+                }
+                for(const child in node.children) {
+                  if(node.children.hasOwnProperty(child)) {
+                    queue.push(node.children[child]);
+                  }
+                }
+              }
+              console.log(string.slice(0, -2).trim());
+            }
+          
+            printByLevel() {
+              if(!this.root) {
+                return console.log('No root node found');
+              }
+              const newline = new Node('\n');
+              const queue = [this.root, newline];
+              let string = '';
+              while(queue.length) {
+                const node = queue.shift();
+                string += node.data.toString() + (node.data !== '\n' ? ' ' : '');
+                if(node === newline && queue.length) {
+                  queue.push(newline);
+                }
+                for(const child in node.children) {
+                  if(node.children.hasOwnProperty(child)) {
+                    queue.push(node.children[child]);
+                  }
+                }
+              }
+              console.log(string.trim());
+            }
+          }
+        `
+    },
+    {
+        id: '33',
+        title: 'Bubble Sort',
+        tags : ['Data Structure', 'Sort'],
+        problem: 
+        `Implement the Bubble Sort algorithm`,
+        code:
+        `// basic 
+        function bubbleSortBasic(array) {
+            for(let i = 0; i < array.length; i++) {
+              for(let j = 1; j < array.length; j++) {
+                if(array[j - 1] > array[j]) {
+                  [array[j - 1], array[j]] = [array[j], array[j - 1]];
+                }
+              }
+            }
+            return array;
+          }
+          // optimized
+          function bubbleSort(array) {
+            let swapped;
+            do {
+              swapped = false;
+              for(let i = 0; i < array.length; i++) {
+                if(array[i] && array[i + 1] && array[i] > array[i + 1]) {
+                  [array[i], array[i + 1]] = [array[i + 1], array[i]];
+                  swapped = true;
+                }
+              }
+            } while(swapped);
+            return array;
+          }
+        `
+    },
+    {
+        id: '34',
+        title: 'Insertion Sort',
+        tags : ['Data Structure', 'Sort'],
+        problem: 
+        `Implement the Insertion Sort algorithm`,
+        code:
+        `function insertionSort(array) {
+            for(let i = 0; i < array.length; i++) {
+              let temp = array[i];
+              let j = i - 1;
+              while (j >= 0 && array[j] > temp) {
+                array[j + 1] = array[j];
+                j--;
+              }
+              array[j + 1] = temp;
+            }
+            return array;
+          }
+          
+        `
+    },
+    {
+        id: '35',
+        title: 'Merge Sort',
+        tags : ['Data Structure', 'Sort'],
+        problem: 
+        `Implement the Merge Sort algorithm`,
+        code:
+        `// top-down implementation
+        function mergeSortTopDown(array) {
+          if(array.length < 2) {
+            return array;
+          }
+        
+          const middle = Math.floor(array.length / 2);
+          const left = array.slice(0, middle);
+          const right = array.slice(middle);
+        
+          return mergeTopDown(mergeSortTopDown(left), mergeSortTopDown(right));
+        }
+        function mergeTopDown(left, right) {
+          const array = [];
+        
+          while(left.length && right.length) {
+            if(left[0] < right[0]) {
+              array.push(left.shift());
+            } else {
+              array.push(right.shift());
+            }
+          }
+          return array.concat(left.slice()).concat(right.slice());
+        }
+                
+        // bottom-up implementation
+        function mergeSortBottomUp(array) {
+          let step = 1;
+          while (step < array.length) {
+            let left = 0;
+            while (left + step < array.length) {
+              mergeBottomUp(array, left, step);
+              left += step * 2;
+            }
+            step *= 2;
+          }
+          return array;
+        }
+        function mergeBottomUp(array, left, step) {
+          const right = left + step;
+          const end = Math.min(left + step * 2 - 1, array.length - 1);
+          let leftMoving = left;
+          let rightMoving = right;
+          const temp = [];
+        
+          for (let i = left; i <= end; i++) {
+            if ((array[leftMoving] <= array[rightMoving] || rightMoving > end) &&
+                leftMoving < right) {
+              temp[i] = array[leftMoving];
+              leftMoving++;
+            } else {
+              temp[i] = array[rightMoving];
+              rightMoving++;
+            }
+          }
+        
+          for (let j = left; j <= end; j++) {
+            array[j] = temp[j];
+          }
+        }        
+        `
+    },
+    {
+        id: '36',
+        title: 'Quick Sort',
+        tags : ['Data Structure', 'Sort'],
+        problem: 
+        `Implement the Quick Sort algorithm`,
+        code:
+        `// basic implementation (pivot is the first element of the array)
+        function quicksortBasic(array) {
+          if(array.length < 2) {
+            return array;
+          }
+        
+          const pivot = array[0];
+          const lesser = [];
+          const greater = [];
+        
+          for(let i = 1; i < array.length; i++) {
+            if(array[i] < pivot) {
+              lesser.push(array[i]);
+            } else {
+              greater.push(array[i]);
+            }
+          }
+        
+          return quicksortBasic(lesser).concat(pivot, quicksortBasic(greater));
+        }
+                
+        // classic implementation 
+        function quicksort(array, left, right) {
+          left = left || 0;
+          right = right || array.length - 1;
+        
+          // const pivot = partitionLomuto(array, left, right); // you can play with both partition
+          const pivot = partitionHoare(array, left, right); // you can play with both partition
+        
+          if(left < pivot - 1) {
+            quicksort(array, left, pivot - 1);
+          }
+          if(right > pivot) {
+            quicksort(array, pivot, right);
+          }
+          return array;
+        }
+        // Lomuto partition scheme, it is less efficient than the Hoare partition scheme
+        function partitionLomuto(array, left, right) {
+          const pivot = right;
+          let i = left;
+          let last = left;
+        
+          for(let j = left; j < right; j++) {
+            if(array[j] <= array[pivot]) {
+              [array[i], array[j]] = [array[j], array[i]];
+              i = i + 1;
+            }
+            last = j + 1;
+          }
+          [array[i], array[last]] = [array[last], array[i]];
+          return i;
+        }
+        // Hoare partition scheme, it is more efficient than the Lomuto partition scheme 
+        // because it does three times fewer swaps on average
+        function partitionHoare(array, left, right) {
+          const pivot = Math.floor((left + right) / 2 );
+        
+          while(left <= right) {
+            while(array[left] < array[pivot]) {
+              left++;
+            }
+            while(array[right] > array[pivot]) {
+              right--;
+            }
+            if(left <= right) {
+              [array[left], array[right]] = [array[right], array[left]];
+              left++;
+              right--;
+            }
+          }
+          return left;
+        }
+        `
+    },
+    {
+        id: '37',
+        title: 'Selection Sort',
+        tags : ['Data Structure', 'Sort'],
+        problem: 
+        `Implement the Selection Sort algorithm`,
+        code:
+        `function selectionSort(array) {
+            for(let i = 0; i < array.length; i++) {
+              let min = i;
+              for(let j = i + 1; j < array.length; j++) {
+                if(array[j] < array[min]) {
+                  min = j;
+                }
+              }
+              if(i !== min) {
+                [array[i], array[min]] = [array[min], array[i]];
+              }
+            }
+            return array;
+          }
+        `
+    },
+    {
+        id: '38',
+        title: 'Shell Sort',
+        tags : ['Data Structure', 'Sort'],
+        problem: 
+        `Implement the Shell Sort algorithm`,
+        code:
+        `function shellsort(array) {
+            for(let g = 0; g < gaps.length; g++) {
+              const gap = gaps[g];
+              for(let i = gap; i < array.length; i++) {
+                const temp = array[i];
+                let last = i;
+                for(let j = i; j >= gap && array[j - gap] > temp; j -= gap) {
+                  array[j] = array[j - gap];
+                  last -= gap;
+                }
+                array[last] = temp;
+              }
+            }
+            return array;
+          }
+        `
+    },
 ]

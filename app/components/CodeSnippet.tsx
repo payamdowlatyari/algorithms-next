@@ -8,7 +8,7 @@ export default function CodeSnippet({codeSample}: any)  {
     const { theme, setTheme } = useTheme()
 
     return (
-        <div className="demo text-sm p-2">
+        <div className="demo text-xs p-2">
             <CopyBlock
             language='tsx'
             text={codeSample}
