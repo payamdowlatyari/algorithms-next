@@ -1306,7 +1306,7 @@ export const algorithmsList = [
     {
         id: '28',
         title: 'Binary Search Tree',
-        tags : ['Class', 'Tree', 'Data Structure'],
+        tags : ['Class', 'Tree', 'Data Structure', 'Search'],
         problem: 
         `Implement a Binary Search Tree class with all neccessary methods`,
         code: 

@@ -36,15 +36,23 @@ export default function Header() {
       title: "String",
       href: "/string"
     },
+    {
+      title: "Sort",
+      href: "/sort"
+    },
+    {
+      title: "Search",
+      href: "/search"
+    },
   ];
     return ( 
       <Navbar onMenuOpenChange={setIsMenuOpen}>
         <NavbarContent className="gap-4 font-mono" justify="start">
         <NavbarBrand>
             <Link 
-            color="foreground" 
-            href="/" 
-            className="font-semibold"
+              color="foreground" 
+              href="/" 
+              className="font-semibold"
             >
             Algorithms for Life
             </Link>
@@ -54,12 +62,12 @@ export default function Header() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
         </NavbarContent>
-        <NavbarMenu className="items-center flex content-center font-mono">
+        <NavbarMenu className="items-center font-mono">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               color="foreground" 
-              className="w-full p-1 text-2xl sm:text-4xl transition ease-in-out delay-150 hover:bg-foreground hover:text-background duration-500"
+              className="w-full p-1 text-2xl sm:text-4xl border-b-2 border-transparent transition ease-in-out delay-100 hover:border-current duration-500"
               href={item.href}
             >
               {item.title}
