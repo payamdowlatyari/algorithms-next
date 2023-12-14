@@ -1,7 +1,20 @@
 'use client'
 
 import { Card, CardBody, CardFooter, Link } from "@nextui-org/react";
-import { TbBinaryTree, TbBracketsContain, TbListSearch, TbHash, TbLineHeight, TbReorder, TbAbc, TbTriangleSquareCircle, TbTransform} from "react-icons/tb";
+import { 
+  TbBinaryTree, 
+  TbChartTreemap,
+  TbBracketsContain, 
+  TbListSearch, 
+  TbHash, 
+  TbLineHeight, 
+  TbReorder, 
+  TbAlphabetLatin, 
+  TbTriangleSquareCircle, 
+  TbTransform,
+  TbPolygon,
+  TbStepInto 
+} from "react-icons/tb";
 
 export default function Home() {
 
@@ -91,7 +104,7 @@ export default function Home() {
               className="mt-1"
               ><Link href="string" 
               className="text-8xl justify-center text-pink-500">
-                <TbAbc /> 
+                <TbAlphabetLatin /> 
                 </Link>
             </CardBody>
             <CardFooter className="justify-center mb-5">
@@ -122,6 +135,45 @@ export default function Home() {
             </CardBody>
             <CardFooter className="justify-center mb-5">
             <span className="text-2xl text-orange-500 text-center">Search</span>
+            </CardFooter>
+          </Card>
+
+          <Card shadow="sm" className="w-60 h-60 transition ease-in-out hover:scale-105 duration-300">
+            <CardBody
+              className="mt-1"
+              ><Link href="recursion" 
+              className="text-8xl justify-center text-yellow-400">
+                <TbChartTreemap /> 
+                </Link>
+            </CardBody>
+            <CardFooter className="justify-center mb-5">
+            <span className="text-2xl text-yellow-400 text-center">Recursion</span>
+            </CardFooter>
+          </Card>
+
+          <Card shadow="sm" className="w-60 h-60 transition ease-in-out hover:scale-105 duration-300">
+            <CardBody
+              className="mt-1"
+              ><Link href="graph" 
+              className="text-8xl justify-center text-indigo-500">
+                <TbPolygon /> 
+                </Link>
+            </CardBody>
+            <CardFooter className="justify-center mb-5">
+            <span className="text-2xl text-indigo-500 text-center">Graph</span>
+            </CardFooter>
+          </Card>
+
+          <Card shadow="sm" className="w-60 h-60 transition ease-in-out hover:scale-105 duration-300">
+            <CardBody
+              className="mt-1"
+              ><Link href="pointer" 
+              className="text-8xl justify-center text-sky-500">
+                <TbStepInto /> 
+                </Link>
+            </CardBody>
+            <CardFooter className="justify-center mb-5">
+            <span className="text-2xl text-sky-500 text-center">Pointer</span>
             </CardFooter>
           </Card>
 
