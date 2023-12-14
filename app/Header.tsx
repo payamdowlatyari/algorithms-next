@@ -44,6 +44,18 @@ export default function Header() {
       title: "Search",
       href: "/search"
     },
+    {
+      title: "Recursion",
+      href: "/recursion"
+    },
+    {
+      title: "Graph",
+      href: "/graph"
+    },
+    {
+      title: "Pointer",
+      href: "/pointer"
+    },
   ];
     return ( 
       <Navbar onMenuOpenChange={setIsMenuOpen}>

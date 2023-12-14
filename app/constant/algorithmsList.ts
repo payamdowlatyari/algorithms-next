@@ -41,17 +41,16 @@ code:
 */
 const twoSum = (nums, target) => { 
 
-let map = {};
+    let map = {};
 
-for (let i = 0; i < nums.length; i++) {
+    for (let i = 0; i < nums.length; i++) {
 
-    if (target - nums[i] in map) 
-        return [map[target-nums[i]], i];
-    else 
-        map[nums[i]] = i;  
-}
-}
-`},
+        if (target - nums[i] in map) 
+            return [map[target-nums[i]], i];
+        else 
+            map[nums[i]] = i;  
+    }
+}`},
 {
 id: '2',
 title: 'Contains Duplicate',
@@ -94,8 +93,7 @@ const containsDuplicate = (nums) => {
         numsSet.add(i)
     }
     return false;
-}
-`},
+}`},
 {
 id: '3',
 title: 'Product Except Self',
@@ -144,8 +142,7 @@ const productExceptSelf = (nums) => {
         product *= nums[j];
     }
     return res;
-}
-    `},
+}`},
     {
 id: '4',
 title: 'The Sign of an Array',
@@ -247,8 +244,7 @@ function canMakeArithmeticProgression(arr){
     }
     
     return true;
-}
-`
+}`
     },
     {
 id: '6',
@@ -296,9 +292,7 @@ function maxSubArray(nums) {
         max = Math.max(max, nums[i])
     }
     return max;
-}
-`
-},
+}`},
 {
 id: '7',
 title: 'First Missing Possitive',
@@ -348,10 +342,8 @@ function firstMissingPositive(nums) {
             }
         }
     
-        return n + 1;
-    }
-    `
-},
+    return n + 1;
+}`},
 {
 id: '8',
 title: 'Find Peak Element',
@@ -399,8 +391,7 @@ function findPeakElement(nums) {
             
     if (nums[0] < nums[nums.length - 1]) return nums.length - 1;
     return 0;          
-}
-`
+}`
 },
     {
 id: '9',
@@ -457,10 +448,8 @@ function coinChange(coins, amount) {
     }
 
     return dp[amount] === Number.MAX_VALUE ? -1 : dp[amount];
-}
-`
-},
-    {
+}`},
+{
 id: '10',
 title: 'Best Time to Buy and Sell Stocks',
 tags : ['Array', 'Dynamic Programming'],
@@ -511,9 +500,7 @@ function maxProfit(prices) {
     
     }
     return max;
-}
-`
-    },
+}`},
 
 {
 id: '11',
@@ -552,9 +539,7 @@ function postOrderTravarsal(root){
     preOrderTravarsal(root.right);
 
     console.log(root.val);
-}
-`
-},
+}`},
 {
 id: '12',
 title: 'Invert Binary Tree',
@@ -585,15 +570,14 @@ code:
 */
 const invertTree = (root) => {
 
-if (!root) return root;
+    if (!root) return root;
 
-let left = root.left;
-root.left = invertTree(root.right);
-root.right = invertTree(left);
+    let left = root.left;
+    root.left = invertTree(root.right);
+    root.right = invertTree(left);
 
-return root;
-}
-`},
+    return root;
+}`},
 {
 id: '13',
 title: 'Maximum Depth of Binary Tree',
@@ -636,8 +620,7 @@ const maxDepth = (root) => {
     DFS(root, 1);
 
 return maxDepth;
-}
-`
+}`
 },
 {
 id: '14',
@@ -715,9 +698,7 @@ class LinkedList {
             curr = curr.next;
         }
     }
-}
-`
-},
+}`},
 {
 id: '15',
 title: 'Merge Two Linked Lists',
@@ -770,8 +751,7 @@ const mergeTwoLists = (l1, l2) => {
 
     prev.next = l1 || l2;
     return nullNode.next;
-}
-`},
+}`},
 {
 id: '16',
 title: 'Reverse Linked List',
@@ -814,9 +794,7 @@ const reverseList = (head) => {
     }
     
     return prev;
-}
-`
-},
+}`},
 {
 id: '17',
 title: 'Longest Common Subsequence',
@@ -877,9 +855,7 @@ const longestCommonSubsequence = function (text1, text2) {
     }
     
     return DP[0][0];
-}
-`
-},
+}`},
 {
 id: '18',
 title: 'Climbing Stairs',
@@ -932,9 +908,7 @@ const climb = () => {
             return cache[n];
         }
     }
-}
-`
-},
+}`},
 {
 id: '19',
 title: 'Trapping Rainwater',
@@ -984,9 +958,7 @@ export default function trap(height) {
     }
 
     return volume;
-}
-`
-},
+}`},
 {
 id: '20',
 title: 'Hash Table',
@@ -1046,9 +1018,7 @@ code:
         }
         console.log(string.trim());
     }
-}
-`
-},
+}`},
 {
 id: '21',
 title: 'Linked List',
@@ -1115,10 +1085,7 @@ class LinkedList {
                     curr = curr.next;
             }
         }
-}
-
-`
-},
+}`},
 {
 id: '22',
 title: 'Stack',
@@ -1152,9 +1119,7 @@ class Stack {
     size() {
         return this.list.size();
     }
-}
-`
-},
+}`},
 {
 id: '23',
 title: 'Queue',
@@ -1187,9 +1152,7 @@ class Queue {
     print() {
         console.log(this.queue.join(' '));
     }
-}
-`
-},
+}`},
 {
 id: '24',
 title: 'Compare Two Strings with Backspace',
@@ -1249,9 +1212,7 @@ var backspaceCompare = function(s, t) {
     const processedT = processString(t);
 
     return processedS === processedT;
-}
-`
-},
+}`},
 {
 id: '25',
 title: 'Tree',
@@ -1266,9 +1227,7 @@ class TreeNode {
             this.left = (left === undefined ? null : left);
             this.right = (right === undefined ? null : right);
         }
-}
-`
-},
+}`},
 {
 id: '26',
 title: 'Binary Search',
@@ -1321,9 +1280,7 @@ export default function search(nums, target) {
 
     if (nums.length === 1 && target === nums[0]) return 0;
     return binarySerach(nums, 0, nums.length - 1, target);    
-}
-`
-},
+}`},
 {
 id: '27',
 title: 'Array',
@@ -1364,9 +1321,7 @@ code:
     print() {
         console.log(this.array.join(' '));
     }
-}
-`
-},
+}`},
 {
 id: '28',
 title: 'Binary Search Tree',
@@ -1650,9 +1605,7 @@ code:
         return true;
         }
     }
-}
-`
-},
+}`},
 {
 id: '29',
 title: 'Doubly Linked List',
@@ -1761,9 +1714,7 @@ code:
         }
         console.log(string.trim());
     }
-}
-`
-},
+}`},
 {
 id: '30',
 title: 'Graph',
@@ -1899,9 +1850,7 @@ code:
         return (vertex + ' -> ' + this.edges[vertex].join(', ')).trim();
         }, this).join(' | '));
     }
-}
-`
-},
+}`},
 {
 id: '31',
 title: 'Set',
@@ -1978,9 +1927,7 @@ code:
     print() {
         console.log(this.values.join(' '));
     }
-}
-`
-},
+}`},
 {
 id: '32',
 title: 'Trie',
@@ -2168,13 +2115,11 @@ code:
         }
         console.log(string.trim());
     }
-}
-`
-},
+}`},
 {
 id: '33',
 title: 'Bubble Sort',
-tags : ['Data Structure', 'Sort'],
+tags : ['Sort'],
 problem: 
 `Implement the Bubble Sort algorithm`,
 code:
@@ -2202,13 +2147,11 @@ function bubbleSortBasic(array) {
         }
     } while(swapped);
     return array;
-}
-`
-},
+}`},
 {
 id: '34',
 title: 'Insertion Sort',
-tags : ['Data Structure', 'Sort'],
+tags : ['Sort'],
 problem: 
 `Implement the Insertion Sort algorithm`,
 code:
@@ -2223,13 +2166,11 @@ code:
         array[j + 1] = temp;
     }
     return array;
-}    
-`
-},
+}`},
 {
 id: '35',
 title: 'Merge Sort',
-tags : ['Data Structure', 'Sort'],
+tags : ['Sort'],
 problem: 
 `Implement the Merge Sort algorithm`,
 code:
@@ -2245,6 +2186,7 @@ function mergeSortTopDown(array) {
 
     return mergeTopDown(mergeSortTopDown(left), mergeSortTopDown(right));
 }
+
 function mergeTopDown(left, right) {
     const array = [];
 
@@ -2271,6 +2213,7 @@ function mergeSortBottomUp(array) {
     }
     return array;
 }
+
 function mergeBottomUp(array, left, step) {
     const right = left + step;
     const end = Math.min(left + step * 2 - 1, array.length - 1);
@@ -2292,20 +2235,18 @@ function mergeBottomUp(array, left, step) {
     for (let j = left; j <= end; j++) {
     array[j] = temp[j];
     }
-}        
-`
-},
+}`},
 {
 id: '36',
 title: 'Quick Sort',
-tags : ['Data Structure', 'Sort'],
+tags : ['Sort'],
 problem: 
 `Implement the Quick Sort algorithm`,
 code:
 `// basic implementation (pivot is the first element of the array)
 function quicksortBasic(array) {
     if(array.length < 2) {
-    return array;
+        return array;
     }
 
     const pivot = array[0];
@@ -2313,11 +2254,11 @@ function quicksortBasic(array) {
     const greater = [];
 
     for(let i = 1; i < array.length; i++) {
-    if(array[i] < pivot) {
-        lesser.push(array[i]);
-    } else {
-        greater.push(array[i]);
-    }
+        if(array[i] < pivot) {
+            lesser.push(array[i]);
+        } else {
+            greater.push(array[i]);
+        }
     }
 
     return quicksortBasic(lesser).concat(pivot, quicksortBasic(greater));
@@ -2332,10 +2273,10 @@ function quicksort(array, left, right) {
     const pivot = partitionHoare(array, left, right); // you can play with both partition
 
     if(left < pivot - 1) {
-    quicksort(array, left, pivot - 1);
+        quicksort(array, left, pivot - 1);
     }
     if(right > pivot) {
-    quicksort(array, pivot, right);
+        quicksort(array, pivot, right);
     }
     return array;
 }
@@ -2346,11 +2287,11 @@ function partitionLomuto(array, left, right) {
     let last = left;
 
     for(let j = left; j < right; j++) {
-    if(array[j] <= array[pivot]) {
-        [array[i], array[j]] = [array[j], array[i]];
-        i = i + 1;
-    }
-    last = j + 1;
+        if(array[j] <= array[pivot]) {
+            [array[i], array[j]] = [array[j], array[i]];
+            i = i + 1;
+        }
+        last = j + 1;
     }
     [array[i], array[last]] = [array[last], array[i]];
     return i;
@@ -2361,26 +2302,24 @@ function partitionHoare(array, left, right) {
     const pivot = Math.floor((left + right) / 2 );
 
     while(left <= right) {
-    while(array[left] < array[pivot]) {
-        left++;
-    }
-    while(array[right] > array[pivot]) {
-        right--;
-    }
-    if(left <= right) {
-        [array[left], array[right]] = [array[right], array[left]];
-        left++;
-        right--;
-    }
+        while(array[left] < array[pivot]) {
+            left++;
+        }
+        while(array[right] > array[pivot]) {
+            right--;
+        }
+        if(left <= right) {
+            [array[left], array[right]] = [array[right], array[left]];
+            left++;
+            right--;
+        }
     }
     return left;
-}
-`
-},
+}`},
 {
 id: '37',
 title: 'Selection Sort',
-tags : ['Data Structure', 'Sort'],
+tags : ['Sort'],
 problem: 
 `Implement the Selection Sort algorithm`,
 code:
@@ -2388,22 +2327,20 @@ code:
     for(let i = 0; i < array.length; i++) {
         let min = i;
         for(let j = i + 1; j < array.length; j++) {
-        if(array[j] < array[min]) {
-            min = j;
-        }
-        }
-        if(i !== min) {
-        [array[i], array[min]] = [array[min], array[i]];
+            if(array[j] < array[min]) {
+                min = j;
+            }
+            }
+            if(i !== min) {
+            [array[i], array[min]] = [array[min], array[i]];
         }
     }
     return array;
-}
-`
-},
+}`},
 {
 id: '38',
 title: 'Shell Sort',
-tags : ['Data Structure', 'Sort'],
+tags : ['Sort'],
 problem: 
 `Implement the Shell Sort algorithm`,
 code:
@@ -2417,13 +2354,11 @@ code:
             array[j] = array[j - gap];
             last -= gap;
         }
-        array[last] = temp;
+            array[last] = temp;
         }
     }
     return array;
-}
-`
-},
+}`},
 {
 id: '39',
 title: 'Breadth First Travarsal',
@@ -2455,9 +2390,7 @@ function breadthFirstTraversal (tree) {
         }
     }
     return result;
-}
-`
-},
+}`},
 {
 id: '40',
 title: 'Depdth First Travarsal',
@@ -2487,9 +2420,7 @@ function depthFirstTraversal(tree){
         }
     }
     return result;
-}
-`
-},
+}`},
 {
 id: '41',
 title: 'Sorted Array to a Binary Search Tree',
@@ -2537,7 +2468,5 @@ code:
  */
 function sortedArrayToBST (nums) {
     return buildTree(nums, 0, nums.length - 1)  
-}
-`
-},
-]
+}`},
+];
