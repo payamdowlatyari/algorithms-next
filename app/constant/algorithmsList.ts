@@ -2469,4 +2469,219 @@ code:
 function sortedArrayToBST (nums) {
     return buildTree(nums, 0, nums.length - 1)  
 }`},
+{
+id: '42',
+title: 'Reverse Only Letters',
+tags : ['String', 'Recursion'],
+problem: 
+`Given a string s, reverse the string according to the following rules:
+
+All the characters that are not English letters remain in the same position.
+All the English letters (lowercase or uppercase) should be reversed.
+Return s after reversing it.
+
+Example 1:
+Input: s = "ab-cd"
+Output: "dc-ba"
+
+Example 2:
+Input: s = "a-bC-dEf-ghIj"
+Output: "j-Ih-gfE-dCba"
+
+Example 3:
+Input: s = "Test1ng-Leet=code-Q!"
+Output: "Qedo1ct-eeLg=ntse-T!"
+ 
+Constraints:
+1 <= s.length <= 100
+s consists of characters with ASCII values in the range [33, 122].
+s does not contain '\"' or '\\'.
+`,
+code: 
+`/**
+* @param {string} s
+* @return {string}
+*/
+function reverseOnlyLetters(s) {
+   
+   const letterRegex = /[A-Za-z]/;
+
+   let reversed = s.split('').reverse().join('')
+
+   let reversedOnlyLetters = ''
+
+   for (let i = 0; i < s.length; i++) { 
+       if (letterRegex.test(reversed[i])) 
+           reversedOnlyLetters += reversed[i]
+   }
+
+   for (let j = 0; j < s.length; j++) { 
+       if (!letterRegex.test(s[j])) 
+           reversedOnlyLetters = reversedOnlyLetters.slice(0, j) + s[j] + reversedOnlyLetters.slice(j)
+   }
+
+  return reversedOnlyLetters
+}`},
+{
+id: '43',
+title: 'Reverse String II',
+tags : ['String', 'Recursion'],
+problem: 
+`Given a string s and an integer k, reverse the first k characters 
+for every 2k characters counting from the start of the string.
+
+If there are fewer than k characters left, reverse all of them. 
+If there are less than 2k but greater than or equal to k characters, 
+then reverse the first k characters and leave the other as original.
+ 
+Example 1:
+Input: s = "abcdefg", k = 2
+Output: "bacdfeg"
+
+Example 2:
+Input: s = "abcd", k = 2
+Output: "bacd"
+
+Constraints:
+1 <= s.length <= 104
+s consists of only lowercase English letters.
+1 <= k <= 104
+`,
+code: 
+`/**
+* @param {string} s
+* @param {number} k
+* @return {string}
+*/
+function reverseStr(s, k) {
+    
+   if (s.length < k) return s.split('').reverse().join('');
+   if (s.length >= k && s.length < (k * 2)) 
+       return s.slice(0, k).split('').reverse().join('') + s.slice(k);
+
+   let tempStr = s.slice(0, k).split('').reverse().join('') + s.slice(k, k * 2) 
+   return tempStr + reverseStr(s.slice(k * 2), k)
+}`},
+{
+id: '44',
+title: 'Diameter of Binary Tree',
+tags : ['Tree', 'Recursion'],
+problem: 
+`Given the root of a binary tree, return the length of the diameter of the tree.
+
+The diameter of a binary tree is the length of the longest path between any two nodes in a tree. 
+This path may or may not pass through the root.
+
+The length of a path between two nodes is represented by the number of edges between them.
+
+Example 1:
+Input: root = [1,2,3,4,5]
+Output: 3
+Explanation: 3 is the length of the path [4,2,1,3] or [5,2,1,3].
+
+Example 2:
+Input: root = [1,2]
+Output: 1
+
+Constraints:
+The number of nodes in the tree is in the range [1, 104].
+-100 <= Node.val <= 100
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+`,
+code: 
+`/**
+* @param {TreeNode} root
+* @return {number}
+*/
+function diameterOfBinaryTree(root) {
+   
+   let diameter = 0;
+
+   const height = (node) => {
+       if (node === null) return 0
+   
+       const left = height(node.left)
+       const right = height(node.right)
+   
+       diameter = Math.max(diameter, left + right)
+       return 1 + Math.max(left, right)
+   }
+
+   height(root)
+   return diameter
+}`},
+{
+id: '45',
+title: 'Reverse Linked List II',
+tags : ['Linked List', 'Two Pointers'],
+problem: 
+`Given the head of a singly linked list and two integers left and right where left <= right, 
+reverse the nodes of the list from position left to position right, and return the reversed list. 
+
+Example 1:
+Input: head = [1,2,3,4,5], left = 2, right = 4
+Output: [1,4,3,2,5]
+
+Example 2:
+Input: head = [5], left = 1, right = 1
+Output: [5]
+
+Constraints:
+The number of nodes in the list is n.
+1 <= n <= 500
+-500 <= Node.val <= 500
+1 <= left <= right <= n
+
+// Follow up: Could you do it in one pass?
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */`,
+code: 
+`/**
+* @param {ListNode} head
+* @param {number} left
+* @param {number} right
+* @return {ListNode}
+*/
+function reverseBetween(head, left, right) {
+   if (!head || left === right) {
+       return head;
+   }
+
+   let dummy = new ListNode(0);
+   dummy.next = head;
+   let prev = dummy;
+
+   for (let i = 0; i < left - 1; i++) {
+       prev = prev.next;
+   }
+
+   let current = prev.next;
+   let nextNode = null;
+
+   for (let i = 0; i < right - left + 1; i++) {
+       let temp = current.next;
+       current.next = nextNode;
+       nextNode = current;
+       current = temp;
+   }
+
+   prev.next.next = current;
+   prev.next = nextNode;
+
+   return dummy.next;
+}`},
 ];
