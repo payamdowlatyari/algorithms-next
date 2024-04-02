@@ -5,7 +5,7 @@ import { CodeBlock, hybrid, github } from "react-code-blocks";
 
 export default function Problem({problem}: any)  {
 
-const { theme, setTheme } = useTheme()
+const { theme } = useTheme()
 
   return (
       <div className="demo  text-xs p-2">

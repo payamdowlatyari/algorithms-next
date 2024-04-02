@@ -2684,4 +2684,270 @@ function reverseBetween(head, left, right) {
 
    return dummy.next;
 }`},
+{
+id: '46',
+title: 'Two pointers - Template 1',
+tags : ['Array', 'Two Pointers'],
+problem: 
+`Two pointers: one input, opposite ends`,
+code: 
+`let fn = arr => {
+    let left = 0, ans = 0, right = arr.length - 1;
+
+    while (left < right) {
+        // do some logic here with left and right
+        if (CONDITION) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    return ans;
+}`},
+{
+id: '47',
+title: 'Two pointers - Template 2',
+tags : ['Array', 'Two Pointers'],
+problem: 
+`Two pointers: two inputs, exhaust both`,
+code: 
+`let fn = (arr1, arr2) => {
+    let i = 0, j = 0, ans = 0;
+    
+    while (i < arr1.length && j < arr2.length) {
+        // do some logic here
+        if (CONDITION) {
+            i++;
+        } else {
+            j++;
+        }
+    }
+
+    while (i < arr1.length) {
+        // do logic
+        i++;
+    }
+
+    while (j < arr2.length) {
+        // do logic
+        j++;
+    }
+
+    return ans;
+}`}, 
+{
+id: '48',
+title: 'Prefix Sum',
+tags : ['Array'],
+problem: 
+`Build a prefix sum`,
+code: 
+`let fn = arr => {
+    let prefix = [arr[0]];
+    for (let i = 1; i < arr.length; i++) {
+        prefix.push(prefix[prefix.length - 1] + arr[i]);
+    }
+
+    return prefix;
+}`},
+{
+id: '49',
+title: 'Efficient string building',
+tags : ['Array', 'String'],
+problem: 
+`Efficient string building`,
+code: 
+`// arr is a list of characters
+let fn = arr => {
+    let ans = [];
+    for (const c of arr) {
+        ans.push(c);
+    }
+
+    return ans.join("")
+}
+
+let fn = arr => {
+    let ans = "";
+    for (const c of arr) {
+        ans += c;
+    }
+
+    return ans;
+}`},
+{
+id: '50',
+title: 'Linked list: fast and slow pointer',
+tags : ['Linked List', 'Two Pointers'],
+problem: 
+`Linked list: fast and slow pointer`,
+code: 
+`let fn = head => {
+    let slow = head;
+    let fast = head;
+    let ans = 0;
+    
+    while (fast && fast.next) {
+        // do logic
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    
+    return ans;
+}`},
+{
+id: '51',
+title: 'Find number of subarrays that fit an exact criteria',
+tags : ['Array'],
+problem: 
+`Find number of subarrays that fit an exact criteria`,
+code: 
+`let fn = (arr, k) => {
+    let counts = new Map();
+    counts.set(0, 1);
+    let ans = 0, curr = 0;
+
+    for (const num of arr) {
+        // do logic to change curr
+        ans += counts.get(curr - k) || 0;
+        counts.set(curr, (counts.get(curr) || 0) + 1);
+    }
+
+    return ans;
+}`},
+{
+id: '52',
+title: 'Monotonic increasing stack',
+tags : ['Array', 'Stack'],
+problem: 
+`Monotonic increasing stack. The same logic can be applied to maintain a monotonic queue.`,
+code: 
+`let fn = arr => {
+    let stack = [];
+    let ans = 0;
+
+    for (const num of arr) {
+        // for monotonic decreasing, just flip the > to <
+        while (stack.length && stack[stack.length - 1] > num) {
+            // do logic
+            stack.pop();
+        }
+
+        stack.push(num);
+    }
+
+    return ans;
+}`},
+{
+id: '53',
+title: 'Binary search: duplicate elements, left-most insertion point',
+tags : ['Search'],
+problem: 
+`Binary search: duplicate elements, left-most insertion point`,
+code: 
+`let fn = (arr, target) => {
+    let left = 0;
+    let right = arr.length;
+    while (left < right) {
+        let mid = Math.floor((left + right) / 2);
+        if (arr[mid] >= target) {
+            right = mid;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    return left;
+}`},
+{
+id: '54',
+title: 'Binary search: duplicate elements, right-most insertion point',
+tags : ['Search'],
+problem: 
+`Binary search: duplicate elements, right-most insertion point`,
+code: 
+`let fn = (arr, target) => {
+    let left = 0;
+    let right = arr.length;
+    while (left < right) {
+        let mid = Math.floor((left + right) / 2);
+        if (arr[mid] > target) {
+            right = mid;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+return left;
+}`},
+{
+id: '55',
+title: 'Binary search: for greedy problems',
+tags : ['Search'],
+problem: 
+`Binary search: for greedy problems`,
+code: 
+`// min
+let fn = arr => {
+    let check = x => {
+        // this function is implemented depending on the problem
+        return BOOLEAN;
+    }
+
+    let left = MINIMUM_POSSIBLE_ANSWER;
+    let right = MAXMIMUM_POSSIBLE_ANSWER;
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        if (check(mid)) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    return left;
+}
+
+// max
+let fn = arr => {
+    let check = x => {
+        // this function is implemented depending on the problem
+        return BOOLEAN;
+    }
+
+    let left = MINIMUM_POSSIBLE_ANSWER;
+    let right = MAXMIMUM_POSSIBLE_ANSWER;
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        if (check(mid)) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return right;
+}`},
+{
+id: '56',
+title: 'Backtracking',
+tags : ['Search'],
+problem: 
+`Backtracking`,
+code: 
+`let backtrack = (curr, OTHER_ARGUMENTS...) => {
+    if (BASE_CASE) {
+        // modify the answer
+        return;
+    }
+
+    let ans = 0;
+    for (ITERATE_OVER_INPUT) {
+        // modify the current state
+        ans += backtrack(curr, OTHER_ARGUMENTS...);
+        // undo the modification of the current state
+    }
+
+    return ans;
+}`},
 ];
