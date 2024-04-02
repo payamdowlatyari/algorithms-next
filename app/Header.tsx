@@ -11,7 +11,7 @@ export default function Header() {
 
     return ( 
       <Navbar onMenuOpenChange={setIsMenuOpen}>
-        <NavbarContent className="gap-4 font-mono" justify="start">
+        <NavbarContent className="gap-4 font-sans" justify="start">
           <NavbarBrand>
             <Link 
               color="foreground" 
@@ -26,7 +26,7 @@ export default function Header() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
         </NavbarContent>
-        <NavbarMenu className="flex flex-col items-center font-mono">
+        <NavbarMenu className="flex flex-col items-center font-sans">
         {topicList.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link

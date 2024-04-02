@@ -40,8 +40,8 @@ export const topicList = [
         href: "/recursion"
       },
       {
-        title: "Graph",
-        href: "/graph"
+        title: "Template",
+        href: "/template"
       },
       {
         title: "Pointer",

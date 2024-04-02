@@ -505,7 +505,7 @@ function maxProfit(prices) {
 {
 id: '11',
 title: 'Tree Travarsal',
-tags : ['Tree', 'Recursion'],
+tags : ['Tree', 'Recursion', 'Template'],
 problem: 
 `Implement three types of tree travarsals`,
 code: 
@@ -1718,7 +1718,7 @@ code:
 {
 id: '30',
 title: 'Graph',
-tags : ['Class', 'Graph', 'Data Structure'],
+tags : ['Class', 'Data Structure'],
 problem: 
 `Implement a Graph class with all neccessary methods`,
 code:
@@ -2687,7 +2687,7 @@ function reverseBetween(head, left, right) {
 {
 id: '46',
 title: 'Two pointers - Template 1',
-tags : ['Array', 'Two Pointers'],
+tags : ['Array', 'Two Pointers', 'Template'],
 problem: 
 `Two pointers: one input, opposite ends`,
 code: 
@@ -2707,7 +2707,7 @@ code:
 {
 id: '47',
 title: 'Two pointers - Template 2',
-tags : ['Array', 'Two Pointers'],
+tags : ['Array', 'Two Pointers', 'Template'],
 problem: 
 `Two pointers: two inputs, exhaust both`,
 code: 
@@ -2738,7 +2738,7 @@ code:
 {
 id: '48',
 title: 'Prefix Sum',
-tags : ['Array'],
+tags : ['Array', 'Template'],
 problem: 
 `Build a prefix sum`,
 code: 
@@ -2753,7 +2753,7 @@ code:
 {
 id: '49',
 title: 'Efficient string building',
-tags : ['Array', 'String'],
+tags : ['Array', 'String', 'Template'],
 problem: 
 `Efficient string building`,
 code: 
@@ -2798,7 +2798,7 @@ code:
 {
 id: '51',
 title: 'Find number of subarrays that fit an exact criteria',
-tags : ['Array'],
+tags : ['Array', 'Template'],
 problem: 
 `Find number of subarrays that fit an exact criteria`,
 code: 
@@ -2818,7 +2818,7 @@ code:
 {
 id: '52',
 title: 'Monotonic increasing stack',
-tags : ['Array', 'Stack'],
+tags : ['Array', 'Stack', 'Template'],
 problem: 
 `Monotonic increasing stack. The same logic can be applied to maintain a monotonic queue.`,
 code: 
@@ -2841,7 +2841,7 @@ code:
 {
 id: '53',
 title: 'Binary search: duplicate elements, left-most insertion point',
-tags : ['Search'],
+tags : ['Search', 'Template'],
 problem: 
 `Binary search: duplicate elements, left-most insertion point`,
 code: 
@@ -2862,7 +2862,7 @@ code:
 {
 id: '54',
 title: 'Binary search: duplicate elements, right-most insertion point',
-tags : ['Search'],
+tags : ['Search', 'Template'],
 problem: 
 `Binary search: duplicate elements, right-most insertion point`,
 code: 
@@ -2883,7 +2883,7 @@ return left;
 {
 id: '55',
 title: 'Binary search: for greedy problems',
-tags : ['Search'],
+tags : ['Search', 'Template'],
 problem: 
 `Binary search: for greedy problems`,
 code: 
@@ -2931,7 +2931,7 @@ let fn = arr => {
 {
 id: '56',
 title: 'Backtracking',
-tags : ['Search'],
+tags : ['Search', 'Template'],
 problem: 
 `Backtracking`,
 code: 
@@ -2946,6 +2946,29 @@ code:
         // modify the current state
         ans += backtrack(curr, OTHER_ARGUMENTS...);
         // undo the modification of the current state
+    }
+
+    return ans;
+}`},
+{
+id: '57',
+title: 'Sliding Window',
+tags : ['Array', 'Two Pointers', 'Template'],
+problem: 
+`Sliding window`,
+code: 
+`let fn = arr => {
+    let left = 0, ans = 0, curr = 0;
+
+    for (let right = 0; right < arr.length; right++) {
+        // do logic here to add arr[right] to curr
+
+        while (WINDOW_CONDITION_BROKEN) {
+            // remove arr[left] from curr
+            left++;
+        }
+
+        // update ans
     }
 
     return ans;

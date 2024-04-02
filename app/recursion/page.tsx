@@ -15,7 +15,7 @@ export default function Recursion() {
     }
 
     return ( 
-        <Accordion variant="splitted" className="font-mono">
+        <Accordion variant="splitted">
             {algorithmsList.filter(isRecursion).map((item, index) => (
                 <AccordionItem key={index} aria-label={item.title} title={item.title} subtitle={item.tags.map(tag => getChip(tag))}>
                     <Problem problem={item.problem}/>

@@ -1,48 +1,32 @@
-"use client";
-
-import { 
-    TbBinaryTree, 
-    TbChartTreemap,
-    TbBracketsContain, 
-    TbListSearch, 
-    TbHash, 
-    TbLineHeight, 
-    TbReorder, 
-    TbAlphabetLatin, 
-    TbTriangleSquareCircle, 
-    TbTransform,
-    TbPolygon,
-    TbStepInto 
-  } from "react-icons/tb";
-
+import { FcTemplate, FcNumericalSorting12, FcFinePrint, FcGenealogy, FcOrgUnit, FcCandleSticks, FcWorkflow, FcGrid, FcCollect, FcFeedIn, FcRadarPlot, FcTimeline } from "react-icons/fc";
 
 const getIcon = (icon: string) => {
 
     switch (icon) {
         case "Data Structures":
-            return <TbTriangleSquareCircle />
+            return <FcOrgUnit />
         case "Array":
-            return <TbBracketsContain />
+            return <FcGrid />
         case "Tree":
-            return <TbBinaryTree />
+            return <FcGenealogy />
         case "Dynamic Programming":
-            return <TbTransform />
+            return <FcCandleSticks />
         case "Linked List":
-            return <TbReorder />
+            return <FcWorkflow />
         case "Hash Table":
-            return <TbHash />
+            return <FcTimeline />
         case "String":
-            return <TbAlphabetLatin />
+            return <FcRadarPlot />
         case "Sort":
-            return <TbLineHeight />
+            return <FcNumericalSorting12 />
         case "Search":
-            return <TbListSearch />
+            return <FcFinePrint />
         case "Recursion":
-            return <TbChartTreemap />
-        case "Graph":
-            return <TbPolygon />
+            return <FcFeedIn />
+        case "Template":
+            return <FcTemplate />
         case "Pointer":
-            return <TbStepInto />
+            return <FcCollect />
        }
 }  
 

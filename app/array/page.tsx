@@ -14,7 +14,7 @@ export default function Array () {
         return <Chip size="sm" color="default" variant="flat" className="mt-1 mr-1">{tag}</Chip>
     }
     return ( 
-        <Accordion variant="splitted" className="font-mono">
+        <Accordion variant="splitted">
             {algorithmsList.filter(isArray).map((item, index) => (
                 <AccordionItem key={index} aria-label={item.title} title={item.title} subtitle={item.tags.map(tag => getChip(tag))}>
                     <Problem problem={item.problem}/>
