@@ -1,45 +1,60 @@
-'use client'
+"use client";
 
 import { useState } from "react";
-import { Navbar, NavbarContent, NavbarBrand, Link, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
-import { ThemeSwitcher } from "./components/ThemeSwitcher";
-import { topicList } from "./constant/topicList";
+import {
+  Navbar,
+  NavbarContent,
+  NavbarBrand,
+  Link,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarItem,
+} from "@nextui-org/react";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { topicList } from "@/constant/topicList";
 
-export default function Header() { 
-
+/**
+ * Header component that renders a Navbar with a theme switcher,
+ * a menu toggle, and a menu with links to algorithm topics.
+ */
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    return ( 
-      <Navbar onMenuOpenChange={setIsMenuOpen}>
-        <NavbarContent className="gap-4 font-sans" justify="start">
-          <NavbarBrand>
-            <Link 
-              color="foreground" 
-              href="/" 
-              className="font-semibold"
-            >
+  return (
+    <Navbar onMenuOpenChange={setIsMenuOpen} isMenuOpen={isMenuOpen}>
+      <NavbarContent className="gap-4" justify="start">
+        <NavbarBrand>
+          <Link color="foreground" href="/" className="font-bold text-xl">
             Algorithms for Life
-            </Link>
-          </NavbarBrand>
-          <ThemeSwitcher/>
-          <NavbarMenuToggle
+          </Link>
+        </NavbarBrand>
+        <NavbarItem className="hidden gap-4">
+          <Link color="foreground" href="/problems" className="font-semibold">
+            Home
+          </Link>
+        </NavbarItem>
+        <ThemeSwitcher />
+        <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
-        </NavbarContent>
-        <NavbarMenu className="flex flex-col items-center font-sans">
-        {topicList.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color="foreground" 
-              className="w-full p-1 text-2xl sm:text-4xl border-b-2 border-transparent transition ease-in-out delay-100 hover:border-current duration-500"
-              href={item.href}
-            >
-              {item.title}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-      </Navbar>
-    );
+      </NavbarContent>
+      {isMenuOpen && (
+        <NavbarMenu
+          aria-label="Topics"
+          className="flex flex-col items-center justify-center gap-2">
+          {topicList.map(({ title, href }) => (
+            <NavbarMenuItem key={title}>
+              <Link
+                color="foreground"
+                className="w-full p-1 text-xl md:text-2xl border-b-2 border-transparent transition ease-in-out delay-100 hover:border-current duration-500"
+                href={href}>
+                {title}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      )}
+    </Navbar>
+  );
 }
-

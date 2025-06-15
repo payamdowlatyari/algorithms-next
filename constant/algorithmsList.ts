@@ -1,11 +1,9 @@
 export const algorithmsList = [
-
-{
-id: '1',
-title: 'Two Sum',
-tags : ['Array', 'Hash Table'],
-problem: 
-`Given an array of integers nums and an integer target, 
+  {
+    id: "1",
+    title: "Two Sum",
+    tags: ["Array", "Hash Table"],
+    problem: `Given an array of integers nums and an integer target, 
 return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, 
 and you may not use the same element twice.
@@ -33,8 +31,7 @@ Only one valid answer exists.
 
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 `,
-code: 
-`/**
+    code: `/**
 * @param {number[]} nums
 * @param {number} target
 * @return {number[]}
@@ -50,13 +47,13 @@ const twoSum = (nums, target) => {
         else 
             map[nums[i]] = i;  
     }
-}`},
-{
-id: '2',
-title: 'Contains Duplicate',
-tags : ['Array', 'Two Pointers'],
-problem: 
-`Given an integer array nums, return true if any value appears at least twice in the array, 
+}`,
+  },
+  {
+    id: "2",
+    title: "Contains Duplicate",
+    tags: ["Array", "Two Pointers"],
+    problem: `Given an integer array nums, return true if any value appears at least twice in the array, 
 and return false if every element is distinct.
 
 Example 1:
@@ -75,8 +72,7 @@ Constraints:
 1 <= nums.length <= 105
 -109 <= nums[i] <= 109
 `,
-code: 
-`/**
+    code: `/**
 * @param {number[]} nums
 * @param {number} k
 * @return {boolean}
@@ -93,13 +89,13 @@ const containsDuplicate = (nums) => {
         numsSet.add(i)
     }
     return false;
-}`},
-{
-id: '3',
-title: 'Product Except Self',
-tags : ['Array'],
-problem: 
-`Given an integer array nums, return an array answer such that answer[i] 
+}`,
+  },
+  {
+    id: "3",
+    title: "Product Except Self",
+    tags: ["Array"],
+    problem: `Given an integer array nums, return an array answer such that answer[i] 
 is equal to the product of all the elements of nums except nums[i].
 The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
 
@@ -120,8 +116,7 @@ The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit int
 
 Follow up: Can you solve the problem in O(1) extra space complexity? 
 `,
-code: 
-`/**
+    code: `/**
 * @param {number[]} nums
 * @return {number}
 */
@@ -142,13 +137,13 @@ const productExceptSelf = (nums) => {
         product *= nums[j];
     }
     return res;
-}`},
-    {
-id: '4',
-title: 'The Sign of an Array',
-tags : ['Array'],
-problem: 
-`There is a function signFunc(x) that returns:
+}`,
+  },
+  {
+    id: "4",
+    title: "The Sign of an Array",
+    tags: ["Array"],
+    problem: `There is a function signFunc(x) that returns:
 
 1 if x is positive.
 -1 if x is negative.
@@ -181,8 +176,7 @@ Constraints:
 1 <= nums.length <= 1000
 -100 <= nums[i] <= 100
 `,
-code: 
-`/**
+    code: `/**
 * @param {number[]} nums
 * @return {number}
 */
@@ -198,14 +192,13 @@ function arraySign(nums) {
     if (product < 0) return -1;
     
     return 1;
-}`
-    },
-    {
-id: '5',
-title: 'Arithmetic Progression',
-tags : ['Array'],
-problem: 
-`A sequence of numbers is called an arithmetic progression if the 
+}`,
+  },
+  {
+    id: "5",
+    title: "Arithmetic Progression",
+    tags: ["Array"],
+    problem: `A sequence of numbers is called an arithmetic progression if the 
 difference between any two consecutive elements is the same.
 
 Given an array of numbers arr, return true if the array can be rearranged 
@@ -227,8 +220,7 @@ Constraints:
 2 <= arr.length <= 1000
 -10^6 <= arr[i] <= 10^6
 `,
-code: 
-`/**
+    code: `/**
 * @param {number[]} arr
 * @return {boolean}
 */
@@ -244,14 +236,13 @@ function canMakeArithmeticProgression(arr){
     }
     
     return true;
-}`
-    },
-    {
-id: '6',
-title: 'Maximum Sub-array',
-tags : ['Array', 'Divide and Conquer', 'Dynamic Programming'],
-problem: 
-`Given an integer array nums, find the 
+}`,
+  },
+  {
+    id: "6",
+    title: "Maximum Sub-array",
+    tags: ["Array", "Dynamic Programming"],
+    problem: `Given an integer array nums, find the 
 subarray with the largest sum, and return its sum.
 
 Example 1:
@@ -277,8 +268,7 @@ Constraints:
 Follow up: If you have figured out the O(n) solution, try coding another 
 solution using the divide and conquer approach, which is more subtle.
 `,
-code: 
-`/**
+    code: `/**
 * @param {number[]} nums
 * @return {number}
 */
@@ -292,13 +282,13 @@ function maxSubArray(nums) {
         max = Math.max(max, nums[i])
     }
     return max;
-}`},
-{
-id: '7',
-title: 'First Missing Possitive',
-tags : ['Array'],
-problem: 
-`Given an unsorted integer array nums, return the smallest missing positive integer.
+}`,
+  },
+  {
+    id: "7",
+    title: "First Missing Possitive",
+    tags: ["Array"],
+    problem: `Given an unsorted integer array nums, return the smallest missing positive integer.
 You must implement an algorithm that runs in O(n) time and uses O(1) auxiliary space.
 
 Example 1:
@@ -321,8 +311,7 @@ Constraints:
 1 <= nums.length <= 105
 -231 <= nums[i] <= 231 - 1
 `,
-code: 
-`/**
+    code: `/**
 * @param {number[]} nums
 * @return {number}
 */
@@ -343,13 +332,13 @@ function firstMissingPositive(nums) {
         }
     
     return n + 1;
-}`},
-{
-id: '8',
-title: 'Find Peak Element',
-tags : ['Array', 'Search'],
-problem: 
-`A peak element is an element that is strictly greater than its neighbors.
+}`,
+  },
+  {
+    id: "8",
+    title: "Find Peak Element",
+    tags: ["Array", "Search"],
+    problem: `A peak element is an element that is strictly greater than its neighbors.
 
 Given a 0-indexed integer array nums, find a peak element, and return its index. 
 If the array contains multiple peaks, return the index to any of the peaks.
@@ -378,8 +367,7 @@ Constraints:
 -2^31 <= nums[i] <= 2^31 - 1
 nums[i] != nums[i + 1] for all valid i.
 `,
-code: 
-`/**
+    code: `/**
 * @param {number[]} nums
 * @return {number}
 */
@@ -391,14 +379,13 @@ function findPeakElement(nums) {
             
     if (nums[0] < nums[nums.length - 1]) return nums.length - 1;
     return 0;          
-}`
-},
-    {
-id: '9',
-title: 'Coin Change',
-tags : ['Array', 'Dynamic Programming'],
-problem: 
-`You are given an integer array coins representing coins of different 
+}`,
+  },
+  {
+    id: "9",
+    title: "Coin Change",
+    tags: ["Array", "Dynamic Programming"],
+    problem: `You are given an integer array coins representing coins of different 
 denominations and an integer amount representing a total amount of money.
 
 Return the fewest number of coins that you need to make up that amount. 
@@ -429,8 +416,7 @@ Constraints:
 1 <= coins[i] <= 231 - 1
 0 <= amount <= 104
 `,
-code: 
-`/**
+    code: `/**
 * @param {number[]} coins
 * @param {number} amount
 * @return {number}
@@ -448,13 +434,13 @@ function coinChange(coins, amount) {
     }
 
     return dp[amount] === Number.MAX_VALUE ? -1 : dp[amount];
-}`},
-{
-id: '10',
-title: 'Best Time to Buy and Sell Stocks',
-tags : ['Array', 'Dynamic Programming'],
-problem: 
-`You are given an array prices where prices[i] is the price 
+}`,
+  },
+  {
+    id: "10",
+    title: "Best Time to Buy and Sell Stocks",
+    tags: ["Array", "Dynamic Programming"],
+    problem: `You are given an array prices where prices[i] is the price 
 of a given stock on the ith day.
 
 You want to maximize your profit by choosing a single day to buy one 
@@ -481,8 +467,7 @@ Constraints:
 1 <= prices.length <= 105
 0 <= prices[i] <= 104
 `,
-code: 
-`/**
+    code: `/**
 * @param {number[]} prices
 * @return {number}
 */
@@ -500,16 +485,15 @@ function maxProfit(prices) {
     
     }
     return max;
-}`},
+}`,
+  },
 
-{
-id: '11',
-title: 'Tree Travarsal',
-tags : ['Tree', 'Recursion', 'Template'],
-problem: 
-`Implement three types of tree travarsals`,
-code: 
-`// Pre order
+  {
+    id: "11",
+    title: "Tree Travarsal",
+    tags: ["Tree", "Recursion", "Template"],
+    problem: `Implement three types of tree travarsals`,
+    code: `// Pre order
 function preOrderTravarsal(root){
 
     if (root === null) return;
@@ -539,13 +523,13 @@ function postOrderTravarsal(root){
     preOrderTravarsal(root.right);
 
     console.log(root.val);
-}`},
-{
-id: '12',
-title: 'Invert Binary Tree',
-tags : ['Tree', 'Recursion'],
-problem: 
-`Given the root of a binary tree, invert the tree, and return its root.
+}`,
+  },
+  {
+    id: "12",
+    title: "Invert Binary Tree",
+    tags: ["Tree", "Recursion"],
+    problem: `Given the root of a binary tree, invert the tree, and return its root.
 
 Example 1:
 Input: root = [4,2,7,1,3,6,9]
@@ -563,8 +547,7 @@ Constraints:
 The number of nodes in the tree is in the range [0, 100].
 -100 <= Node.val <= 100
 `,
-code: 
-`/**
+    code: `/**
 * @param {TreeNode} root
 * @return {TreeNode}
 */
@@ -577,13 +560,13 @@ const invertTree = (root) => {
     root.right = invertTree(left);
 
     return root;
-}`},
-{
-id: '13',
-title: 'Maximum Depth of Binary Tree',
-tags : ['Tree', 'DFS'],
-problem: 
-`Given the root of a binary tree, return its maximum depth.
+}`,
+  },
+  {
+    id: "13",
+    title: "Maximum Depth of Binary Tree",
+    tags: ["Tree"],
+    problem: `Given the root of a binary tree, return its maximum depth.
 A binary tree's maximum depth is the number of nodes along the 
 longest path from the root node down to the farthest leaf node.
 
@@ -599,8 +582,7 @@ Constraints:
 The number of nodes in the tree is in the range [0, 104].
 -100 <= Node.val <= 100
 `,
-code: 
-`/**
+    code: `/**
 * @param {TreeNode} root
 * @return {number}
 */
@@ -620,16 +602,14 @@ const maxDepth = (root) => {
     DFS(root, 1);
 
 return maxDepth;
-}`
-},
-{
-id: '14',
-title: 'Linked List',
-tags : ['Linked list'],
-problem: 
-`Implement a singly linked-list`,
-code: 
-`// Definition for a linked-list node
+}`,
+  },
+  {
+    id: "14",
+    title: "Linked List",
+    tags: ["Linked List"],
+    problem: `Implement a singly linked-list`,
+    code: `// Definition for a linked-list node
 class LinkedListNode {
     constructor(value, next = null){
         this.value = value;
@@ -698,13 +678,13 @@ class LinkedList {
             curr = curr.next;
         }
     }
-}`},
-{
-id: '15',
-title: 'Merge Two Linked Lists',
-tags : ['Linked List'],
-problem: 
-`You are given the heads of two sorted linked lists list1 and list2.
+}`,
+  },
+  {
+    id: "15",
+    title: "Merge Two Linked Lists",
+    tags: ["Linked List"],
+    problem: `You are given the heads of two sorted linked lists list1 and list2.
 Merge the two lists in a one sorted list. 
 The list should be made by splicing together the nodes of the first two lists.
 Return the head of the merged linked list.
@@ -726,8 +706,7 @@ The number of nodes in both lists is in the range [0, 50].
 -100 <= Node.val <= 100
 Both list1 and list2 are sorted in non-decreasing order.
 `,
-code: 
-`/**
+    code: `/**
 * @param {ListNode} l1
 * @param {ListNode} l2
 * @return {ListNode}
@@ -751,13 +730,13 @@ const mergeTwoLists = (l1, l2) => {
 
     prev.next = l1 || l2;
     return nullNode.next;
-}`},
-{
-id: '16',
-title: 'Reverse Linked List',
-tags : ['Linked List'],
-problem: 
-`Given the head of a singly linked list, reverse the list, and return the reversed list.
+}`,
+  },
+  {
+    id: "16",
+    title: "Reverse Linked List",
+    tags: ["Linked List"],
+    problem: `Given the head of a singly linked list, reverse the list, and return the reversed list.
 
 Example 1:
 Input: head = [1,2,3,4,5]
@@ -777,8 +756,7 @@ The number of nodes in the list is the range [0, 5000].
 
 Follow up: A linked list can be reversed either iteratively or recursively. 
 Could you implement both?`,
-code: 
-`/**
+    code: `/**
 * @param {ListNode} head
 * @return {ListNode}
 */
@@ -794,13 +772,13 @@ const reverseList = (head) => {
     }
     
     return prev;
-}`},
-{
-id: '17',
-title: 'Longest Common Subsequence',
-tags : ['Dynamic Programming', 'String'],
-problem: 
-`Given two strings text1 and text2, return the length of their longest common subsequence. 
+}`,
+  },
+  {
+    id: "17",
+    title: "Longest Common Subsequence",
+    tags: ["Dynamic Programming", "String"],
+    problem: `Given two strings text1 and text2, return the length of their longest common subsequence. 
 If there is no common subsequence, return 0.
 A subsequence of a string is a new string generated from the original string with some characters 
 (can be none) deleted without changing the relative order of the remaining characters.
@@ -830,8 +808,7 @@ Constraints:
 1 <= text1.length, text2.length <= 1000
 text1 and text2 consist of only lowercase English characters.
 `,
-code: 
-`/**
+    code: `/**
 * @param {string} text1
 * @param {string} text2
 * @return {number}
@@ -855,13 +832,13 @@ const longestCommonSubsequence = function (text1, text2) {
     }
     
     return DP[0][0];
-}`},
-{
-id: '18',
-title: 'Climbing Stairs',
-tags : ['Dynamic Programming'],
-problem: 
-`You are climbing a staircase. It takes n steps to reach the top.
+}`,
+  },
+  {
+    id: "18",
+    title: "Climbing Stairs",
+    tags: ["Dynamic Programming"],
+    problem: `You are climbing a staircase. It takes n steps to reach the top.
 Each time you can either climb 1 or 2 steps. 
 In how many distinct ways can you climb to the top?
 
@@ -885,8 +862,7 @@ Explanation: There are three ways to climb to the top.
 Constraints:
 1 <= n <= 45
 `,
-code: 
-`const climbStairs = (n) => {
+    code: `const climbStairs = (n) => {
     const memoized = climb();
     return memoized(n);
 }
@@ -908,13 +884,13 @@ const climb = () => {
             return cache[n];
         }
     }
-}`},
-{
-id: '19',
-title: 'Trapping Rainwater',
-tags : ['Dynamic Programming', 'Two Pointers'],
-problem: 
-`Given n non-negative integers representing an elevation map where the width 
+}`,
+  },
+  {
+    id: "19",
+    title: "Trapping Rainwater",
+    tags: ["Dynamic Programming", "Two Pointers"],
+    problem: `Given n non-negative integers representing an elevation map where the width 
 of each bar is 1, compute how much water it can trap after raining.
 
 Example 1:
@@ -932,8 +908,7 @@ n == height.length
 1 <= n <= 2 * 104
 0 <= height[i] <= 105
 `,
-code: 
-`/**
+    code: `/**
 * @param {number[]} height
 * @return {number}
 */
@@ -958,15 +933,14 @@ export default function trap(height) {
     }
 
     return volume;
-}`},
-{
-id: '20',
-title: 'Hash Table',
-tags : ['Class', 'Hash Table', 'Data Structure'],
-problem: 
-`Implement a Hash Table`,
-code: 
-`export default class HashTable {
+}`,
+  },
+  {
+    id: "20",
+    title: "Hash Table",
+    tags: ["Hash Table", "Data Structure"],
+    problem: `Implement a Hash Table`,
+    code: `export default class HashTable {
     constructor(size) {
         this.values = {};
         this.numberOfValues = 0;
@@ -1018,15 +992,14 @@ code:
         }
         console.log(string.trim());
     }
-}`},
-{
-id: '21',
-title: 'Linked List',
-tags : ['Class', 'Linked List', 'Data Structure'],
-problem: 
-`Implement a singly linked-list`,
-code: 
-`// Definition for a linked-list node
+}`,
+  },
+  {
+    id: "21",
+    title: "Linked List",
+    tags: ["Linked List", "Data Structure"],
+    problem: `Implement a singly linked-list`,
+    code: `// Definition for a linked-list node
 class LinkedListNode {
     constructor(value, next = null){
         this.value = value;
@@ -1085,15 +1058,14 @@ class LinkedList {
                     curr = curr.next;
             }
         }
-}`},
-{
-id: '22',
-title: 'Stack',
-tags : ['Class', 'Linked List', 'Stack', 'Data Structure'],
-problem: 
-`Implement a Stack`,
-code: 
-`// implementing a stack using a linked-list
+}`,
+  },
+  {
+    id: "22",
+    title: "Stack",
+    tags: ["Linked List", "Data Structure"],
+    problem: `Implement a Stack`,
+    code: `// implementing a stack using a linked-list
 class Stack {
     constructor() {
         this.list = new LinkedList();
@@ -1119,15 +1091,14 @@ class Stack {
     size() {
         return this.list.size();
     }
-}`},
-{
-id: '23',
-title: 'Queue',
-tags : ['Class', 'Linked List', 'Queue', 'Data Structure'],
-problem: 
-`Implement a Queue`,
-code: 
-`// implementing a queue using a linked-list
+}`,
+  },
+  {
+    id: "23",
+    title: "Queue",
+    tags: ["Linked List", "Data Structure"],
+    problem: `Implement a Queue`,
+    code: `// implementing a queue using a linked-list
 class Queue {
     constructor() {
         this.queue = [];
@@ -1152,13 +1123,13 @@ class Queue {
     print() {
         console.log(this.queue.join(' '));
     }
-}`},
-{
-id: '24',
-title: 'Compare Two Strings with Backspace',
-tags : ['String', 'Two Pointers', 'Stack'],
-problem : 
-`Given two strings s and t, return true if they are equal 
+}`,
+  },
+  {
+    id: "24",
+    title: "Compare Two Strings with Backspace",
+    tags: ["String", "Two Pointers"],
+    problem: `Given two strings s and t, return true if they are equal 
 when both are typed into empty text editors. 
 '#' means a backspace character.
 
@@ -1189,8 +1160,7 @@ s and t only contain lowercase letters and '#' characters.
 
 Follow up: Can you solve it in O(n) time and O(1) space?    
 `,
-code: 
-`/**
+    code: `/**
 * @param {string} s
 * @param {string} t
 * @return {boolean}
@@ -1212,28 +1182,27 @@ var backspaceCompare = function(s, t) {
     const processedT = processString(t);
 
     return processedS === processedT;
-}`},
-{
-id: '25',
-title: 'Tree',
-tags : ['Tree', 'Data Structure'],
-problem: 
-`Implement a Binary Tree`,
-code: 
-`// Definition for a binary tree node
+}`,
+  },
+  {
+    id: "25",
+    title: "Tree",
+    tags: ["Tree", "Data Structure"],
+    problem: `Implement a Binary Tree`,
+    code: `// Definition for a binary tree node
 class TreeNode {
         constructor(val, left, right) {
             this.val = (val === undefined ? 0 : val);
             this.left = (left === undefined ? null : left);
             this.right = (right === undefined ? null : right);
         }
-}`},
-{
-id: '26',
-title: 'Binary Search',
-tags : ['Array', 'Search'],
-problem : 
-`Given an array of integers nums which is sorted in ascending order, 
+}`,
+  },
+  {
+    id: "26",
+    title: "Binary Search",
+    tags: ["Array", "Search"],
+    problem: `Given an array of integers nums which is sorted in ascending order, 
 and an integer target, write a function to search target in nums. 
 If target exists, then return its index. Otherwise, return -1.
 
@@ -1255,8 +1224,7 @@ Constraints:
 All the integers in nums are unique.
 nums is sorted in ascending order.
 `,
-code: 
-`const binarySerach = (nums, l, r, t) => {
+    code: `const binarySerach = (nums, l, r, t) => {
 
     if (r >= l) {
         let m = l + Math.floor((r - l) / 2);
@@ -1280,15 +1248,14 @@ export default function search(nums, target) {
 
     if (nums.length === 1 && target === nums[0]) return 0;
     return binarySerach(nums, 0, nums.length - 1, target);    
-}`},
-{
-id: '27',
-title: 'Array',
-tags : ['Class', 'Array', 'Data Structure'],
-problem: 
-`Implement an array class with all neccessary methods`,
-code: 
-`class MyArray {
+}`,
+  },
+  {
+    id: "27",
+    title: "Array",
+    tags: ["Array", "Data Structure"],
+    problem: `Implement an array class with all neccessary methods`,
+    code: `class MyArray {
     constructor() {
         this.array = [];
     }
@@ -1321,15 +1288,14 @@ code:
     print() {
         console.log(this.array.join(' '));
     }
-}`},
-{
-id: '28',
-title: 'Binary Search Tree',
-tags : ['Class', 'Tree', 'Data Structure', 'Search', 'BST'],
-problem: 
-`Implement a Binary Search Tree class with all neccessary methods`,
-code: 
-`function Node(data) {
+}`,
+  },
+  {
+    id: "28",
+    title: "Binary Search Tree",
+    tags: ["Tree", "Data Structure", "Search"],
+    problem: `Implement a Binary Search Tree class with all neccessary methods`,
+    code: `function Node(data) {
     this.data = data;
     this.left = null;
     this.right = null;
@@ -1605,15 +1571,14 @@ code:
         return true;
         }
     }
-}`},
-{
-id: '29',
-title: 'Doubly Linked List',
-tags : ['Class', 'Linked List', 'Data Structure'],
-problem: 
-`Implement a Doubly Linked List class with all neccessary methods`,
-code:
-`function Node(data) {
+}`,
+  },
+  {
+    id: "29",
+    title: "Doubly Linked List",
+    tags: ["Linked List", "Data Structure"],
+    problem: `Implement a Doubly Linked List class with all neccessary methods`,
+    code: `function Node(data) {
     this.data = data;
     this.previous = null;
     this.next = null;
@@ -1714,15 +1679,14 @@ code:
         }
         console.log(string.trim());
     }
-}`},
-{
-id: '30',
-title: 'Graph',
-tags : ['Class', 'Data Structure'],
-problem: 
-`Implement a Graph class with all neccessary methods`,
-code:
-`class Graph {
+}`,
+  },
+  {
+    id: "30",
+    title: "Graph",
+    tags: ["Data Structures"],
+    problem: `Implement a Graph class with all neccessary methods`,
+    code: `class Graph {
     constructor() {
         this.vertices = [];
         this.edges = [];
@@ -1850,15 +1814,14 @@ code:
         return (vertex + ' -> ' + this.edges[vertex].join(', ')).trim();
         }, this).join(' | '));
     }
-}`},
-{
-id: '31',
-title: 'Set',
-tags : ['Class', 'Data Structure'],
-problem: 
-`Implement a Set class with all neccessary methods`,
-code:
-`class Set {
+}`,
+  },
+  {
+    id: "31",
+    title: "Set",
+    tags: ["Data Structures"],
+    problem: `Implement a Set class with all neccessary methods`,
+    code: `class Set {
     constructor() {
         this.values = [];
         this.numberOfValues = 0;
@@ -1927,15 +1890,14 @@ code:
     print() {
         console.log(this.values.join(' '));
     }
-}`},
-{
-id: '32',
-title: 'Trie',
-tags : ['Class', 'Data Structure', 'String'],
-problem: 
-`Implement a Trie class with all neccessary methods`,
-code:
-`function Node(data) {
+}`,
+  },
+  {
+    id: "32",
+    title: "Trie",
+    tags: ["Data Structure", "String"],
+    problem: `Implement a Trie class with all neccessary methods`,
+    code: `function Node(data) {
     this.data = data;
     this.isWord = false;
     this.prefixes = 0;
@@ -2115,15 +2077,14 @@ code:
         }
         console.log(string.trim());
     }
-}`},
-{
-id: '33',
-title: 'Bubble Sort',
-tags : ['Sort'],
-problem: 
-`Implement the Bubble Sort algorithm`,
-code:
-`// basic 
+}`,
+  },
+  {
+    id: "33",
+    title: "Bubble Sort",
+    tags: ["Sort"],
+    problem: `Implement the Bubble Sort algorithm`,
+    code: `// basic 
 function bubbleSortBasic(array) {
     for(let i = 0; i < array.length; i++) {
         for(let j = 1; j < array.length; j++) {
@@ -2147,15 +2108,14 @@ function bubbleSortBasic(array) {
         }
     } while(swapped);
     return array;
-}`},
-{
-id: '34',
-title: 'Insertion Sort',
-tags : ['Sort'],
-problem: 
-`Implement the Insertion Sort algorithm`,
-code:
-`function insertionSort(array) {
+}`,
+  },
+  {
+    id: "34",
+    title: "Insertion Sort",
+    tags: ["Sort"],
+    problem: `Implement the Insertion Sort algorithm`,
+    code: `function insertionSort(array) {
     for(let i = 0; i < array.length; i++) {
         let temp = array[i];
         let j = i - 1;
@@ -2166,15 +2126,14 @@ code:
         array[j + 1] = temp;
     }
     return array;
-}`},
-{
-id: '35',
-title: 'Merge Sort',
-tags : ['Sort'],
-problem: 
-`Implement the Merge Sort algorithm`,
-code:
-`// top-down implementation
+}`,
+  },
+  {
+    id: "35",
+    title: "Merge Sort",
+    tags: ["Sort"],
+    problem: `Implement the Merge Sort algorithm`,
+    code: `// top-down implementation
 function mergeSortTopDown(array) {
     if(array.length < 2) {
     return array;
@@ -2235,15 +2194,14 @@ function mergeBottomUp(array, left, step) {
     for (let j = left; j <= end; j++) {
     array[j] = temp[j];
     }
-}`},
-{
-id: '36',
-title: 'Quick Sort',
-tags : ['Sort'],
-problem: 
-`Implement the Quick Sort algorithm`,
-code:
-`// basic implementation (pivot is the first element of the array)
+}`,
+  },
+  {
+    id: "36",
+    title: "Quick Sort",
+    tags: ["Sort"],
+    problem: `Implement the Quick Sort algorithm`,
+    code: `// basic implementation (pivot is the first element of the array)
 function quicksortBasic(array) {
     if(array.length < 2) {
         return array;
@@ -2315,15 +2273,14 @@ function partitionHoare(array, left, right) {
         }
     }
     return left;
-}`},
-{
-id: '37',
-title: 'Selection Sort',
-tags : ['Sort'],
-problem: 
-`Implement the Selection Sort algorithm`,
-code:
-`function selectionSort(array) {
+}`,
+  },
+  {
+    id: "37",
+    title: "Selection Sort",
+    tags: ["Sort"],
+    problem: `Implement the Selection Sort algorithm`,
+    code: `function selectionSort(array) {
     for(let i = 0; i < array.length; i++) {
         let min = i;
         for(let j = i + 1; j < array.length; j++) {
@@ -2336,15 +2293,14 @@ code:
         }
     }
     return array;
-}`},
-{
-id: '38',
-title: 'Shell Sort',
-tags : ['Sort'],
-problem: 
-`Implement the Shell Sort algorithm`,
-code:
-`function shellsort(array) {
+}`,
+  },
+  {
+    id: "38",
+    title: "Shell Sort",
+    tags: ["Sort"],
+    problem: `Implement the Shell Sort algorithm`,
+    code: `function shellsort(array) {
     for(let g = 0; g < gaps.length; g++) {
         const gap = gaps[g];
         for(let i = gap; i < array.length; i++) {
@@ -2358,15 +2314,14 @@ code:
         }
     }
     return array;
-}`},
-{
-id: '39',
-title: 'Breadth First Travarsal',
-tags : ['Search', 'Tree', 'Queue', 'BFS'],
-problem: 
-`Implement the Breadth First Travarsal algorithm for a Binary Tree`,
-code: 
-`// converts a tree to an array in a breadth-first order
+}`,
+  },
+  {
+    id: "39",
+    title: "Breadth First Travarsal",
+    tags: ["Search", "Tree"],
+    problem: `Implement the Breadth First Travarsal algorithm for a Binary Tree`,
+    code: `// converts a tree to an array in a breadth-first order
 function breadthFirstTraversal (tree) {
 
     if (!tree) return [];  
@@ -2390,15 +2345,14 @@ function breadthFirstTraversal (tree) {
         }
     }
     return result;
-}`},
-{
-id: '40',
-title: 'Depdth First Travarsal',
-tags : ['Search', 'Tree', 'Stack', 'DFS'],
-problem: 
-`Implement the Depdth First Travarsal algorithm for a Binary Tree`,
-code: 
-`// converts a tree to an array in a depth-first order
+}`,
+  },
+  {
+    id: "40",
+    title: "Depdth First Travarsal",
+    tags: ["Search", "Tree"],
+    problem: `Implement the Depdth First Travarsal algorithm for a Binary Tree`,
+    code: `// converts a tree to an array in a depth-first order
 function depthFirstTraversal(tree){
 
     if (!tree) return [];
@@ -2420,13 +2374,13 @@ function depthFirstTraversal(tree){
         }
     }
     return result;
-}`},
-{
-id: '41',
-title: 'Sorted Array to a Binary Search Tree',
-tags : ['Array', 'Search', 'Tree', 'BST'],
-problem: 
-`Given an integer array nums where the elements 
+}`,
+  },
+  {
+    id: "41",
+    title: "Sorted Array to a Binary Search Tree",
+    tags: ["Array", "Search", "Tree"],
+    problem: `Given an integer array nums where the elements 
 are sorted in ascending order, convert it to a 
 height-balanced binary search tree.
 
@@ -2446,8 +2400,7 @@ Constraints:
 -10^4 <= nums[i] <= 10^4
 nums is sorted in a strictly increasing order.
 `,
-code: 
-`const buildTree = (nums, start, end) => {
+    code: `const buildTree = (nums, start, end) => {
 
     if (start > end) 
         return null;
@@ -2468,13 +2421,13 @@ code:
  */
 function sortedArrayToBST (nums) {
     return buildTree(nums, 0, nums.length - 1)  
-}`},
-{
-id: '42',
-title: 'Reverse Only Letters',
-tags : ['String', 'Recursion'],
-problem: 
-`Given a string s, reverse the string according to the following rules:
+}`,
+  },
+  {
+    id: "42",
+    title: "Reverse Only Letters",
+    tags: ["String", "Recursion"],
+    problem: `Given a string s, reverse the string according to the following rules:
 
 All the characters that are not English letters remain in the same position.
 All the English letters (lowercase or uppercase) should be reversed.
@@ -2497,8 +2450,7 @@ Constraints:
 s consists of characters with ASCII values in the range [33, 122].
 s does not contain '\"' or '\\'.
 `,
-code: 
-`/**
+    code: `/**
 * @param {string} s
 * @return {string}
 */
@@ -2521,13 +2473,13 @@ function reverseOnlyLetters(s) {
    }
 
   return reversedOnlyLetters
-}`},
-{
-id: '43',
-title: 'Reverse String II',
-tags : ['String', 'Recursion'],
-problem: 
-`Given a string s and an integer k, reverse the first k characters 
+}`,
+  },
+  {
+    id: "43",
+    title: "Reverse String II",
+    tags: ["String", "Recursion"],
+    problem: `Given a string s and an integer k, reverse the first k characters 
 for every 2k characters counting from the start of the string.
 
 If there are fewer than k characters left, reverse all of them. 
@@ -2547,8 +2499,7 @@ Constraints:
 s consists of only lowercase English letters.
 1 <= k <= 104
 `,
-code: 
-`/**
+    code: `/**
 * @param {string} s
 * @param {number} k
 * @return {string}
@@ -2561,13 +2512,13 @@ function reverseStr(s, k) {
 
    let tempStr = s.slice(0, k).split('').reverse().join('') + s.slice(k, k * 2) 
    return tempStr + reverseStr(s.slice(k * 2), k)
-}`},
-{
-id: '44',
-title: 'Diameter of Binary Tree',
-tags : ['Tree', 'Recursion'],
-problem: 
-`Given the root of a binary tree, return the length of the diameter of the tree.
+}`,
+  },
+  {
+    id: "44",
+    title: "Diameter of Binary Tree",
+    tags: ["Tree", "Recursion"],
+    problem: `Given the root of a binary tree, return the length of the diameter of the tree.
 
 The diameter of a binary tree is the length of the longest path between any two nodes in a tree. 
 This path may or may not pass through the root.
@@ -2596,8 +2547,7 @@ The number of nodes in the tree is in the range [1, 104].
  * }
  */
 `,
-code: 
-`/**
+    code: `/**
 * @param {TreeNode} root
 * @return {number}
 */
@@ -2617,13 +2567,13 @@ function diameterOfBinaryTree(root) {
 
    height(root)
    return diameter
-}`},
-{
-id: '45',
-title: 'Reverse Linked List II',
-tags : ['Linked List', 'Two Pointers'],
-problem: 
-`Given the head of a singly linked list and two integers left and right where left <= right, 
+}`,
+  },
+  {
+    id: "45",
+    title: "Reverse Linked List II",
+    tags: ["Linked List", "Two Pointers"],
+    problem: `Given the head of a singly linked list and two integers left and right where left <= right, 
 reverse the nodes of the list from position left to position right, and return the reversed list. 
 
 Example 1:
@@ -2649,8 +2599,7 @@ The number of nodes in the list is n.
  *     this.next = (next===undefined ? null : next)
  * }
  */`,
-code: 
-`/**
+    code: `/**
 * @param {ListNode} head
 * @param {number} left
 * @param {number} right
@@ -2683,15 +2632,14 @@ function reverseBetween(head, left, right) {
    prev.next = nextNode;
 
    return dummy.next;
-}`},
-{
-id: '46',
-title: 'Two pointers - Template 1',
-tags : ['Array', 'Two Pointers', 'Template'],
-problem: 
-`Two pointers: one input, opposite ends`,
-code: 
-`let fn = arr => {
+}`,
+  },
+  {
+    id: "46",
+    title: "Two pointers - Template 1",
+    tags: ["Array", "Two Pointers", "Template"],
+    problem: `Two pointers: one input, opposite ends`,
+    code: `let fn = arr => {
     let left = 0, ans = 0, right = arr.length - 1;
 
     while (left < right) {
@@ -2703,15 +2651,14 @@ code:
         }
     }
     return ans;
-}`},
-{
-id: '47',
-title: 'Two pointers - Template 2',
-tags : ['Array', 'Two Pointers', 'Template'],
-problem: 
-`Two pointers: two inputs, exhaust both`,
-code: 
-`let fn = (arr1, arr2) => {
+}`,
+  },
+  {
+    id: "47",
+    title: "Two pointers - Template 2",
+    tags: ["Array", "Two Pointers", "Template"],
+    problem: `Two pointers: two inputs, exhaust both`,
+    code: `let fn = (arr1, arr2) => {
     let i = 0, j = 0, ans = 0;
     
     while (i < arr1.length && j < arr2.length) {
@@ -2734,30 +2681,28 @@ code:
     }
 
     return ans;
-}`}, 
-{
-id: '48',
-title: 'Prefix Sum',
-tags : ['Array', 'Template'],
-problem: 
-`Build a prefix sum`,
-code: 
-`let fn = arr => {
+}`,
+  },
+  {
+    id: "48",
+    title: "Prefix Sum",
+    tags: ["Array", "Template"],
+    problem: `Build a prefix sum`,
+    code: `let fn = arr => {
     let prefix = [arr[0]];
     for (let i = 1; i < arr.length; i++) {
         prefix.push(prefix[prefix.length - 1] + arr[i]);
     }
 
     return prefix;
-}`},
-{
-id: '49',
-title: 'Efficient string building',
-tags : ['Array', 'String', 'Template'],
-problem: 
-`Efficient string building`,
-code: 
-`// arr is a list of characters
+}`,
+  },
+  {
+    id: "49",
+    title: "Efficient string building",
+    tags: ["Array", "String", "Template"],
+    problem: `Efficient string building`,
+    code: `// arr is a list of characters
 let fn = arr => {
     let ans = [];
     for (const c of arr) {
@@ -2774,15 +2719,14 @@ let fn = arr => {
     }
 
     return ans;
-}`},
-{
-id: '50',
-title: 'Linked list: fast and slow pointer',
-tags : ['Linked List', 'Two Pointers'],
-problem: 
-`Linked list: fast and slow pointer`,
-code: 
-`let fn = head => {
+}`,
+  },
+  {
+    id: "50",
+    title: "Linked list: fast and slow pointer",
+    tags: ["Linked List", "Two Pointers"],
+    problem: `Linked list: fast and slow pointer`,
+    code: `let fn = head => {
     let slow = head;
     let fast = head;
     let ans = 0;
@@ -2794,15 +2738,14 @@ code:
     }
     
     return ans;
-}`},
-{
-id: '51',
-title: 'Find number of subarrays that fit an exact criteria',
-tags : ['Array', 'Template'],
-problem: 
-`Find number of subarrays that fit an exact criteria`,
-code: 
-`let fn = (arr, k) => {
+}`,
+  },
+  {
+    id: "51",
+    title: "Find number of subarrays that fit an exact criteria",
+    tags: ["Array", "Template"],
+    problem: `Find number of subarrays that fit an exact criteria`,
+    code: `let fn = (arr, k) => {
     let counts = new Map();
     counts.set(0, 1);
     let ans = 0, curr = 0;
@@ -2814,15 +2757,14 @@ code:
     }
 
     return ans;
-}`},
-{
-id: '52',
-title: 'Monotonic increasing stack',
-tags : ['Array', 'Stack', 'Template'],
-problem: 
-`Monotonic increasing stack. The same logic can be applied to maintain a monotonic queue.`,
-code: 
-`let fn = arr => {
+}`,
+  },
+  {
+    id: "52",
+    title: "Monotonic increasing stack",
+    tags: ["Array", "Template"],
+    problem: `Monotonic increasing stack. The same logic can be applied to maintain a monotonic queue.`,
+    code: `let fn = arr => {
     let stack = [];
     let ans = 0;
 
@@ -2837,15 +2779,14 @@ code:
     }
 
     return ans;
-}`},
-{
-id: '53',
-title: 'Binary search: duplicate elements, left-most insertion point',
-tags : ['Search', 'Template'],
-problem: 
-`Binary search: duplicate elements, left-most insertion point`,
-code: 
-`let fn = (arr, target) => {
+}`,
+  },
+  {
+    id: "53",
+    title: "Binary search: duplicate elements, left-most insertion point",
+    tags: ["Search", "Template"],
+    problem: `Binary search: duplicate elements, left-most insertion point`,
+    code: `let fn = (arr, target) => {
     let left = 0;
     let right = arr.length;
     while (left < right) {
@@ -2858,15 +2799,14 @@ code:
     }
 
     return left;
-}`},
-{
-id: '54',
-title: 'Binary search: duplicate elements, right-most insertion point',
-tags : ['Search', 'Template'],
-problem: 
-`Binary search: duplicate elements, right-most insertion point`,
-code: 
-`let fn = (arr, target) => {
+}`,
+  },
+  {
+    id: "54",
+    title: "Binary search: duplicate elements, right-most insertion point",
+    tags: ["Search", "Template"],
+    problem: `Binary search: duplicate elements, right-most insertion point`,
+    code: `let fn = (arr, target) => {
     let left = 0;
     let right = arr.length;
     while (left < right) {
@@ -2879,15 +2819,14 @@ code:
     }
 
 return left;
-}`},
-{
-id: '55',
-title: 'Binary search: for greedy problems',
-tags : ['Search', 'Template'],
-problem: 
-`Binary search: for greedy problems`,
-code: 
-`// min
+}`,
+  },
+  {
+    id: "55",
+    title: "Binary search: for greedy problems",
+    tags: ["Search", "Template"],
+    problem: `Binary search: for greedy problems`,
+    code: `// min
 let fn = arr => {
     let check = x => {
         // this function is implemented depending on the problem
@@ -2927,15 +2866,14 @@ let fn = arr => {
     }
 
     return right;
-}`},
-{
-id: '56',
-title: 'Backtracking',
-tags : ['Search', 'Template'],
-problem: 
-`Backtracking`,
-code: 
-`let backtrack = (curr, OTHER_ARGUMENTS...) => {
+}`,
+  },
+  {
+    id: "56",
+    title: "Backtracking",
+    tags: ["Search", "Template"],
+    problem: `Backtracking`,
+    code: `let backtrack = (curr, OTHER_ARGUMENTS...) => {
     if (BASE_CASE) {
         // modify the answer
         return;
@@ -2949,15 +2887,14 @@ code:
     }
 
     return ans;
-}`},
-{
-id: '57',
-title: 'Sliding Window',
-tags : ['Array', 'Two Pointers', 'Template'],
-problem: 
-`Sliding window`,
-code: 
-`let fn = arr => {
+}`,
+  },
+  {
+    id: "57",
+    title: "Sliding Window",
+    tags: ["Array", "Two Pointers", "Template"],
+    problem: `Sliding window`,
+    code: `let fn = arr => {
     let left = 0, ans = 0, curr = 0;
 
     for (let right = 0; right < arr.length; right++) {
@@ -2972,5 +2909,6 @@ code:
     }
 
     return ans;
-}`},
+}`,
+  },
 ];
