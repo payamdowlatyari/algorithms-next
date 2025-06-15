@@ -7,7 +7,7 @@ import { Link } from "@nextui-org/react";
  */
 export default function Footer() {
   return (
-    <div className="text-center text-xs py-2">
+    <div className="text-center text-xs py-4">
       <span className="opacity-75">
         Copyright © {new Date().getFullYear()} - Designed by{" "}
       </span>

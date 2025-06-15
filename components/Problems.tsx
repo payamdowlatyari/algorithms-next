@@ -37,29 +37,38 @@ export default function Problems() {
   };
 
   return (
-    <div className="gap-5 flex flex-wrap justify-center m-5">
-      <div className="m-1 md:m-5 w-full">
+    <div className="gap-5 flex flex-wrap justify-center items-center">
+      <div className="w-full m-1 md:m-2 flex flex-wrap md:flex-nowrap justify-between items-center gap-5">
         <SearchGroup
           onChangeHandler={onSearchChange}
-          placeholder={"Search..."}
+          placeholder={"Search algorithms by topic..."}
         />{" "}
+        <div className="min-w-[200px] w-full flex justify-end">
+          <Link
+            href="/problems"
+            className="text-foreground block text-center text-sm md:text-base">
+            View all
+          </Link>
+        </div>
       </div>
-      {filteredGroups.map((item, index) => (
-        <Link key={index} href={item.href || "#"}>
-          <Card
-            shadow="sm"
-            className="flex justify-center w-60 h-60 transition ease-in-out hover:scale-105 duration-300">
-            <CardBody className="text-8xl items-center text-foreground mt-2">
-              <Icons topic={item.title} />
-            </CardBody>
-            <CardFooter className="justify-center mb-5">
-              <span className="text-2xl text-foreground text-center">
-                {item.title}
-              </span>
-            </CardFooter>
-          </Card>
-        </Link>
-      ))}
+      <div className="w-full flex flex-wrap justify-center gap-2 md:gap-5">
+        {filteredGroups.map((item, index) => (
+          <Link key={index} href={item.href || "#"}>
+            <Card
+              shadow="sm"
+              className="flex justify-center items-center w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 ease-in-out hover:scale-105 duration-300">
+              <CardBody className="text-8xl items-center text-foreground mt-2">
+                <Icons topic={item.title} />
+              </CardBody>
+              <CardFooter className="justify-center mb-5">
+                <span className="text-2xl text-foreground text-center">
+                  {item.title}
+                </span>
+              </CardFooter>
+            </Card>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

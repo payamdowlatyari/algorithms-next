@@ -22,18 +22,16 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} isMenuOpen={isMenuOpen}>
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
+      className="shadow-sm shadow-gray-500 sticky top-0 z-50 h-20">
       <NavbarContent className="gap-4" justify="start">
         <NavbarBrand>
           <Link color="foreground" href="/" className="font-bold text-xl">
             Algorithms for Life
           </Link>
         </NavbarBrand>
-        <NavbarItem className="hidden gap-4">
-          <Link color="foreground" href="/problems" className="font-semibold">
-            Home
-          </Link>
-        </NavbarItem>
         <ThemeSwitcher />
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
