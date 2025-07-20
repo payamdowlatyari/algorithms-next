@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { algorithmsList } from "@/constant/algorithmsList";
-import ProblemPage from "@/components/ProblemPage";
+import { algorithmsList } from '@/constant/algorithmsList';
+import ProblemPage from '@/components/ProblemPage';
 
 /**
  * Renders an accordion list of algorithms related to trees.
@@ -9,7 +9,7 @@ import ProblemPage from "@/components/ProblemPage";
  * This component is rendered at /tree.
  */
 export default function Tree() {
-  const algorithms = algorithmsList.filter(({ tags }) => tags.includes("Tree"));
+  const algorithms = algorithmsList.filter(({ tags }) => tags.includes('Tree'));
 
   return <ProblemPage algorithms={algorithms} />;
 }

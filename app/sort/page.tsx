@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { algorithmsList } from "@/constant/algorithmsList";
-import ProblemPage from "@/components/ProblemPage";
+import { algorithmsList } from '@/constant/algorithmsList';
+import ProblemPage from '@/components/ProblemPage';
 
 /**
  * Renders an accordion list of algorithms related to sorting.
@@ -9,7 +9,7 @@ import ProblemPage from "@/components/ProblemPage";
  * This component is rendered at /sort.
  */
 export default function Sort() {
-  const algorithms = algorithmsList.filter(({ tags }) => tags.includes("Sort"));
+  const algorithms = algorithmsList.filter(({ tags }) => tags.includes('Sort'));
 
   return <ProblemPage algorithms={algorithms} />;
 }

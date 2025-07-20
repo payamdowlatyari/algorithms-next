@@ -1,5 +1,5 @@
-import { useTheme } from "next-themes";
-import { CopyBlock, hybrid, github } from "react-code-blocks";
+import { useTheme } from 'next-themes';
+import { CopyBlock, hybrid, github } from 'react-code-blocks';
 
 /**
  * A CodeSnippet component which takes a code sample as a prop and renders it
@@ -12,12 +12,12 @@ export default function CodeSnippet({ codeSample }: { codeSample: string }) {
   const { theme } = useTheme();
 
   return (
-    <div className="demo text-xs p-2 font-mono">
+    <div className='demo text-xs p-2 font-mono'>
       <CopyBlock
-        language="tsx"
+        language='tsx'
         text={codeSample}
         showLineNumbers={true}
-        theme={theme === "dark" ? hybrid : github}
+        theme={theme === 'dark' ? hybrid : github}
         codeBlock
       />
     </div>

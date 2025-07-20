@@ -1,4 +1,4 @@
-import { Chip } from "@nextui-org/react";
+import { Chip } from '@nextui-org/react';
 
 /**
  * A functional component that renders a list of tags as Chip components.
@@ -7,7 +7,7 @@ import { Chip } from "@nextui-org/react";
  */
 export default function Chips({ tags }: { tags: string[] }) {
   return (
-    <div className="flex gap-2">
+    <div className='flex gap-2'>
       {tags?.map((tag, index) => (
         <Chip key={index}>{tag}</Chip>
       ))}

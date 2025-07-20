@@ -1,50 +1,50 @@
 export const topicList = [
   {
-    title: "Data Structures",
-    href: "/datastructure",
+    title: 'Data Structures',
+    href: '/datastructure',
   },
   {
-    title: "Array",
-    href: "/array",
+    title: 'Array',
+    href: '/array',
   },
   {
-    title: "Tree",
-    href: "/tree",
+    title: 'Tree',
+    href: '/tree',
   },
   {
-    title: "Dynamic Programming",
-    href: "/dynamic",
+    title: 'Dynamic Programming',
+    href: '/dynamic',
   },
   {
-    title: "Linked List",
-    href: "/linkedlist",
+    title: 'Linked List',
+    href: '/linkedlist',
   },
   {
-    title: "Hash Table",
-    href: "/hashtable",
+    title: 'Hash Table',
+    href: '/hashtable',
   },
   {
-    title: "String",
-    href: "/string",
+    title: 'String',
+    href: '/string',
   },
   {
-    title: "Sort",
-    href: "/sort",
+    title: 'Sort',
+    href: '/sort',
   },
   {
-    title: "Search",
-    href: "/search",
+    title: 'Search',
+    href: '/search',
   },
   {
-    title: "Recursion",
-    href: "/recursion",
+    title: 'Recursion',
+    href: '/recursion',
   },
   {
-    title: "Template",
-    href: "/template",
+    title: 'Template',
+    href: '/template',
   },
   {
-    title: "Pointer",
-    href: "/pointer",
+    title: 'Pointer',
+    href: '/pointer',
   },
 ];

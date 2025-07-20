@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { algorithmsList } from "@/constant/algorithmsList";
-import ProblemPage from "@/components/ProblemPage";
+import { algorithmsList } from '@/constant/algorithmsList';
+import ProblemPage from '@/components/ProblemPage';
 
 /**
  * Renders an accordion list of algorithms related to templates.
@@ -10,7 +10,7 @@ import ProblemPage from "@/components/ProblemPage";
  */
 export default function Template() {
   const algorithms = algorithmsList.filter(({ tags }) =>
-    tags.includes("Template")
+    tags.includes('Template'),
   );
 
   return <ProblemPage algorithms={algorithms} />;

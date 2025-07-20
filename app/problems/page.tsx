@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { algorithmsList } from "@/constant/algorithmsList";
-import ProblemPage from "@/components/ProblemPage";
+import { algorithmsList } from '@/constant/algorithmsList';
+import ProblemPage from '@/components/ProblemPage';
 
 /**
  * Renders an accordion list of all algorithms.

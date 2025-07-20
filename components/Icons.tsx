@@ -11,7 +11,7 @@ import {
   FcFeedIn,
   FcRadarPlot,
   FcTimeline,
-} from "react-icons/fc";
+} from 'react-icons/fc';
 
 /**
  * Returns a React component that represents an icon for a given topic, or null
@@ -21,29 +21,29 @@ import {
  */
 const getIcon = (icon: string) => {
   switch (icon) {
-    case "Data Structures":
+    case 'Data Structures':
       return <FcOrgUnit />;
-    case "Array":
+    case 'Array':
       return <FcGrid />;
-    case "Tree":
+    case 'Tree':
       return <FcGenealogy />;
-    case "Dynamic Programming":
+    case 'Dynamic Programming':
       return <FcCandleSticks />;
-    case "Linked List":
+    case 'Linked List':
       return <FcWorkflow />;
-    case "Hash Table":
+    case 'Hash Table':
       return <FcTimeline />;
-    case "String":
+    case 'String':
       return <FcRadarPlot />;
-    case "Sort":
+    case 'Sort':
       return <FcNumericalSorting12 />;
-    case "Search":
+    case 'Search':
       return <FcFinePrint />;
-    case "Recursion":
+    case 'Recursion':
       return <FcFeedIn />;
-    case "Template":
+    case 'Template':
       return <FcTemplate />;
-    case "Pointer":
+    case 'Pointer':
       return <FcCollect />;
   }
 };

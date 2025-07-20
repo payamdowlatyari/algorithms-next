@@ -1,8 +1,8 @@
 export const algorithmsList = [
   {
-    id: "1",
-    title: "Two Sum",
-    tags: ["Array", "Hash Table"],
+    id: '1',
+    title: 'Two Sum',
+    tags: ['Array', 'Hash Table'],
     problem: `Given an array of integers nums and an integer target, 
 return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, 
@@ -50,9 +50,9 @@ const twoSum = (nums, target) => {
 }`,
   },
   {
-    id: "2",
-    title: "Contains Duplicate",
-    tags: ["Array", "Two Pointers"],
+    id: '2',
+    title: 'Contains Duplicate',
+    tags: ['Array', 'Two Pointers'],
     problem: `Given an integer array nums, return true if any value appears at least twice in the array, 
 and return false if every element is distinct.
 
@@ -92,9 +92,9 @@ const containsDuplicate = (nums) => {
 }`,
   },
   {
-    id: "3",
-    title: "Product Except Self",
-    tags: ["Array"],
+    id: '3',
+    title: 'Product Except Self',
+    tags: ['Array'],
     problem: `Given an integer array nums, return an array answer such that answer[i] 
 is equal to the product of all the elements of nums except nums[i].
 The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
@@ -140,9 +140,9 @@ const productExceptSelf = (nums) => {
 }`,
   },
   {
-    id: "4",
-    title: "The Sign of an Array",
-    tags: ["Array"],
+    id: '4',
+    title: 'The Sign of an Array',
+    tags: ['Array'],
     problem: `There is a function signFunc(x) that returns:
 
 1 if x is positive.
@@ -195,9 +195,9 @@ function arraySign(nums) {
 }`,
   },
   {
-    id: "5",
-    title: "Arithmetic Progression",
-    tags: ["Array"],
+    id: '5',
+    title: 'Arithmetic Progression',
+    tags: ['Array'],
     problem: `A sequence of numbers is called an arithmetic progression if the 
 difference between any two consecutive elements is the same.
 
@@ -239,9 +239,9 @@ function canMakeArithmeticProgression(arr){
 }`,
   },
   {
-    id: "6",
-    title: "Maximum Sub-array",
-    tags: ["Array", "Dynamic Programming"],
+    id: '6',
+    title: 'Maximum Sub-array',
+    tags: ['Array', 'Dynamic Programming'],
     problem: `Given an integer array nums, find the 
 subarray with the largest sum, and return its sum.
 
@@ -285,9 +285,9 @@ function maxSubArray(nums) {
 }`,
   },
   {
-    id: "7",
-    title: "First Missing Possitive",
-    tags: ["Array"],
+    id: '7',
+    title: 'First Missing Possitive',
+    tags: ['Array'],
     problem: `Given an unsorted integer array nums, return the smallest missing positive integer.
 You must implement an algorithm that runs in O(n) time and uses O(1) auxiliary space.
 
@@ -335,9 +335,9 @@ function firstMissingPositive(nums) {
 }`,
   },
   {
-    id: "8",
-    title: "Find Peak Element",
-    tags: ["Array", "Search"],
+    id: '8',
+    title: 'Find Peak Element',
+    tags: ['Array', 'Search'],
     problem: `A peak element is an element that is strictly greater than its neighbors.
 
 Given a 0-indexed integer array nums, find a peak element, and return its index. 
@@ -382,9 +382,9 @@ function findPeakElement(nums) {
 }`,
   },
   {
-    id: "9",
-    title: "Coin Change",
-    tags: ["Array", "Dynamic Programming"],
+    id: '9',
+    title: 'Coin Change',
+    tags: ['Array', 'Dynamic Programming'],
     problem: `You are given an integer array coins representing coins of different 
 denominations and an integer amount representing a total amount of money.
 
@@ -437,9 +437,9 @@ function coinChange(coins, amount) {
 }`,
   },
   {
-    id: "10",
-    title: "Best Time to Buy and Sell Stocks",
-    tags: ["Array", "Dynamic Programming"],
+    id: '10',
+    title: 'Best Time to Buy and Sell Stocks',
+    tags: ['Array', 'Dynamic Programming'],
     problem: `You are given an array prices where prices[i] is the price 
 of a given stock on the ith day.
 
@@ -489,9 +489,9 @@ function maxProfit(prices) {
   },
 
   {
-    id: "11",
-    title: "Tree Travarsal",
-    tags: ["Tree", "Recursion", "Template"],
+    id: '11',
+    title: 'Tree Travarsal',
+    tags: ['Tree', 'Recursion', 'Template'],
     problem: `Implement three types of tree travarsals`,
     code: `// Pre order
 function preOrderTravarsal(root){
@@ -526,9 +526,9 @@ function postOrderTravarsal(root){
 }`,
   },
   {
-    id: "12",
-    title: "Invert Binary Tree",
-    tags: ["Tree", "Recursion"],
+    id: '12',
+    title: 'Invert Binary Tree',
+    tags: ['Tree', 'Recursion'],
     problem: `Given the root of a binary tree, invert the tree, and return its root.
 
 Example 1:
@@ -563,9 +563,9 @@ const invertTree = (root) => {
 }`,
   },
   {
-    id: "13",
-    title: "Maximum Depth of Binary Tree",
-    tags: ["Tree"],
+    id: '13',
+    title: 'Maximum Depth of Binary Tree',
+    tags: ['Tree'],
     problem: `Given the root of a binary tree, return its maximum depth.
 A binary tree's maximum depth is the number of nodes along the 
 longest path from the root node down to the farthest leaf node.
@@ -605,9 +605,9 @@ return maxDepth;
 }`,
   },
   {
-    id: "14",
-    title: "Linked List",
-    tags: ["Linked List"],
+    id: '14',
+    title: 'Linked List',
+    tags: ['Linked List'],
     problem: `Implement a singly linked-list`,
     code: `// Definition for a linked-list node
 class LinkedListNode {
@@ -681,9 +681,9 @@ class LinkedList {
 }`,
   },
   {
-    id: "15",
-    title: "Merge Two Linked Lists",
-    tags: ["Linked List"],
+    id: '15',
+    title: 'Merge Two Linked Lists',
+    tags: ['Linked List'],
     problem: `You are given the heads of two sorted linked lists list1 and list2.
 Merge the two lists in a one sorted list. 
 The list should be made by splicing together the nodes of the first two lists.
@@ -733,9 +733,9 @@ const mergeTwoLists = (l1, l2) => {
 }`,
   },
   {
-    id: "16",
-    title: "Reverse Linked List",
-    tags: ["Linked List"],
+    id: '16',
+    title: 'Reverse Linked List',
+    tags: ['Linked List'],
     problem: `Given the head of a singly linked list, reverse the list, and return the reversed list.
 
 Example 1:
@@ -775,9 +775,9 @@ const reverseList = (head) => {
 }`,
   },
   {
-    id: "17",
-    title: "Longest Common Subsequence",
-    tags: ["Dynamic Programming", "String"],
+    id: '17',
+    title: 'Longest Common Subsequence',
+    tags: ['Dynamic Programming', 'String'],
     problem: `Given two strings text1 and text2, return the length of their longest common subsequence. 
 If there is no common subsequence, return 0.
 A subsequence of a string is a new string generated from the original string with some characters 
@@ -835,9 +835,9 @@ const longestCommonSubsequence = function (text1, text2) {
 }`,
   },
   {
-    id: "18",
-    title: "Climbing Stairs",
-    tags: ["Dynamic Programming"],
+    id: '18',
+    title: 'Climbing Stairs',
+    tags: ['Dynamic Programming'],
     problem: `You are climbing a staircase. It takes n steps to reach the top.
 Each time you can either climb 1 or 2 steps. 
 In how many distinct ways can you climb to the top?
@@ -887,9 +887,9 @@ const climb = () => {
 }`,
   },
   {
-    id: "19",
-    title: "Trapping Rainwater",
-    tags: ["Dynamic Programming", "Two Pointers"],
+    id: '19',
+    title: 'Trapping Rainwater',
+    tags: ['Dynamic Programming', 'Two Pointers'],
     problem: `Given n non-negative integers representing an elevation map where the width 
 of each bar is 1, compute how much water it can trap after raining.
 
@@ -936,9 +936,9 @@ export default function trap(height) {
 }`,
   },
   {
-    id: "20",
-    title: "Hash Table",
-    tags: ["Hash Table", "Data Structure"],
+    id: '20',
+    title: 'Hash Table',
+    tags: ['Hash Table', 'Data Structure'],
     problem: `Implement a Hash Table`,
     code: `export default class HashTable {
     constructor(size) {
@@ -995,9 +995,9 @@ export default function trap(height) {
 }`,
   },
   {
-    id: "21",
-    title: "Linked List",
-    tags: ["Linked List", "Data Structure"],
+    id: '21',
+    title: 'Linked List',
+    tags: ['Linked List', 'Data Structure'],
     problem: `Implement a singly linked-list`,
     code: `// Definition for a linked-list node
 class LinkedListNode {
@@ -1061,9 +1061,9 @@ class LinkedList {
 }`,
   },
   {
-    id: "22",
-    title: "Stack",
-    tags: ["Linked List", "Data Structure"],
+    id: '22',
+    title: 'Stack',
+    tags: ['Linked List', 'Data Structure'],
     problem: `Implement a Stack`,
     code: `// implementing a stack using a linked-list
 class Stack {
@@ -1094,9 +1094,9 @@ class Stack {
 }`,
   },
   {
-    id: "23",
-    title: "Queue",
-    tags: ["Linked List", "Data Structure"],
+    id: '23',
+    title: 'Queue',
+    tags: ['Linked List', 'Data Structure'],
     problem: `Implement a Queue`,
     code: `// implementing a queue using a linked-list
 class Queue {
@@ -1126,9 +1126,9 @@ class Queue {
 }`,
   },
   {
-    id: "24",
-    title: "Compare Two Strings with Backspace",
-    tags: ["String", "Two Pointers"],
+    id: '24',
+    title: 'Compare Two Strings with Backspace',
+    tags: ['String', 'Two Pointers'],
     problem: `Given two strings s and t, return true if they are equal 
 when both are typed into empty text editors. 
 '#' means a backspace character.
@@ -1185,9 +1185,9 @@ var backspaceCompare = function(s, t) {
 }`,
   },
   {
-    id: "25",
-    title: "Tree",
-    tags: ["Tree", "Data Structure"],
+    id: '25',
+    title: 'Tree',
+    tags: ['Tree', 'Data Structure'],
     problem: `Implement a Binary Tree`,
     code: `// Definition for a binary tree node
 class TreeNode {
@@ -1199,9 +1199,9 @@ class TreeNode {
 }`,
   },
   {
-    id: "26",
-    title: "Binary Search",
-    tags: ["Array", "Search"],
+    id: '26',
+    title: 'Binary Search',
+    tags: ['Array', 'Search'],
     problem: `Given an array of integers nums which is sorted in ascending order, 
 and an integer target, write a function to search target in nums. 
 If target exists, then return its index. Otherwise, return -1.
@@ -1251,9 +1251,9 @@ export default function search(nums, target) {
 }`,
   },
   {
-    id: "27",
-    title: "Array",
-    tags: ["Array", "Data Structure"],
+    id: '27',
+    title: 'Array',
+    tags: ['Array', 'Data Structure'],
     problem: `Implement an array class with all neccessary methods`,
     code: `class MyArray {
     constructor() {
@@ -1291,9 +1291,9 @@ export default function search(nums, target) {
 }`,
   },
   {
-    id: "28",
-    title: "Binary Search Tree",
-    tags: ["Tree", "Data Structure", "Search"],
+    id: '28',
+    title: 'Binary Search Tree',
+    tags: ['Tree', 'Data Structure', 'Search'],
     problem: `Implement a Binary Search Tree class with all neccessary methods`,
     code: `function Node(data) {
     this.data = data;
@@ -1574,9 +1574,9 @@ export default function search(nums, target) {
 }`,
   },
   {
-    id: "29",
-    title: "Doubly Linked List",
-    tags: ["Linked List", "Data Structure"],
+    id: '29',
+    title: 'Doubly Linked List',
+    tags: ['Linked List', 'Data Structure'],
     problem: `Implement a Doubly Linked List class with all neccessary methods`,
     code: `function Node(data) {
     this.data = data;
@@ -1682,9 +1682,9 @@ export default function search(nums, target) {
 }`,
   },
   {
-    id: "30",
-    title: "Graph",
-    tags: ["Data Structures"],
+    id: '30',
+    title: 'Graph',
+    tags: ['Data Structures'],
     problem: `Implement a Graph class with all neccessary methods`,
     code: `class Graph {
     constructor() {
@@ -1817,9 +1817,9 @@ export default function search(nums, target) {
 }`,
   },
   {
-    id: "31",
-    title: "Set",
-    tags: ["Data Structures"],
+    id: '31',
+    title: 'Set',
+    tags: ['Data Structures'],
     problem: `Implement a Set class with all neccessary methods`,
     code: `class Set {
     constructor() {
@@ -1893,9 +1893,9 @@ export default function search(nums, target) {
 }`,
   },
   {
-    id: "32",
-    title: "Trie",
-    tags: ["Data Structure", "String"],
+    id: '32',
+    title: 'Trie',
+    tags: ['Data Structure', 'String'],
     problem: `Implement a Trie class with all neccessary methods`,
     code: `function Node(data) {
     this.data = data;
@@ -2080,9 +2080,9 @@ export default function search(nums, target) {
 }`,
   },
   {
-    id: "33",
-    title: "Bubble Sort",
-    tags: ["Sort"],
+    id: '33',
+    title: 'Bubble Sort',
+    tags: ['Sort'],
     problem: `Implement the Bubble Sort algorithm`,
     code: `// basic 
 function bubbleSortBasic(array) {
@@ -2111,9 +2111,9 @@ function bubbleSortBasic(array) {
 }`,
   },
   {
-    id: "34",
-    title: "Insertion Sort",
-    tags: ["Sort"],
+    id: '34',
+    title: 'Insertion Sort',
+    tags: ['Sort'],
     problem: `Implement the Insertion Sort algorithm`,
     code: `function insertionSort(array) {
     for(let i = 0; i < array.length; i++) {
@@ -2129,9 +2129,9 @@ function bubbleSortBasic(array) {
 }`,
   },
   {
-    id: "35",
-    title: "Merge Sort",
-    tags: ["Sort"],
+    id: '35',
+    title: 'Merge Sort',
+    tags: ['Sort'],
     problem: `Implement the Merge Sort algorithm`,
     code: `// top-down implementation
 function mergeSortTopDown(array) {
@@ -2197,9 +2197,9 @@ function mergeBottomUp(array, left, step) {
 }`,
   },
   {
-    id: "36",
-    title: "Quick Sort",
-    tags: ["Sort"],
+    id: '36',
+    title: 'Quick Sort',
+    tags: ['Sort'],
     problem: `Implement the Quick Sort algorithm`,
     code: `// basic implementation (pivot is the first element of the array)
 function quicksortBasic(array) {
@@ -2276,9 +2276,9 @@ function partitionHoare(array, left, right) {
 }`,
   },
   {
-    id: "37",
-    title: "Selection Sort",
-    tags: ["Sort"],
+    id: '37',
+    title: 'Selection Sort',
+    tags: ['Sort'],
     problem: `Implement the Selection Sort algorithm`,
     code: `function selectionSort(array) {
     for(let i = 0; i < array.length; i++) {
@@ -2296,9 +2296,9 @@ function partitionHoare(array, left, right) {
 }`,
   },
   {
-    id: "38",
-    title: "Shell Sort",
-    tags: ["Sort"],
+    id: '38',
+    title: 'Shell Sort',
+    tags: ['Sort'],
     problem: `Implement the Shell Sort algorithm`,
     code: `function shellsort(array) {
     for(let g = 0; g < gaps.length; g++) {
@@ -2317,9 +2317,9 @@ function partitionHoare(array, left, right) {
 }`,
   },
   {
-    id: "39",
-    title: "Breadth First Travarsal",
-    tags: ["Search", "Tree"],
+    id: '39',
+    title: 'Breadth First Travarsal',
+    tags: ['Search', 'Tree'],
     problem: `Implement the Breadth First Travarsal algorithm for a Binary Tree`,
     code: `// converts a tree to an array in a breadth-first order
 function breadthFirstTraversal (tree) {
@@ -2348,9 +2348,9 @@ function breadthFirstTraversal (tree) {
 }`,
   },
   {
-    id: "40",
-    title: "Depdth First Travarsal",
-    tags: ["Search", "Tree"],
+    id: '40',
+    title: 'Depdth First Travarsal',
+    tags: ['Search', 'Tree'],
     problem: `Implement the Depdth First Travarsal algorithm for a Binary Tree`,
     code: `// converts a tree to an array in a depth-first order
 function depthFirstTraversal(tree){
@@ -2377,9 +2377,9 @@ function depthFirstTraversal(tree){
 }`,
   },
   {
-    id: "41",
-    title: "Sorted Array to a Binary Search Tree",
-    tags: ["Array", "Search", "Tree"],
+    id: '41',
+    title: 'Sorted Array to a Binary Search Tree',
+    tags: ['Array', 'Search', 'Tree'],
     problem: `Given an integer array nums where the elements 
 are sorted in ascending order, convert it to a 
 height-balanced binary search tree.
@@ -2424,9 +2424,9 @@ function sortedArrayToBST (nums) {
 }`,
   },
   {
-    id: "42",
-    title: "Reverse Only Letters",
-    tags: ["String", "Recursion"],
+    id: '42',
+    title: 'Reverse Only Letters',
+    tags: ['String', 'Recursion'],
     problem: `Given a string s, reverse the string according to the following rules:
 
 All the characters that are not English letters remain in the same position.
@@ -2476,9 +2476,9 @@ function reverseOnlyLetters(s) {
 }`,
   },
   {
-    id: "43",
-    title: "Reverse String II",
-    tags: ["String", "Recursion"],
+    id: '43',
+    title: 'Reverse String II',
+    tags: ['String', 'Recursion'],
     problem: `Given a string s and an integer k, reverse the first k characters 
 for every 2k characters counting from the start of the string.
 
@@ -2515,9 +2515,9 @@ function reverseStr(s, k) {
 }`,
   },
   {
-    id: "44",
-    title: "Diameter of Binary Tree",
-    tags: ["Tree", "Recursion"],
+    id: '44',
+    title: 'Diameter of Binary Tree',
+    tags: ['Tree', 'Recursion'],
     problem: `Given the root of a binary tree, return the length of the diameter of the tree.
 
 The diameter of a binary tree is the length of the longest path between any two nodes in a tree. 
@@ -2570,9 +2570,9 @@ function diameterOfBinaryTree(root) {
 }`,
   },
   {
-    id: "45",
-    title: "Reverse Linked List II",
-    tags: ["Linked List", "Two Pointers"],
+    id: '45',
+    title: 'Reverse Linked List II',
+    tags: ['Linked List', 'Two Pointers'],
     problem: `Given the head of a singly linked list and two integers left and right where left <= right, 
 reverse the nodes of the list from position left to position right, and return the reversed list. 
 
@@ -2635,9 +2635,9 @@ function reverseBetween(head, left, right) {
 }`,
   },
   {
-    id: "46",
-    title: "Two pointers - Template 1",
-    tags: ["Array", "Two Pointers", "Template"],
+    id: '46',
+    title: 'Two pointers - Template 1',
+    tags: ['Array', 'Two Pointers', 'Template'],
     problem: `Two pointers: one input, opposite ends`,
     code: `let fn = arr => {
     let left = 0, ans = 0, right = arr.length - 1;
@@ -2654,9 +2654,9 @@ function reverseBetween(head, left, right) {
 }`,
   },
   {
-    id: "47",
-    title: "Two pointers - Template 2",
-    tags: ["Array", "Two Pointers", "Template"],
+    id: '47',
+    title: 'Two pointers - Template 2',
+    tags: ['Array', 'Two Pointers', 'Template'],
     problem: `Two pointers: two inputs, exhaust both`,
     code: `let fn = (arr1, arr2) => {
     let i = 0, j = 0, ans = 0;
@@ -2684,9 +2684,9 @@ function reverseBetween(head, left, right) {
 }`,
   },
   {
-    id: "48",
-    title: "Prefix Sum",
-    tags: ["Array", "Template"],
+    id: '48',
+    title: 'Prefix Sum',
+    tags: ['Array', 'Template'],
     problem: `Build a prefix sum`,
     code: `let fn = arr => {
     let prefix = [arr[0]];
@@ -2698,9 +2698,9 @@ function reverseBetween(head, left, right) {
 }`,
   },
   {
-    id: "49",
-    title: "Efficient string building",
-    tags: ["Array", "String", "Template"],
+    id: '49',
+    title: 'Efficient string building',
+    tags: ['Array', 'String', 'Template'],
     problem: `Efficient string building`,
     code: `// arr is a list of characters
 let fn = arr => {
@@ -2722,9 +2722,9 @@ let fn = arr => {
 }`,
   },
   {
-    id: "50",
-    title: "Linked list: fast and slow pointer",
-    tags: ["Linked List", "Two Pointers"],
+    id: '50',
+    title: 'Linked list: fast and slow pointer',
+    tags: ['Linked List', 'Two Pointers'],
     problem: `Linked list: fast and slow pointer`,
     code: `let fn = head => {
     let slow = head;
@@ -2741,9 +2741,9 @@ let fn = arr => {
 }`,
   },
   {
-    id: "51",
-    title: "Find number of subarrays that fit an exact criteria",
-    tags: ["Array", "Template"],
+    id: '51',
+    title: 'Find number of subarrays that fit an exact criteria',
+    tags: ['Array', 'Template'],
     problem: `Find number of subarrays that fit an exact criteria`,
     code: `let fn = (arr, k) => {
     let counts = new Map();
@@ -2760,9 +2760,9 @@ let fn = arr => {
 }`,
   },
   {
-    id: "52",
-    title: "Monotonic increasing stack",
-    tags: ["Array", "Template"],
+    id: '52',
+    title: 'Monotonic increasing stack',
+    tags: ['Array', 'Template'],
     problem: `Monotonic increasing stack. The same logic can be applied to maintain a monotonic queue.`,
     code: `let fn = arr => {
     let stack = [];
@@ -2782,9 +2782,9 @@ let fn = arr => {
 }`,
   },
   {
-    id: "53",
-    title: "Binary search: duplicate elements, left-most insertion point",
-    tags: ["Search", "Template"],
+    id: '53',
+    title: 'Binary search: duplicate elements, left-most insertion point',
+    tags: ['Search', 'Template'],
     problem: `Binary search: duplicate elements, left-most insertion point`,
     code: `let fn = (arr, target) => {
     let left = 0;
@@ -2802,9 +2802,9 @@ let fn = arr => {
 }`,
   },
   {
-    id: "54",
-    title: "Binary search: duplicate elements, right-most insertion point",
-    tags: ["Search", "Template"],
+    id: '54',
+    title: 'Binary search: duplicate elements, right-most insertion point',
+    tags: ['Search', 'Template'],
     problem: `Binary search: duplicate elements, right-most insertion point`,
     code: `let fn = (arr, target) => {
     let left = 0;
@@ -2822,9 +2822,9 @@ return left;
 }`,
   },
   {
-    id: "55",
-    title: "Binary search: for greedy problems",
-    tags: ["Search", "Template"],
+    id: '55',
+    title: 'Binary search: for greedy problems',
+    tags: ['Search', 'Template'],
     problem: `Binary search: for greedy problems`,
     code: `// min
 let fn = arr => {
@@ -2869,9 +2869,9 @@ let fn = arr => {
 }`,
   },
   {
-    id: "56",
-    title: "Backtracking",
-    tags: ["Search", "Template"],
+    id: '56',
+    title: 'Backtracking',
+    tags: ['Search', 'Template'],
     problem: `Backtracking`,
     code: `let backtrack = (curr, OTHER_ARGUMENTS...) => {
     if (BASE_CASE) {
@@ -2890,9 +2890,9 @@ let fn = arr => {
 }`,
   },
   {
-    id: "57",
-    title: "Sliding Window",
-    tags: ["Array", "Two Pointers", "Template"],
+    id: '57',
+    title: 'Sliding Window',
+    tags: ['Array', 'Two Pointers', 'Template'],
     problem: `Sliding window`,
     code: `let fn = arr => {
     let left = 0, ans = 0, curr = 0;

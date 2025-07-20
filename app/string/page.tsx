@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { algorithmsList } from "@/constant/algorithmsList";
-import ProblemPage from "@/components/ProblemPage";
+import { algorithmsList } from '@/constant/algorithmsList';
+import ProblemPage from '@/components/ProblemPage';
 
 /**
  * Renders an accordion list of algorithms related to strings.
@@ -10,7 +10,7 @@ import ProblemPage from "@/components/ProblemPage";
  */
 export default function String() {
   const algorithms = algorithmsList.filter(({ tags }) =>
-    tags.includes("String")
+    tags.includes('String'),
   );
 
   return <ProblemPage algorithms={algorithms} />;

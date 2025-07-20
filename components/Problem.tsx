@@ -1,5 +1,5 @@
-import { useTheme } from "next-themes";
-import { CodeBlock, hybrid, github } from "react-code-blocks";
+import { useTheme } from 'next-themes';
+import { CodeBlock, hybrid, github } from 'react-code-blocks';
 
 /**
  * A component to render a problem.
@@ -14,12 +14,12 @@ export default function Problem({ problem }: { problem: string }) {
   const { theme } = useTheme();
 
   return (
-    <div className="demo text-xs sm:text-sm p-1 md:p-2">
+    <div className='demo text-xs sm:text-sm p-1 md:p-2'>
       <CodeBlock
-        language="text"
+        language='text'
         text={problem}
         showLineNumbers={false}
-        theme={theme === "dark" ? hybrid : github}
+        theme={theme === 'dark' ? hybrid : github}
       />
     </div>
   );

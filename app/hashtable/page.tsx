@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { algorithmsList } from "@/constant/algorithmsList";
-import ProblemPage from "@/components/ProblemPage";
+import { algorithmsList } from '@/constant/algorithmsList';
+import ProblemPage from '@/components/ProblemPage';
 
 /**
  * Renders an accordion list of algorithms related to hash tables.
@@ -10,7 +10,7 @@ import ProblemPage from "@/components/ProblemPage";
  */
 export default function HashTable() {
   const algorithms = algorithmsList.filter(({ tags }) =>
-    tags.includes("Hash Table")
+    tags.includes('Hash Table'),
   );
 
   return <ProblemPage algorithms={algorithms} />;

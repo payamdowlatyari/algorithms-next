@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import Problems from "@/components/Problems";
+import Problems from '@/components/Problems';
 
 /**
  * This page renders a list of topics and their problems.

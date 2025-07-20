@@ -1,4 +1,4 @@
-import { Input } from "@nextui-org/react";
+import { Input } from '@nextui-org/react';
 
 interface SearchGroupProps {
   placeholder: string;
@@ -15,10 +15,10 @@ export default function SearchGroup({
 }: SearchGroupProps) {
   return (
     <Input
-      type="search"
+      type='search'
       placeholder={placeholder}
       onChange={onChangeHandler}
-      size="sm"
+      size='sm'
     />
   );
 }

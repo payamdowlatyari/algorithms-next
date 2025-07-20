@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { algorithmsList } from "@/constant/algorithmsList";
-import ProblemPage from "@/components/ProblemPage";
+import { algorithmsList } from '@/constant/algorithmsList';
+import ProblemPage from '@/components/ProblemPage';
 
 /**
  * Renders an accordion list of algorithms related to data structures.
@@ -10,7 +10,7 @@ import ProblemPage from "@/components/ProblemPage";
  */
 export default function DataStructure() {
   const algorithms = algorithmsList.filter(({ tags }) =>
-    tags.includes("Data Structure")
+    tags.includes('Data Structure'),
   );
 
   return <ProblemPage algorithms={algorithms} />;

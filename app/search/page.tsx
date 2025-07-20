@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { algorithmsList } from "@/constant/algorithmsList";
-import ProblemPage from "@/components/ProblemPage";
+import { algorithmsList } from '@/constant/algorithmsList';
+import ProblemPage from '@/components/ProblemPage';
 
 /**
  * Renders an accordion list of algorithms related to search.
@@ -10,7 +10,7 @@ import ProblemPage from "@/components/ProblemPage";
  */
 export default function Search() {
   const algorithms = algorithmsList.filter(({ tags }) =>
-    tags.includes("Search")
+    tags.includes('Search'),
   );
 
   return <ProblemPage algorithms={algorithms} />;
