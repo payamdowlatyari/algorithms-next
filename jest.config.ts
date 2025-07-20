@@ -14,10 +14,10 @@ const config: Config = {
   setupFilesAfterEnv: ['./jest.setup.ts'],
   testPathIgnorePatterns: ['<rootDir>/e2e/'],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|tsx|js|jsx)$': 'ts-jest',
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!antd|@ant-design|rc-.*|@babel/runtime).+(js|jsx)$',
+    '/node_modules/(?!antd|@ant-design|rc-.*|@babel/runtime).+(js|jsx|ts|tsx|json)$',
   ],
   globals: {
     'ts-jest': {
