@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardBody, CardFooter, Link, Spinner } from '@nextui-org/react';
+import { Card, CardBody, CardFooter, Link, Spinner } from '@heroui/react';
 import { Icons } from './Icons';
 import { useEffect, useState } from 'react';
 import SearchGroup from './SearchGroup';
@@ -34,28 +34,29 @@ export default function Landing() {
     setFilteredGroups(newFilteredGroups);
   }, [searchField, topicList]);
 
-  useEffect(() => {
-    /**
-     * Fetches the list of topics from the API and updates the component state.
-     * If the response is not ok, logs the error to the console.
-     * If the response is ok, updates the topicList state with the received data.
-     * In any case, sets isLoading to false after completing the request.
-     */
-    async function fetchData() {
-      try {
-        setIsLoading(true);
-        const response = await fetch('/api/topics');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setTopicList(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setIsLoading(false);
+  /**
+   * Fetches the list of topics from the API and updates the component state.
+   * If the response is not ok, logs the error to the console.
+   * If the response is ok, updates the topicList state with the received data.
+   * In any case, sets isLoading to false after completing the request.
+   */
+  async function fetchData() {
+    try {
+      setIsLoading(true);
+      const response = await fetch('/api/topics');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
+      const data = await response.json();
+      setTopicList(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setIsLoading(false);
     }
+  }
+
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -72,7 +73,7 @@ export default function Landing() {
   if (isLoading || !topicList) {
     return (
       <div className='flex justify-center items-center h-screen'>
-        <Spinner label='Loading topics...' />
+        <Spinner label='Loading topics...' color='current' size='lg' />
       </div>
     );
   }

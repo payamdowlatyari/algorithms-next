@@ -4,17 +4,17 @@ import {
   FcFinePrint,
   FcGenealogy,
   FcOrgUnit,
-  FcCandleSticks,
   FcWorkflow,
   FcCollect,
   FcFeedIn,
   FcRadarPlot,
-  FcTimeline,
-  FcMindMap,
   FcNeutralTrading,
+  FcMultipleInputs,
+  FcParallelTasks,
   FcDataSheet,
-  FcAbout,
+  FcInfo,
 } from 'react-icons/fc';
+import { AiOutlineFieldString } from 'react-icons/ai';
 
 /**
  * Returns a React component that represents an icon for a given topic, or null
@@ -31,13 +31,13 @@ const getIcon = (icon: string) => {
     case 'Tree':
       return <FcGenealogy />;
     case 'Dynamic Programming':
-      return <FcCandleSticks />;
+      return <FcMultipleInputs />;
     case 'Linked List':
       return <FcWorkflow />;
     case 'Hash Table':
-      return <FcTimeline />;
+      return <FcParallelTasks />;
     case 'String':
-      return <FcRadarPlot />;
+      return <AiOutlineFieldString />;
     case 'Sort':
       return <FcNumericalSorting12 />;
     case 'Search':
@@ -49,11 +49,11 @@ const getIcon = (icon: string) => {
     case 'Pointer':
       return <FcCollect />;
     case 'Graph':
-      return <FcMindMap />;
+      return <FcRadarPlot />;
     case 'Sliding Window':
       return <FcNeutralTrading />;
     case 'Other':
-      return <FcAbout />;
+      return <FcInfo />;
     default:
       return null;
   }

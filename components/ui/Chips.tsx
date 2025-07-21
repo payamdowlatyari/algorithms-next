@@ -1,4 +1,4 @@
-import { Chip } from '@nextui-org/react';
+import { Chip } from "@heroui/react";
 
 /**
  * A functional component that renders a list of tags as Chip components.

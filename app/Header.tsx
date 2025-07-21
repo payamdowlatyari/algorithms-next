@@ -9,8 +9,9 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+import { NavbarLink } from '@/components/ui/links';
 
 /**
  * Header component that renders a Navbar with a theme switcher,
@@ -36,6 +37,8 @@ export default function Header() {
       setTopicList(data);
     } catch (error) {
       console.error('Error fetching data:', error);
+    } finally {
+      setIsMenuOpen(false);
     }
   }
 
@@ -67,13 +70,7 @@ export default function Header() {
         >
           {topicList.map(({ title, href }) => (
             <NavbarMenuItem key={title}>
-              <Link
-                color='foreground'
-                className='w-full p-1 text-xl md:text-2xl border-b-2 border-transparent transition ease-in-out delay-100 hover:border-current duration-500'
-                href={href}
-              >
-                {title}
-              </Link>
+              <NavbarLink href={href}>{title}</NavbarLink>
             </NavbarMenuItem>
           ))}
         </NavbarMenu>

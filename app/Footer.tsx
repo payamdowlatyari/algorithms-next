@@ -1,6 +1,6 @@
 'use client';
 
-import { Link } from '@nextui-org/react';
+import { Link } from "@heroui/react";
 
 /**
  * Footer component with a copyright notice and a link to the author's website.
