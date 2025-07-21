@@ -6,11 +6,14 @@ import {
   FcOrgUnit,
   FcCandleSticks,
   FcWorkflow,
-  FcGrid,
   FcCollect,
   FcFeedIn,
   FcRadarPlot,
   FcTimeline,
+  FcMindMap,
+  FcNeutralTrading,
+  FcDataSheet,
+  FcAbout,
 } from 'react-icons/fc';
 
 /**
@@ -24,7 +27,7 @@ const getIcon = (icon: string) => {
     case 'Data Structures':
       return <FcOrgUnit />;
     case 'Array':
-      return <FcGrid />;
+      return <FcDataSheet />;
     case 'Tree':
       return <FcGenealogy />;
     case 'Dynamic Programming':
@@ -45,6 +48,14 @@ const getIcon = (icon: string) => {
       return <FcTemplate />;
     case 'Pointer':
       return <FcCollect />;
+    case 'Graph':
+      return <FcMindMap />;
+    case 'Sliding Window':
+      return <FcNeutralTrading />;
+    case 'Other':
+      return <FcAbout />;
+    default:
+      return null;
   }
 };
 

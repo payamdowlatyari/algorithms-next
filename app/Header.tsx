@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Navbar,
   NavbarContent,
@@ -9,10 +9,8 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  NavbarItem,
 } from '@nextui-org/react';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
-import { topicList } from '@/constant/topicList';
 
 /**
  * Header component that renders a Navbar with a theme switcher,
@@ -20,6 +18,30 @@ import { topicList } from '@/constant/topicList';
  */
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [topicList, setTopicList] = useState([]);
+
+  /**
+   * Fetches the list of topics from the API and updates the component state.
+   * If the response is not ok, logs the error to the console.
+   * If the response is ok, updates the topicList state with the received data.
+   * In any case, sets isMenuOpen to false after completing the request.
+   */
+  async function fetchData() {
+    try {
+      const response = await fetch('/api/topics');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setTopicList(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <Navbar

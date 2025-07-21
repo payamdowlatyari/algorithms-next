@@ -1,13 +1,12 @@
-'use client';
-
-import { algorithmsList } from '@/constant/algorithmsList';
-import ProblemPage from '@/components/ProblemPage';
+import Problems from '@/components/Problems';
 
 /**
- * Renders an accordion list of all algorithms.
+ * Page component for the problems page.
  *
- * This component is rendered at /problems.
+ * This page displays a list of problem groups as cards that can be filtered
+ * using a search input. When a group is selected, the page redirects to the
+ * group page.
  */
-export default function AllProblems() {
-  return <ProblemPage algorithms={algorithmsList} />;
+export default function ProblemsPage() {
+  return <Problems />;
 }
