@@ -16,7 +16,9 @@
     "@heroui/theme": "2.4.19",
     "@sentry/nextjs": "^7.109.0",
     "@testing-library/jest-dom": "^6.6.3",
+    "clsx": "^2.1.1",
     "jest-environment-jsdom": "^30.0.4",
+    "motion": "^12.23.9",
     "next": "14.0.3",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
@@ -25,6 +27,7 @@
     "react-icons": "^4.12.0",
     "react-markdown": "^10.1.0",
     "react-syntax-highlighter": "^15.6.1",
+    "tailwind-merge": "^3.3.1",
     "ts-jest": "^29.4.0"
   },
   "devDependencies": {

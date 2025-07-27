@@ -1,10 +1,10 @@
 import { extractQuestionAndCode } from '@/utils/extractQuestionAndCode';
-import { GroupLink, ProblemLink } from './ui/links';
+import { GroupLink, ProblemLink, SolutionLink } from '@/components/ui/links';
 import {
   extractGroupsAndProblems,
   ProblemData,
 } from '@/utils/extractGroupsAndProblems';
-import { Card, CardBody, CardFooter, Link } from '@heroui/react';
+import { Card, CardBody, CardFooter } from '@heroui/react';
 import ReactMarkdown from 'react-markdown';
 
 /**
@@ -46,7 +46,7 @@ export default function Group({
       </div>
       <div className='flex flex-col gap-4 my-10'>
         {problemPaths.map(({ name, href }) => (
-          <Card key={href} isHoverable>
+          <Card key={href} isHoverable itemRef={href}>
             <CardBody>
               <ProblemLink href={href} slug={name} />
               <article className='text-xs md:text-sm whitespace-pre-line my-2'>
@@ -66,12 +66,7 @@ export default function Group({
               </article>
             </CardBody>
             <CardFooter className='flex justify-end'>
-              <Link size='sm' color='foreground' isBlock href={href}>
-                View Solution{' '}
-                <span className='ml-2' aria-hidden='true'>
-                  &rarr;
-                </span>
-              </Link>
+              <SolutionLink href={href} />
             </CardFooter>
           </Card>
         ))}

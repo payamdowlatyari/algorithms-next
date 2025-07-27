@@ -1,9 +1,9 @@
 'use client';
 
 import { Card, CardBody, CardFooter, Link, Spinner } from '@heroui/react';
-import { Icons } from './Icons';
+import { Icons } from '@/components/Icons';
 import { useEffect, useState } from 'react';
-import SearchGroup from './SearchGroup';
+import SearchGroup from '@/components/SearchGroup';
 
 /**
  * Represents a topic with a title and a link.
@@ -86,10 +86,7 @@ export default function Landing() {
           placeholder={'Search algorithms by topic...'}
         />{' '}
         <div className='min-w-[200px] w-full flex justify-end'>
-          <Link
-            href='/problems'
-            className='text-foreground block text-center text-sm md:text-base'
-          >
+          <Link href='/problems' isBlock color='primary'>
             View all
           </Link>
         </div>
@@ -98,8 +95,10 @@ export default function Landing() {
         {filteredGroups.map((item, index) => (
           <Link key={index} href={item.href || '#'}>
             <Card
+              isHoverable
+              isPressable
               shadow='sm'
-              className='flex justify-center items-center w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 ease-in-out hover:scale-105 duration-300'
+              className='flex justify-center items-center w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60'
             >
               <CardBody className='text-8xl items-center text-foreground mt-2'>
                 <Icons topic={item.title} />

@@ -1,4 +1,4 @@
-import { GroupTopicLink, ProblemLink } from './ui/links';
+import { GroupTopicLink, ProblemLink } from '@/components/ui/links';
 import {
   extractGroupsAndProblems,
   ProblemData,
@@ -22,8 +22,8 @@ export default function Problems() {
           <GroupTopicLink href={`/problems/${group}`} group={group} />
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10'>
             {files.map(({ name, href }) => (
-              <Card key={href} isHoverable isPressable>
-                <CardBody>
+              <Card key={href} isHoverable isPressable itemRef={href}>
+                <CardBody className='flex justify-center items-center h-full'>
                   <ProblemLink href={href} slug={name} />
                 </CardBody>
               </Card>

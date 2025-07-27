@@ -30,7 +30,7 @@ export function ExternalLink({
  */
 export function GroupLink({ href, group }: { href: string; group: string }) {
   return (
-    <Link href={href} color='foreground' size='sm' className='capitalize'>
+    <Link href={href} color='primary' size='sm' isBlock className='capitalize'>
       {group.replace(/([a-z])([A-Z])/g, '$1 $2')} Problems
     </Link>
   );
@@ -55,6 +55,7 @@ export function GroupTopicLink({
       href={href}
       color='foreground'
       size='lg'
+      isBlock
       className='capitalize font-bold'
     >
       {group.replace(/([a-z])([A-Z])/g, '$1 $2')} Problems
@@ -74,14 +75,32 @@ export function ProblemLink({ href, slug }: { href: string; slug: string }) {
     <Link
       href={href}
       color='foreground'
-      size='md'
-      className='capitalize font-bold'
+      size='lg'
+      className='capitalize font-semibold'
     >
       {slug.replace(/([a-z])([A-Z])/g, '$1 $2')}
     </Link>
   );
 }
 
+export function SolutionLink({ href }: { href: string }) {
+  return (
+    <Link href={href} color='primary' size='sm' isBlock>
+      View Solution{' '}
+      <span className='ml-2' aria-hidden='true'>
+        &rarr;
+      </span>
+    </Link>
+  );
+}
+
+/**
+ * A link component that is meant to be used in a navbar.
+ *
+ * @param href - The URL of the link.
+ * @param children - The text of the link.
+ * @returns A stylized link element for use in a navbar.
+ */
 export function NavbarLink({
   href,
   children,

@@ -1,7 +1,7 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import ReactMarkdown from 'react-markdown';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { GroupLink } from './ui/links';
+import { GroupLink } from '@/components/ui/links';
 import {
   extractQuestionAndCode,
   Questiondata,

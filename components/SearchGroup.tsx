@@ -1,5 +1,8 @@
-import { Input } from "@heroui/react";
+import { Input } from '@/components/ui/Input';
 
+/**
+ * Props for the search input component.
+ */
 interface SearchGroupProps {
   placeholder: string;
   onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -16,9 +19,11 @@ export default function SearchGroup({
   return (
     <Input
       type='search'
+      label='Search Algorithms'
       placeholder={placeholder}
       onChange={onChangeHandler}
-      size='sm'
+      className='w-full md:w-2/3'
+      value={''}
     />
   );
 }
