@@ -46,6 +46,9 @@ export function extractQuestionAndCode(
       // allow empty lines between comments at top
       questionLines.push('');
       endOfQuestion++;
+    } else if (trimmed.startsWith('import') && endOfQuestion <= 1) {
+      // skip imports at top of file and add to code
+      endOfQuestion++;
     } else {
       // first non-// line ends the question
       break;
