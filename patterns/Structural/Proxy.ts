@@ -1,3 +1,26 @@
+// Intent: Provides a surrogate or placeholder for another object to control access to it.
+
+// Applicability: Use the Proxy pattern when you want to provide a placeholder
+// for another object to control access to it.
+
+// Structure: The Proxy class implements the same interface as the RealSubject.
+// It can be either lazy-loaded or passed to the Proxy by the client. The Proxy
+// can perform one of these things and then, depending on the result, pass the
+// request to the RealSubject or return a default value.
+
+// Real-world example: You want to provide a placeholder for another object to
+// control access to it.
+
+// ### Pros:
+// - You can control the service object without clients knowing about it.
+// - You can manage the lifecycle of the service object when clients don’t care about it.
+// - The proxy works even if the service object isn’t ready or is not available.
+// - Open/Closed Principle. You can introduce new proxies without changing the service or clients.
+
+// ### Cons:
+// - The code may become more complicated since you need to introduce a lot of new classes.
+// - The response from the service might get delayed.
+
 /**
  * The Subject interface declares common operations for both RealSubject and the
  * Proxy. As long as the client works with RealSubject using this interface,

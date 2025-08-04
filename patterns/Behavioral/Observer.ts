@@ -1,3 +1,25 @@
+// Also known as: Event-Subscriber, Listener
+
+// Intent: Define a one-to-many dependency between objects so that when one object
+// changes state, all its dependents are notified and updated automatically.
+
+// Applicability: When you want to implement a publish/subscribe model or when you
+// need to maintain consistency between related objects without tight coupling.
+
+// Structure: The Observer interface declares the update method, used by subjects.
+// Concrete Observers react to the updates issued by the Subject they had been attached to.
+
+// Real-world example: React.js uses the Observer pattern to implement two-way data binding,
+// which allows data in one component to update another component and vice versa.
+
+// ### Pros:
+// - Open/Closed Principle. You can introduce new subscriber classes without having to change the
+// publisher’s code (and vice versa if there’s a publisher interface).
+// - You can establish relations between objects at runtime.
+
+// ### Cons:
+// - Subscribers are notified in random order.
+
 /**
  * The Subject interface declares a set of methods for managing subscribers.
  */

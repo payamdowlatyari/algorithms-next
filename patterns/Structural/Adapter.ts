@@ -1,3 +1,26 @@
+// Also known as: Wrapper, Translator
+
+// Intent: Converts the interface of a class into another interface clients expect.
+// Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
+
+// Applicability: When you want to use existing code, but its interface isn't compatible with
+// the one you need.
+
+// Structure: The Adapter class implements the Target's interface using the Adaptee's interface.
+// It delegates the client calls to the Adaptee's methods.
+
+// Real-world example: You want to use an existing class, but its interface is incompatible
+// with the one you need. You can create an adapter that translates the interface.
+
+// ### Pros:
+// - Single Responsibility Principle. You can separate the interface or data conversion code from the primary business logic of the program.
+// - Open/Closed Principle. You can introduce new types of adapters into the program without breaking the existing client code,
+// as long as they work with the adapters through the client interface.
+
+// ### Cons:
+// - The overall complexity of the code increases because you need to introduce a set of new interfaces and classes.
+// Sometimes it’s simpler just to change the service class so that it matches the rest of your code.
+
 /**
  * The Target defines the domain-specific interface used by the client code.
  * It's usually a simple interface with one method.

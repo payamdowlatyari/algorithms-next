@@ -1,18 +1,31 @@
 'use client';
 
 import { Card, CardBody, CardFooter, Link } from '@heroui/react';
-import { Icons } from '@/components/Icons';
+import { getIcon, getPatternIcon } from '@/components/Icons';
 import { useEffect, useState } from 'react';
 import SearchGroup from '@/components/SearchGroup';
 import { LoaderFour } from './ui/loaders';
 
-/**
- * Represents a topic with a title and a link.
- */
-interface Topic {
+type ProblemData = {
+  group: string;
+  href: string;
+  title: string;
+  files: {
+    name: string;
+    href: string;
+  }[];
+};
+
+type Topic = {
   title: string;
   href: string;
-}
+};
+
+type Topics = {
+  topics: Topic[];
+  problems: ProblemData[];
+  patterns: ProblemData[];
+};
 
 /**
  * Renders a list of topics as cards that can be filtered using a search input.
@@ -23,16 +36,32 @@ interface Topic {
  */
 export default function Landing() {
   const [searchField, setSearchField] = useState('');
-  const [topicList, setTopicList] = useState<Topic[]>([]);
-  const [filteredGroups, setFilteredGroups] = useState<Topic[]>([]);
+  const [topicList, setTopicList] = useState<Topics>({
+    topics: [],
+    problems: [],
+    patterns: [],
+  });
+  const [filteredGroups, setFilteredGroups] = useState<Topics>({
+    topics: [],
+    problems: [],
+    patterns: [],
+  });
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const newFilteredGroups = topicList.filter((group) => {
-      return group.title.toLowerCase().includes(searchField);
-    });
+    const newFilteredGroups = {
+      topics: topicList.topics.filter((group) => {
+        return group.title.toLowerCase().includes(searchField);
+      }),
+      problems: topicList.problems.filter((group) => {
+        return group.title.toLowerCase().includes(searchField);
+      }),
+      patterns: topicList.patterns.filter((group) => {
+        return group.title.toLowerCase().includes(searchField);
+      }),
+    };
 
-    setFilteredGroups(newFilteredGroups);
+    setFilteredGroups(newFilteredGroups ? newFilteredGroups : topicList);
   }, [searchField, topicList]);
 
   /**
@@ -87,34 +116,66 @@ export default function Landing() {
           placeholder={'Search algorithms by topic...'}
         />{' '}
         <div className='min-w-[200px] w-full flex justify-end space-x-2'>
-          <Link href='/problems' isBlock color='primary'>
-            Problems
-          </Link>
-          <Link href='/patterns' isBlock color='primary'>
-            Design Patterns
-          </Link>
+          {topicList.topics.length > 0 &&
+            topicList.topics.map((item, index) => (
+              <Link key={index} href={item.href || '#'} isBlock color='primary'>
+                {item.title}
+              </Link>
+            ))}
         </div>
       </div>
-      <div className='w-full flex flex-wrap justify-center gap-2 md:gap-5'>
-        {filteredGroups.map((item, index) => (
-          <Link key={index} href={item.href || '#'}>
-            <Card
-              isHoverable
-              isPressable
-              shadow='sm'
-              className='flex justify-center items-center w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60'
-            >
-              <CardBody className='text-8xl items-center text-foreground mt-2'>
-                <Icons topic={item.title} />
-              </CardBody>
-              <CardFooter className='justify-center mb-5'>
-                <span className='text-2xl text-foreground text-center'>
-                  {item.title}
-                </span>
-              </CardFooter>
-            </Card>
-          </Link>
-        ))}
+      <div className='w-full my-10'>
+        <h2 className='text-2xl text-foreground my-5'>
+          Data Structures and Algorithms
+        </h2>
+        <div className='w-full flex flex-wrap justify-center gap-2 md:gap-5 my-5'>
+          {filteredGroups.problems.map((item, index) => (
+            <Link key={index} href={item.href || '#'}>
+              <Card
+                isHoverable
+                isPressable
+                shadow='sm'
+                className='flex justify-center items-center w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60'
+              >
+                <CardBody className='text-8xl items-center text-foreground mt-2'>
+                  {getIcon(item.title)}
+                </CardBody>
+                <CardFooter className='justify-center mb-5'>
+                  <span className='text-2xl text-foreground text-center'>
+                    {item.title}
+                  </span>
+                </CardFooter>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <div className='w-full my-10'>
+        <h2 className='text-2xl text-foreground my-5'>
+          Software Design Patterns
+        </h2>
+        <div className='w-full flex flex-wrap justify-center gap-2 md:gap-5 my-5'>
+          {filteredGroups.patterns.map((item, index) => (
+            <Link key={index} href={item.href || '#'}>
+              <Card
+                isHoverable
+                isPressable
+                shadow='sm'
+                className='flex justify-center items-center w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60'
+              >
+                <CardBody className='text-8xl items-center text-foreground mt-2'>
+                  {getPatternIcon(item.title)}
+                </CardBody>
+                <CardFooter className='justify-center mb-5'>
+                  <span className='text-2xl text-foreground text-center'>
+                    {item.title}
+                  </span>
+                </CardFooter>
+              </Card>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

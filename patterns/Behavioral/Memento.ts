@@ -1,3 +1,30 @@
+// Also known as: Snapshot
+
+// Intent: Without violating encapsulation, capture and externalize an object's
+// internal state so that the object can be restored later. This is useful when
+// the object's internal state is too complex to represent or store directly.
+
+// Applicability: When you want to capture and store the state of an object so
+// that it can be restored at a later point in time.
+
+// Structure: The Memento interface provides a way to access the memento's
+// metadata, such as the date it was created, without exposing the originator's
+// internal state.
+
+// Real world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - You can produce snapshots of the object’s state without violating its encapsulation.
+// - You can simplify the originator’s code by letting the caretaker maintain the history
+// of the originator’s state.
+
+// ### Cons:
+// - The app might consume lots of RAM if clients create mementos too often.
+// - Caretakers should track the originator’s lifecycle to be able to destroy obsolete mementos.
+// - Most dynamic programming languages, such as PHP, Python and JavaScript,
+// can’t guarantee that the state within the memento stays untouched.
+
 /**
  * The Originator holds some important state that may change over time. It also
  * defines a method for saving the state inside a memento and another method for

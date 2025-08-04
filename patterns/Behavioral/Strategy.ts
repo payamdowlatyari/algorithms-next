@@ -1,3 +1,35 @@
+// Intent: Define a family of algorithms, encapsulate each one, and make them
+// interchangeable. Strategy lets the algorithm vary independently from clients
+// that use it.
+
+// Applicability: When you have many similar classes, but need to vary their
+// behavior at runtime.
+
+// Structure: The Strategy interface declares operations common to all supported
+// algorithms. The Context uses this interface to call the algorithm defined by
+// a Concrete Strategy. Concrete Strategies implement the algorithm while
+// following the base Strategy interface. The Context doesn't know the concrete
+// class of a strategy. It should work with all strategies via the Strategy
+// interface.
+
+// Real-world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - You can swap algorithms used inside an object at runtime.
+// - You can isolate the implementation details of an algorithm from the code that uses it.
+// - You can replace inheritance with composition.
+// - Open/Closed Principle. You can introduce new strategies without having to change the context.
+
+// ### Cons:
+// - If you only have a couple of algorithms and they rarely change, there’s no real reason to
+// overcomplicate the program with new classes and interfaces that come along with the pattern.
+// - Clients must be aware of the differences between strategies to be able to select a proper one.
+// - A lot of modern programming languages have functional type support that lets you implement
+// different versions of an algorithm inside a set of anonymous functions. Then you could use these
+// functions exactly as you’d have used the strategy objects, but without bloating your code with extra
+// classes and interfaces.
+
 /**
  * The Context defines the interface of interest to clients.
  * It also maintains a reference to one of the Strategy objects, which

@@ -1,3 +1,30 @@
+// Intent: Lets you traverse elements of a collection without exposing its
+// underlying representation (list, stack, tree, etc.).
+
+// Applicability: When you want to provide a way to access the elements of an
+// object without exposing its underlying representation.
+
+// Structure: The Iterator interface specifies the methods that all concrete
+// iterators must implement. Concrete iterators provide one or several ways to
+// access the elements of the collection.
+
+// Real world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - Single Responsibility Principle. You can clean up the client code and the
+// collections by extracting bulky traversal algorithms into separate classes.
+// - Open/Closed Principle. You can implement new types of collections and iterators
+// and pass them to existing code without breaking anything.
+// - You can iterate over the same collection in parallel because each iterator
+// object contains its own iteration state.
+// - For the same reason, you can delay an iteration and continue it when needed.
+
+// ### Cons:
+// - Applying the pattern can be an overkill if your app only works with simple collections.
+// - Using an iterator may be less efficient than going through elements of
+// some specialized collections directly.
+
 /**
  * Iterator Design Pattern
  *

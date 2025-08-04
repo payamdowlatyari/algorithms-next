@@ -1,3 +1,31 @@
+// Also known as: Intermediary, Controller
+
+// Intent: Lets you define an object that encapsulates how a set of objects interact.
+// Mediator promotes loose coupling by keeping objects from referring each other
+// explicitly, and it allows you to change their interaction indirectly, by
+// passing them through a mediator object.
+
+// Applicability: When you have a set of objects that communicate with each other
+// via a common interface and you want to reduce their coupling.
+
+// Structure: The Mediator interface declares a method used by components to
+// notify the mediator about various events. The Mediator may react to these
+// events and pass the execution to other components.
+
+// Real-world example: The Mediator pattern is used in the jQuery UI library to
+// coordinate different UI components.
+
+// ### Pros:
+// - Single Responsibility Principle. You can extract the communications between various
+// components into a single place, making it easier to comprehend and maintain.
+// - Open/Closed Principle. You can introduce new mediators without having to
+// change the actual components.
+// - You can reduce coupling between various components of a program.
+// - You can reuse individual components more easily.
+
+// ### Cons:
+// - You can make the system more complex than it needs to be.
+
 /**
  * The Mediator interface declares a method used by components to notify the
  * mediator about various events. The Mediator may react to these events and

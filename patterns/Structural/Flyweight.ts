@@ -1,3 +1,29 @@
+// Also known as: Cache
+
+// Intent: The Flyweight Pattern is a structural design pattern that lets you
+// fit more objects into the available amount of memory by sharing common parts
+// of state between multiple objects instead of keeping all of the state in
+// individual objects.
+
+// Applicability: Use the Flyweight Pattern when you have a large number of
+// objects with similar or identical state.
+
+// Structure: The Flyweight interface declares an operation that is supposed to
+// be implemented by all concrete flyweight objects. The Flyweight class also
+// maintains a reference to the shared state.
+
+// Real world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - You can save lots of RAM, assuming your program has tons of similar objects.
+
+// ### Cons:
+// - You might be trading RAM over CPU cycles when some of the context data needs
+// to be recalculated each time somebody calls a flyweight method.
+// - The code becomes much more complicated. New team members will always be wondering
+// why the state of an entity was separated in such a way.
+
 /**
  * The Flyweight stores a common portion of the state (also called intrinsic
  * state) that belongs to multiple real business entities. The Flyweight accepts

@@ -1,3 +1,37 @@
+// Also known as: Wrapper
+
+// Intent: Attach additional responsibilities to an object dynamically. Decorators
+// provide a flexible alternative to subclassing for extending functionality.
+
+// Applicability: When you need to add new behavior to a class without modifying
+// the class itself.
+
+// Structure: The Component interface declares the operations that can be
+// altered by decorators. Concrete Components provide default implementations of
+// the operations. Decorators follow the same interface as the other components.
+// The primary purpose of the Decorator class is to define the wrapping interface
+// for all concrete decorators. The default implementation of the wrapping code
+// might include a field for storing a wrapped component and the means to
+// initialize it. Concrete Decorators call the wrapped object and alter its result
+// in some way. Decorators can execute their behavior either before or after the
+// call to a wrapped object.
+
+// Real-world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - You can extend an object’s behavior without making a new subclass.
+// - You can add or remove responsibilities from an object at runtime.
+// - You can combine several behaviors by wrapping an object into multiple decorators.
+// - Single Responsibility Principle. You can divide a monolithic class that implements
+// many possible variants of behavior into several smaller classes.
+
+// ### Cons:
+// - It’s hard to remove a specific wrapper from the wrappers stack.
+// - It’s hard to implement a decorator in such a way that its behavior
+// doesn’t depend on the order in the decorators stack.
+// - The initial configuration code of layers might look pretty ugly.
+
 /**
  * The base Component interface defines operations that can be altered by
  * decorators.

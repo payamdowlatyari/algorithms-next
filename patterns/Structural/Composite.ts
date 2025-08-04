@@ -1,3 +1,32 @@
+// Also known as: Object Tree, Part-Whole
+
+// Intent: Composite lets clients treat individual objects and compositions of
+// objects uniformly.
+
+// Applicability: When you want to treat individual objects and compositions of
+// objects uniformly.
+
+// Structure: The Composite interface declares common operations for both simple
+// and complex objects of a composition. The base implementation of these
+// operations might include a default behavior for leaf objects and an empty
+// implementation for composite objects. The base interface can also declare
+// methods for adding and removing components (child objects) in a composition.
+// However, the base interface doesn't have to provide any concrete
+// implementations for these methods. The default implementation of these
+// methods should be empty placeholder operations.
+
+// Real-world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - You can work with complex tree structures more conveniently: use polymorphism and recursion to your advantage.
+// - Open/Closed Principle. You can introduce new element types into the app without breaking the existing code,
+// which now works with the object tree.
+
+// ### Cons:
+// - It might be difficult to provide a common interface for classes whose functionality differs too much.
+// In certain scenarios, you’d need to overgeneralize the component interface, making it harder to comprehend.
+
 /**
  * The base Component class declares common operations for both simple and
  * complex objects of a composition.

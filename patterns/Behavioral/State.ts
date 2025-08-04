@@ -1,3 +1,27 @@
+// State - Also known as: Object State
+
+// Intent: Allows an object to alter its behavior when its internal state changes.
+// The object will appear to change its class.
+
+// Applicability: When the behavior of an object is determined by its state and
+// the object must be in a certain state to change its behavior.
+
+// Structure: The Context defines the interface of interest to clients. It also
+// maintains a reference to an instance of a State subclass, which represents the
+// current state of the Context. The Context delegates part of its behavior to
+// the current State object.
+
+// Real world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - Single Responsibility Principle. Organize the code related to particular states into separate classes.
+// - Open/Closed Principle. Introduce new states without changing existing state classes or the context.
+// - Simplify the code of the context by eliminating bulky state machine conditionals.
+
+// ### Cons:
+// - Applying the pattern can be overkill if a state machine has only a few states or rarely changes.
+
 /**
  * The Context defines the interface of interest to clients. It also maintains a
  * reference to an instance of a State subclass, which represents the current

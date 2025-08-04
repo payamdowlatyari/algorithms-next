@@ -1,3 +1,29 @@
+// Also known as: Cloning
+
+// Intent: Specify the kinds of objects to create using a prototypical instance,
+// and create new objects by copying this prototype.
+
+// Applicability: When the classes to instantiate are specified at runtime, for
+// example, via a configuration file. When the initialization of an object is
+// expensive, and you want to avoid it by copying an existing object instead.
+
+// Structure: The Prototype interface declares the cloning method. Concrete
+// prototypes implement the cloning method, which creates a new object by
+// copying the current object. The client code works with the prototype interface
+// to create new objects.
+
+// Real world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - You can clone objects without coupling to their concrete classes.
+// - You can get rid of repeated initialization code in favor of cloning pre-built prototypes.
+// - You can produce complex objects more conveniently.
+// - You get an alternative to inheritance when dealing with configuration presets for complex objects.
+
+// ### Cons:
+// - Cloning complex objects that have circular references might be very tricky.
+
 /**
  * The example class that has cloning ability. We'll see how the values of field
  * with different types will be cloned.

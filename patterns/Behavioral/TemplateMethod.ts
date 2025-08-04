@@ -1,3 +1,29 @@
+// Intent: Define the skeleton of an algorithm in an operation, deferring
+// some steps to subclasses. Template Method lets subclasses redefine certain
+// steps of an algorithm without changing the algorithm's structure.
+
+// Applicability: When you have a set of algorithms, and you want to use one of
+// them in a specific way.
+
+// Structure: The Template Method defines the skeleton of an algorithm in an
+// operation, deferring some steps to subclasses. Template Method lets
+// subclasses redefine certain steps of an algorithm without changing the
+// algorithm's structure.
+
+// Real-world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - You can let clients override only certain parts of a large algorithm, making them
+// less affected by changes that happen to other parts of the algorithm.
+// - You can pull the duplicate code into a superclass.
+
+// ### Cons:
+// - Some clients may be limited by the provided skeleton of an algorithm.
+// - You might violate the Liskov Substitution Principle by suppressing a default
+// step implementation via a subclass.
+// - Template methods tend to be harder to maintain the more steps they have.
+
 /**
  * The Abstract Class defines a template method that contains a skeleton of some
  * algorithm, composed of calls to (usually) abstract primitive operations.

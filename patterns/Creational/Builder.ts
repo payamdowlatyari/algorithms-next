@@ -1,3 +1,24 @@
+// Intent: Lets you separate the construction of a complex object from its
+// representation so that the same construction process can create different
+// representations.
+
+// Applicability: When you want to create different representations of an object
+// using the same construction code.
+
+// Structure: The Builder interface specifies methods for creating the different
+// parts of the Product objects.
+
+// Real-world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - You can construct objects step-by-step, defer construction steps or run steps recursively.
+// - You can reuse the same construction code when building various representations of products.
+// - Single Responsibility Principle. You can isolate complex construction code from the business logic of the product.
+
+// ### Cons:
+// - The overall complexity of the code increases since the pattern requires creating multiple new classes.
+
 /**
  * The Builder interface specifies methods for creating the different parts of
  * the Product objects.

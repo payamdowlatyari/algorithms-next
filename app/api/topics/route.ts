@@ -3,34 +3,91 @@ import path from 'path';
 import { NextResponse } from 'next/server';
 
 /**
+ * Represents a problem in the system.
+ */
+type ProblemData = {
+  group: string;
+  href: string;
+  title: string;
+  files: {
+    name: string;
+    href: string;
+  }[];
+};
+
+/**
+ * Represents a topic in the system.
+ */
+type Topic = {
+  title: string;
+  href: string;
+};
+
+const topics: Topic[] = [
+  {
+    title: 'Problems',
+    href: '/problems',
+  },
+  {
+    title: 'Patterns',
+    href: '/patterns',
+  },
+];
+
+/**
+ * Returns a list of problems and patterns, grouped by their respective directories.
+ * The result is an array of objects with properties group, href, title, and files.
+ * The group property is the name of the directory, the href property is the route
+ * to the group, the title property is the title of the group, and the files property
+ * is an array of objects with properties name and href. The name property is the name
+ * of the file without the extension, and the href property is the route to the file.
+ * Only files with the .ts extension and without the word "test" in their name are included.
+ * The directories are read from the directory specified by the dir parameter.
+ * @param {string} dir - The directory to read from.
+ * @returns {Promise<ProblemData[]>} A Promise that resolves to an array of ProblemData objects.
+ */
+async function getDataCategorized(dir: string): Promise<ProblemData[]> {
+  const problemsDir = path.join(process.cwd(), dir);
+
+  const groups = await fs.promises.readdir(problemsDir, {
+    withFileTypes: true,
+  });
+  const directories = groups
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name);
+
+  const problems = await Promise.all(
+    directories.map(async (group) => {
+      const files = await fs.promises.readdir(path.join(problemsDir, group));
+
+      return {
+        group,
+        href: `/${dir}/${group}`,
+        title: group.replace(/([a-z])([A-Z])/g, '$1 $2'),
+        files: await Promise.all(
+          files
+            .filter((f) => f.endsWith('.ts') && !f.includes('.test'))
+            .map(async (file) => ({
+              name: file.replace('.ts', ''),
+              href: `/${dir}/${group}/${file.replace('.ts', '')}`,
+            })),
+        ),
+      };
+    }),
+  );
+
+  return problems;
+}
+
+/**
  * This API route returns the list of problems grouped by topic.
  *
- * @returns An array of objects, each with a group, href, and title, and an array of objects containing the name and href of each problem in the group.
+ * @returns A JSON response containing an array of topics, and problems and patterns grouped by topic.
  */
 export async function GET(): Promise<NextResponse> {
-  const problemsDir = path.join(process.cwd(), 'problems');
-  const groups = fs
-    .readdirSync(problemsDir)
-    .filter((f) => fs.lstatSync(path.join(problemsDir, f)).isDirectory());
-
-  const problems = groups.map((group) => {
-    const files = fs.readdirSync(path.join(problemsDir, group));
-    return {
-      group,
-      href: `/problems/${group}`,
-      title: group.replace(/([a-z])([A-Z])/g, '$1 $2'),
-      files: files
-        .filter((f) => f.endsWith('.ts') && !f.includes('.test'))
-        .map((file) => ({
-          name: file.replace('.ts', ''),
-          href: `/problems/${group}/${file.replace('.ts', '')}`,
-          content: fs.readFileSync(
-            path.join(problemsDir, group, file),
-            'utf-8',
-          ),
-        })),
-    };
+  return NextResponse.json({
+    topics,
+    problems: (await getDataCategorized('problems')) || [],
+    patterns: (await getDataCategorized('patterns')) || [],
   });
-
-  return NextResponse.json(problems);
 }

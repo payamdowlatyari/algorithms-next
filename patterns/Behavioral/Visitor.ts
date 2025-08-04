@@ -1,3 +1,33 @@
+// Intent: Lets you separate algorithms from the objects on which they operate.
+
+// Motivation: You can define new operations without changing the classes of the
+// elements on which these operations are called.
+
+// Applicability: When you have a hierarchy of objects, and you want to be able
+// to add new operations to the hierarchy without modifying the classes of the
+// objects.
+
+// Structure: The Visitor interface declares a set of methods that correspond to
+// operations defined in the Object structure. These methods declare the set of
+// operations available to clients. Each Concrete Visitor implements these
+// operations.
+
+// Real-world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - Open/Closed Principle. You can introduce a new behavior that can work with objects of different classes
+// without changing these classes.
+// - Single Responsibility Principle. You can move multiple versions of the same behavior into the same class.
+// - A visitor object can accumulate some useful information while working with various objects. This might be handy
+// when you want to traverse some complex object structure, such as an object tree, and apply the visitor to each
+// object of this structure.
+
+// ### Cons:
+// - You need to update all visitors each time a class gets added to or removed from the element hierarchy.
+// - Visitors might lack the necessary access to the private fields and methods of the elements
+// that they’re supposed to work with.
+
 /**
  * The Component interface declares an `accept` method that should take the base
  * visitor interface as an argument.

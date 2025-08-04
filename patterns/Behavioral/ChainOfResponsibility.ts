@@ -1,3 +1,28 @@
+// Also known as: CoR, Chain of Commands
+
+// Intent: Lets you pass requests along a chain of handlers. You can
+// invoke a request either directly or indirectly through a chain of
+// handlers.
+
+// Applicability: When you want to pass a request along a chain of handlers.
+// The handlers can handle the request or pass it to the next handler in the
+// chain.
+
+// Structure: The Handler interface declares a method for building the chain of
+// handlers. Concrete handlers either handle a request or pass it to the next
+// handler in the chain.
+
+// Real world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - You can control the order of request handling.
+// - Single Responsibility Principle. You can decouple classes that invoke operations from classes that perform operations.
+// - Open/Closed Principle. You can introduce new handlers into the app without breaking the existing client code.
+
+// ### Cons:
+// - Some requests may end up unhandled.
+
 /**
  * The Handler interface declares a method for building the chain of handlers.
  * It also declares a method for executing a request.

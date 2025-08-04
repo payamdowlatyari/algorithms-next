@@ -1,3 +1,27 @@
+// Intent: Decouple an abstraction from its implementation so that the two can
+// vary independently.
+
+// Applicability: When you have two independent hierarchies of classes, and you
+// want to decouple the corresponding interfaces.
+
+// Structure: The Abstraction defines the interface for the "control" part of the
+// two class hierarchies. It maintains a reference to an object of the
+// Implementation hierarchy and delegates all of the real work to this object.
+// The Abstraction doesn't have to know anything about the concrete classes of
+// the Implementation hierarchy.
+
+// Real-world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - You can create platform-independent classes and apps.
+// - The client code works with high-level abstractions. It isn’t exposed to the platform details.
+// - Open/Closed Principle. You can introduce new abstractions and implementations independently from each other.
+// - Single Responsibility Principle. You can focus on high-level logic in the abstraction and on platform details in the implementation.
+
+// ### Cons:
+// - You might make the code more complicated by applying the pattern to a highly cohesive class.
+
 /**
  * The Abstraction defines the interface for the "control" part of the two class
  * hierarchies. It maintains a reference to an object of the Implementation

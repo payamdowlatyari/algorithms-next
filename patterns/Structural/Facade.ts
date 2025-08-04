@@ -1,3 +1,24 @@
+// Intent: Provides a unified interface to a set of interfaces in a subsystem.
+// Facade defines a higher-level interface that makes the subsystem easier to
+// use.
+
+// Applicability: Use the Facade pattern when you want to provide a simple
+// interface to a library, a framework, or any other complex set of classes.
+
+// Structure: The Facade class provides the client with a simple interface to the
+// subsystem. It delegates the client requests to the appropriate objects within
+// the subsystem. The Facade is also responsible for managing their lifecycle.
+// All of this shields the client from the undesired complexity of the subsystem.
+
+// Real-world example: You want to provide a simple interface to a complex
+// subsystem.
+
+// ### Pros:
+// - You can isolate your code from the complexity of a subsystem.
+
+// ### Cons:
+// - A facade can become a god object coupled to all classes of an app.
+
 /**
  * The Facade class provides a simple interface to the complex logic of one or
  * several subsystems. The Facade delegates the client requests to the

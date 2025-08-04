@@ -1,3 +1,28 @@
+// Intent: Provide an interface for creating families of related or
+// dependent objects without specifying their concrete classes.
+
+// Applicability: When you want to produce families of related objects without
+// specifying their concrete classes.
+
+// Structure: The Abstract Factory interface declares a set of methods that
+// return different abstract products. These products are called a family and are
+// related by a high-level theme or concept. Products of one family are usually
+// able to collaborate among themselves. A family of products may have several
+// variants, but the products of one variant are incompatible with products of
+// another.
+
+// Real-world example: A web page with a form that captures a user's input. When
+// the form is submitted, you want to store the user's input in the database.
+
+// ### Pros:
+// - You can be sure that the products you’re getting from a factory are compatible with each other.
+// - You avoid tight coupling between concrete products and client code.
+// - Single Responsibility Principle. You can extract the product creation code into one place, making the code easier to support.
+// - Open/Closed Principle. You can introduce new variants of products without breaking existing client code.
+
+// ### Cons:
+// - The code may become more complicated than it should be, since a lot of new interfaces and classes are introduced along with the pattern.
+
 /**
  * The Abstract Factory interface declares a set of methods that return
  * different abstract products. These products are called a family and are

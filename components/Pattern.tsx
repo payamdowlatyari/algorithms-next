@@ -47,8 +47,25 @@ export default function Pattern({
         <h1 className='text-2xl font-bold capitalize'>{title}</h1>
         <GroupLink href={`/patterns/${group}`} group={group} />
       </header>
-      <article className='text-sm md:text-base md:leading-loose whitespace-pre-line mx-2 my-8'>
-        <ReactMarkdown>{question}</ReactMarkdown>
+      <article className='text-sm md:text-base whitespace-pre-line mx-2 my-8 bg-zinc-100 dark:bg-zinc-800 p-3 rounded-lg'>
+        <ReactMarkdown
+          components={{
+            p: ({ node, ...props }) => (
+              <p
+                className='text-sm md:text-base leading-4 md:leading-loose'
+                {...props}
+              />
+            ),
+            h3: ({ node, ...props }) => (
+              <h3 className='text-lg font-bold capitalize' {...props} />
+            ),
+            li: ({ node, ...props }) => (
+              <li className='ml-4 list-disc leading-normal' {...props} />
+            ),
+          }}
+        >
+          {question}
+        </ReactMarkdown>
       </article>
       <SyntaxHighlighter
         language='typescript'

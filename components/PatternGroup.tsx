@@ -53,8 +53,18 @@ export default function PatternGroup({
                 {extractQuestionAndCode(group, name, 'patterns')?.question ? (
                   <ReactMarkdown
                     components={{
-                      p: ({ node, ...props }) => (
-                        <p className='my-2' {...props} />
+                      p: ({ node, ...props }) => <p {...props} />,
+                      h3: ({ node, ...props }) => (
+                        <h3
+                          className='text-base md:text-lg font-bold capitalize'
+                          {...props}
+                        />
+                      ),
+                      li: ({ node, ...props }) => (
+                        <li
+                          className='ml-4 list-disc leading-normal'
+                          {...props}
+                        />
                       ),
                     }}
                   >
