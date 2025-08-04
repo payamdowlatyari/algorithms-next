@@ -68,3 +68,452 @@ const getIcon = (icon: string) => {
 export function Icons({ topic }: { topic: string }) {
   return getIcon(topic);
 }
+
+export const patternIcons = [
+  {
+    category: 'Behavioral',
+    name: 'ChainOfResponsibility',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Behavioral',
+    name: 'Command',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Behavioral',
+    name: 'Iterator',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Behavioral',
+    name: 'Mediator',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Behavioral',
+    name: 'Memento',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Behavioral',
+    name: 'Observer',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Behavioral',
+    name: 'State',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Behavioral',
+    name: 'Strategy',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Behavioral',
+    name: 'TemplateMethod',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Behavioral',
+    name: 'Visitor',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Creational',
+    name: 'AbstractFactory',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Creational',
+    name: 'Builder',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+
+  {
+    category: 'Creational',
+    name: 'FactoryMethod',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Creational',
+    name: 'Prototype',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Creational',
+    name: 'Singleton',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Structural',
+    name: 'Adapter',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Structural',
+    name: 'Bridge',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Structural',
+    name: 'Composite',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Structural',
+    name: 'Decorator',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Structural',
+    name: 'Facade',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Structural',
+    name: 'Flyweight',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+  {
+    category: 'Structural',
+    name: 'Proxy',
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        className='h-12 w-12'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+        />
+      </svg>
+    ),
+  },
+];
+
+export const getPatternIcon = (name: string) => {
+  const pattern = patternIcons.find((icon) => icon.name === name);
+  return pattern ? pattern.icon : null;
+};

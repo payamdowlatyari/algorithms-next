@@ -23,10 +23,11 @@ export interface Questiondata {
 export function extractQuestionAndCode(
   group: string,
   slug: string,
+  directory: string = 'problems',
 ): Questiondata | null {
   const filePath = path.join(
     process.cwd(),
-    'problems',
+    directory,
     group.trim(),
     `${slug.trim()}.ts`,
   );

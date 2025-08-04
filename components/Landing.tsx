@@ -1,9 +1,10 @@
 'use client';
 
-import { Card, CardBody, CardFooter, Link, Spinner } from '@heroui/react';
+import { Card, CardBody, CardFooter, Link } from '@heroui/react';
 import { Icons } from '@/components/Icons';
 import { useEffect, useState } from 'react';
 import SearchGroup from '@/components/SearchGroup';
+import { LoaderFour } from './ui/loaders';
 
 /**
  * Represents a topic with a title and a link.
@@ -73,7 +74,7 @@ export default function Landing() {
   if (isLoading || !topicList) {
     return (
       <div className='flex justify-center items-center h-screen'>
-        <Spinner label='Loading topics...' color='current' size='lg' />
+        <LoaderFour text='Loading topics...' />
       </div>
     );
   }
@@ -85,9 +86,12 @@ export default function Landing() {
           onChangeHandler={onSearchChange}
           placeholder={'Search algorithms by topic...'}
         />{' '}
-        <div className='min-w-[200px] w-full flex justify-end'>
+        <div className='min-w-[200px] w-full flex justify-end space-x-2'>
           <Link href='/problems' isBlock color='primary'>
-            View all
+            Problems
+          </Link>
+          <Link href='/patterns' isBlock color='primary'>
+            Design Patterns
           </Link>
         </div>
       </div>

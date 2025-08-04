@@ -31,7 +31,8 @@ export function ExternalLink({
 export function GroupLink({ href, group }: { href: string; group: string }) {
   return (
     <Link href={href} color='primary' size='sm' isBlock className='capitalize'>
-      {group.replace(/([a-z])([A-Z])/g, '$1 $2')} Problems
+      {group.replace(/([a-z])([A-Z])/g, '$1 $2')}{' '}
+      {href.includes('problems') ? 'Problems' : 'Patterns'}
     </Link>
   );
 }
@@ -58,7 +59,11 @@ export function GroupTopicLink({
       isBlock
       className='capitalize font-bold'
     >
-      {group.replace(/([a-z])([A-Z])/g, '$1 $2')} Problems
+      {group.replace(/([a-z])([A-Z])/g, '$1 $2')}{' '}
+      {href.includes('problems') ? 'Problems' : 'Patterns'}
+      <span className='ml-2' aria-hidden='true'>
+        &rarr;
+      </span>
     </Link>
   );
 }
@@ -83,6 +88,12 @@ export function ProblemLink({ href, slug }: { href: string; slug: string }) {
   );
 }
 
+/**
+ * A link component that points to a specific problem's solution.
+ *
+ * @param href - The URL of the solution page.
+ * @returns A stylized link element for navigating to the solution.
+ */
 export function SolutionLink({ href }: { href: string }) {
   return (
     <Link href={href} color='primary' size='sm' isBlock>

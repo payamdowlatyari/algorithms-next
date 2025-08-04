@@ -26,8 +26,10 @@ export interface ProblemData {
  * including the group name, href, title, and an array of problems with their
  * respective names and hrefs.
  */
-export function extractGroupsAndProblems(): ProblemData[] {
-  const problemsDir = path.join(process.cwd(), 'problems');
+export function extractGroupsAndProblems(
+  directory: string = 'problems',
+): ProblemData[] {
+  const problemsDir = path.join(process.cwd(), directory);
   const groups = fs
     .readdirSync(problemsDir)
     .filter((f) => fs.lstatSync(path.join(problemsDir, f)).isDirectory());
@@ -36,13 +38,13 @@ export function extractGroupsAndProblems(): ProblemData[] {
     const files = fs.readdirSync(path.join(problemsDir, group));
     return {
       group,
-      href: `/problems/${group}`,
+      href: `/${directory}/${group}`,
       title: group.replace(/([a-z])([A-Z])/g, '$1 $2'),
       files: files
         .filter((f) => f.endsWith('.ts') && !f.includes('.test'))
         .map((file) => ({
           name: file.replace('.ts', ''),
-          href: `/problems/${group}/${file.replace('.ts', '')}`,
+          href: `/${directory}/${group}/${file.replace('.ts', '')}`,
         })),
     };
   });
