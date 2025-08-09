@@ -11,7 +11,8 @@ import {
   NavbarMenuItem,
 } from '@heroui/react';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
-import { NavbarLink } from '@/components/ui/links';
+import { NavbarGroupLink, NavbarLink } from '@/components/ui/links';
+import { Topics } from '@/app/lib/interfaces';
 
 /**
  * Header component that renders a Navbar with a theme switcher,
@@ -19,7 +20,7 @@ import { NavbarLink } from '@/components/ui/links';
  */
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [topicList, setTopicList] = useState([]);
+  const [topicList, setTopicList] = useState<Topics | null>(null);
 
   /**
    * Fetches the list of topics from the API and updates the component state.
@@ -33,7 +34,9 @@ export default function Header() {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      const data = await response.json();
+      const data: Topics = await response.json();
+
+      // Update the topicList state
       setTopicList(data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -64,15 +67,37 @@ export default function Header() {
         />
       </NavbarContent>
       {isMenuOpen && (
-        <NavbarMenu
-          aria-label='Topics'
-          className='flex flex-col items-center justify-center gap-2'
-        >
-          {topicList.map(({ title, href }) => (
-            <NavbarMenuItem key={title}>
-              <NavbarLink href={href}>{title}</NavbarLink>
+        <NavbarMenu aria-label='Topics'>
+          <NavbarContent
+            justify='center'
+            className='flex flex-wrap justify-center content-evenly'
+          >
+            <NavbarMenuItem className='w-screen'>
+              <NavbarGroupLink href='/problems'>Problems</NavbarGroupLink>
             </NavbarMenuItem>
-          ))}
+            {topicList?.problems.map(
+              ({ title, href }: { title: string; href: string }) => (
+                <NavbarMenuItem key={title} className='w-60 block'>
+                  <NavbarLink href={href}>{title}</NavbarLink>
+                </NavbarMenuItem>
+              ),
+            )}
+          </NavbarContent>
+          <NavbarContent
+            justify='center'
+            className='flex flex-wrap justify-center content-evenly'
+          >
+            <NavbarMenuItem className='w-screen grid'>
+              <NavbarGroupLink href='/patterns'>Patterns</NavbarGroupLink>
+            </NavbarMenuItem>
+            {topicList?.patterns.map(
+              ({ title, href }: { title: string; href: string }) => (
+                <NavbarMenuItem key={title} className='w-60 block'>
+                  <NavbarLink href={href}>{title}</NavbarLink>
+                </NavbarMenuItem>
+              ),
+            )}
+          </NavbarContent>
         </NavbarMenu>
       )}
     </Navbar>

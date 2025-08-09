@@ -122,7 +122,32 @@ export function NavbarLink({
   return (
     <Link
       color='foreground'
-      className='w-full p-1 text-xl md:text-2xl border-b-2 border-transparent transition ease-in-out delay-100 hover:border-current duration-500'
+      className='w-full p-1 text-lg md:text-xl border-b-2 border-transparent transition ease-in-out delay-100 hover:border-current duration-500'
+      href={href}
+    >
+      {children}
+    </Link>
+  );
+}
+
+/**
+ * A link component that is meant to be used in a navbar.
+ *
+ * @param href - The URL of the link.
+ * @param children - The text of the link.
+ * @returns A stylized link element for use in a navbar.
+ */
+export function NavbarGroupLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: string;
+}) {
+  return (
+    <Link
+      color='foreground'
+      className='w-full p-1 text-xl md:text-2xl font-bold border-b-2 border-transparent transition ease-in-out delay-100 hover:border-current duration-500'
       href={href}
     >
       {children}

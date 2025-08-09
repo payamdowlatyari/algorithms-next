@@ -4,28 +4,8 @@ import { Card, CardBody, CardFooter, Link } from '@heroui/react';
 import { getIcon, getPatternIcon } from '@/components/Icons';
 import { useEffect, useState } from 'react';
 import SearchGroup from '@/components/SearchGroup';
-import { LoaderFour } from './ui/loaders';
-
-type ProblemData = {
-  group: string;
-  href: string;
-  title: string;
-  files: {
-    name: string;
-    href: string;
-  }[];
-};
-
-type Topic = {
-  title: string;
-  href: string;
-};
-
-type Topics = {
-  topics: Topic[];
-  problems: ProblemData[];
-  patterns: ProblemData[];
-};
+import { LoaderFour } from '@/components/ui/loaders';
+import { Topics } from '@/app/lib/interfaces';
 
 /**
  * Renders a list of topics as cards that can be filtered using a search input.

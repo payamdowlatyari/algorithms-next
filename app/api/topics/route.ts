@@ -1,27 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { NextResponse } from 'next/server';
-
-/**
- * Represents a problem in the system.
- */
-type ProblemData = {
-  group: string;
-  href: string;
-  title: string;
-  files: {
-    name: string;
-    href: string;
-  }[];
-};
-
-/**
- * Represents a topic in the system.
- */
-type Topic = {
-  title: string;
-  href: string;
-};
+import { Topic, TopicData } from '@/app/lib/interfaces';
 
 const topics: Topic[] = [
   {
@@ -44,9 +24,9 @@ const topics: Topic[] = [
  * Only files with the .ts extension and without the word "test" in their name are included.
  * The directories are read from the directory specified by the dir parameter.
  * @param {string} dir - The directory to read from.
- * @returns {Promise<ProblemData[]>} A Promise that resolves to an array of ProblemData objects.
+ * @returns {Promise<TopicData[]>} A Promise that resolves to an array of TopicData objects.
  */
-async function getDataCategorized(dir: string): Promise<ProblemData[]> {
+async function getDataCategorized(dir: string): Promise<TopicData[]> {
   const problemsDir = path.join(process.cwd(), dir);
 
   const groups = await fs.promises.readdir(problemsDir, {
