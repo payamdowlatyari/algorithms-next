@@ -15,6 +15,10 @@ import { Card, CardBody } from '@heroui/react';
 export default function Patterns() {
   const patterns: ProblemData[] = extractGroupsAndProblems('patterns');
 
+  if (patterns.length === 0) {
+    return <div className='my-10 mx-4'>No patterns found</div>;
+  }
+
   return (
     <div className='flex flex-col gap-4'>
       {patterns.map(({ group, files }) => (
