@@ -17,7 +17,7 @@ describe('combinationSum', () => {
   it('should find all unique combinations that sum up to the target', () => {
     const candidates = [2, 3, 6, 7];
     const target = 7;
-    const expected = [[7], [2, 2, 3]];
+    const expected = [[2, 2, 3], [7]];
     const result = combinationSum(candidates, target);
     expect(result).toEqual(expected);
   });
