@@ -1,3 +1,11 @@
+// TreeNode class
+
+// TreeNode is a class that represents a node in a binary tree.
+// It has a value and references to its left and right children.
+
+// TreeNode(val) creates a new TreeNode object with the given value and null left and right references.
+// TreeNode(val, left, right) creates a new TreeNode object with the given value and the specified left and right references.
+
 /**
  * Definition for a binary tree node.
  * This class represents a node in a binary tree.
@@ -20,6 +28,9 @@ class TreeNode {
 
   /**
    * Constructs a new TreeNode.
+   * @param {number} val - The value of the node.
+   * @param {TreeNode|null} left - The left child of the node.
+   * @param {TreeNode|null} right - The right child of the node.
    */
   constructor(val: any, left: TreeNode | null, right: TreeNode | null) {
     this.val = val === undefined ? 0 : val;

@@ -1,3 +1,26 @@
+// This file contains functions for working with bits in numbers, including testing, setting, clearing, toggling,
+// and updating bits, as well as counting set bits and checking for powers of two.
+// These functions are useful for various applications in computer science and programming.
+//
+// The functions provided in this file are:
+// - testKthBit: Tests whether the kth bit of a given number is set.
+// - setKthBit: Sets the kth bit of a given number.
+// - clearKthBit: Clears the kth bit of a given number, setting it to 0.
+// - toggleKthBit: Toggles the kth bit of a given number.
+// - updateKthBit: Updates the kth bit of a given number with a new value.
+// - countSetBits: Returns the number of set bits in a given number.
+// - isPowerOfTwo: Checks whether a given number is a power of two.
+// - findKthBit: Returns the value of the kth bit of a given number.
+// - findLastSetBit: Finds the last set bit in a given number.
+// - findFirstSetBit: Finds the first set bit in a given number.
+// - findLowestSetBit: Finds the lowest set bit in a given number.
+// - multiplyByPowerOfTwo: Multiplies a given number by a power of two.
+// - divideByPowerOfTwo: Divides a given number by a power of two.
+// - swapVariables: Swaps two variables without using a temporary variable.
+//
+// Each function includes an example usage and an explanation of its purpose and behavior.
+// The functions are designed to be efficient and easy to use for common bit manipulation tasks in programming.
+
 /**
  * Tests whether the kth bit of a given number is set.
  *

@@ -1,3 +1,24 @@
+// linked list implementation in typescript
+
+// This implementation defines a LinkedList class with methods to add, remove, and check for values in the list.
+// It also includes a LinkedListNode class to represent each node in the list, and a DoubleLinkedList class
+// that extends LinkedList to create a doubly linked list with additional functionality.
+
+// The LinkedList class provides methods to add a new value to the end of the list, remove a specific value from the list,
+// check if a value exists in the list, and print all values in the list.
+// The DoubleLinkedList class adds functionality to remove a node at a specific position and remove the last node from the list.
+
+// Example usage:
+// const linkedList = new LinkedList();
+// linkedList.add(1);
+// linkedList.add(2);
+// linkedList.add(3);
+// console.log(linkedList); // LinkedList { head: { value: 1, next: { value: 2, next: { value: 3, next: null } } } }
+// linkedList.remove(2);
+// console.log(linkedList); // LinkedList { head: { value: 1, next: { value: 3, next: null } } }
+// linkedList.add(4);
+// console.log(linkedList); // LinkedList { head: { value: 1, next: { value: 3, next: { value: 4, next: null } } } }
+
 /**
  * A class representing a node in a linked list.
  *

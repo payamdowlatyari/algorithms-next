@@ -1,3 +1,16 @@
+// Hash Table implementation in TypeScript
+
+// This implementation defines a HashTable class that uses an array of buckets to store key-value pairs.
+// The hash function is based on the djb2 algorithm, which provides a good distribution of hash values for strings.
+// The set method adds key-value pairs to the hash table, while the get method retrieves values based on their keys.
+// The implementation also keeps track of collisions, which occur when multiple keys hash to the same index in the buckets array.
+
+// Example usage:
+// const hashTable = new HashTable();
+// hashTable.set('key', 'value');
+// const value = hashTable.get('key');
+// console.log(value); // 'value'
+
 /**
  * A class representing a hash table.
  *
@@ -6,7 +19,7 @@
  *
  * @example
  * const hashTable = new HashTable();
- * hashTable.add('key', 'value');
+ * hashTable.set('key', 'value');
  * const value = hashTable.get('key');
  * console.log(value); // 'value'
  */

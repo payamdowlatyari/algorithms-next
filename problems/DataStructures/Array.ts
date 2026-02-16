@@ -1,3 +1,22 @@
+// Array class
+
+// The Array class provides methods to get and set items, retrieve the length of the array, and convert the array to a string.
+// It is designed to mimic some basic functionalities of JavaScript's built-in Array.
+
+// Constraints:
+
+// The size of the array should be a non-negative integer.
+// The getItem and setItem methods should handle out-of-bounds indices gracefully, returning undefined for getItem and ignoring setItem calls.
+
+// Example usage:
+
+// const arr = new Array(5);
+// arr.setItem(0, 10);
+// arr.setItem(1, 20);
+// console.log(arr.getItem(0)); // 10
+// console.log(arr.length); // 5
+// console.log(arr.toString()); // "10,20,,,,""
+
 /**
  * Custom Array class to demonstrate basic array operations.
  * This class provides methods to get and set items, retrieve the length of the array, and convert the array to a string.

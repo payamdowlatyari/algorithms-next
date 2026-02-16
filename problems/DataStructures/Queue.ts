@@ -1,3 +1,13 @@
+// Queue is a class that represents a queue data structure.
+// A queue is a collection of items that follows the First In First Out (FIFO) principle.
+// The first item added to the queue will be the first one to be removed.
+
+// Queue() creates a new empty queue.
+// enqueue(item) adds an item to the end of the queue.
+// dequeue() removes and returns the item at the front of the queue.
+// isEmpty() returns true if the queue is empty, false otherwise.
+// peek() returns the item at the front of the queue without removing it.
+
 /**
  * @class Queue
  * @description A class representing a queue data structure.

@@ -1,3 +1,18 @@
+// Matrix operations and manipulations
+
+// This file contains functions to perform various operations on matrices, such as transposing, creating new matrices,
+// finding diagonals, and rotating matrices. These functions are useful for a wide range of applications in computer science,
+// including image processing, data analysis, and mathematical computations.
+
+// The functions provided in this file are:
+// - createMatrix: Creates a new matrix with the same dimensions as the given matrix, filled with zeros, and also returns a copy of the original matrix.
+// - findDiagonals: Finds the elements of the main and anti-diagonals in a given matrix.
+// - rotateMatrix: Rotates a given matrix in multiple ways (transpose, rotate left, rotate right) and returns the results.
+// - transposeMatrix: Returns the transpose of a given matrix.
+
+// Each function includes an example usage and an explanation of its purpose and behavior.
+// The functions are designed to be efficient and easy to use for common matrix operations in programming.
+
 /**
  * Creates two matrices: a copy of the given matrix and a new matrix with the same dimensions but all elements set to 0
  * @param {number[][]} matrix - the given matrix
@@ -69,3 +84,15 @@ const rotateMatrix = (matrix: number[][]): object => {
   const rotateRight = transpose.map((row) => row.reverse());
   return { transpose, transposeTuple, rotateLeft, rotateRight };
 };
+
+/**
+ * Returns the transpose of a given matrix.
+ * @param {number[][]} matrix - the given matrix
+ * @returns {number[][]} - the transpose of the given matrix
+ * @example
+ * const matrix = [[1, 2], [3, 4]];
+ * const transpose = transposeMatrix(matrix);
+ * // transpose will be [[1, 3], [2, 4]]
+ */
+const transposeMatrix = (matrix: number[][]): number[][] =>
+  matrix[0].map((_, i) => matrix.map((row) => row[i]));

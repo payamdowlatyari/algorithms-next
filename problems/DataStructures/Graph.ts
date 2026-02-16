@@ -1,3 +1,25 @@
+// Graph data structure implementation
+
+// This implementation uses an adjacency list to store the graph's vertices and edges.
+// Each vertex is represented as a key in the adjacency map, and its value is an array of neighboring vertices.
+
+// The Graph class provides methods to add vertices, edges, and perform depth-first search (DFS) and breadth-first search (BFS) traversals on the graph.
+
+// The addVertex method adds a new vertex to the graph.
+// The addEdge method adds an undirected edge between two vertices.
+// The dfs method performs a depth-first search traversal on the graph, starting from a given vertex.
+// The bfs method performs a breadth-first search traversal on the graph, starting from a given vertex.
+// The printGraph method prints the graph's adjacency list.
+
+// Example usage:
+// const graph = new Graph();
+// graph.addVertex(1);
+// graph.addVertex(2);
+// graph.addEdge(1, 2);
+// graph.dfs(1);
+// graph.bfs(1);
+// graph.printGraph();
+
 /**
  * @class Graph
  * @description Represents a graph using an adjacency list.

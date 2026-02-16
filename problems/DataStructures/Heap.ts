@@ -1,3 +1,19 @@
+// Heap data structure implementation in TypeScript
+
+// This implementation defines a Heap class that can be used to create both min-heaps and max-heaps by providing a custom comparator function.
+// The Heap class provides methods to add elements, peek at the top element, remove the top element, and get the size of the heap.
+// The MaxHeap and MinHeap classes extend the Heap class and provide specific comparator functions for max-heap and min-heap behavior, respectively.
+// The MinPriorityQueue class is a specific implementation of a min-heap that provides methods for inserting elements, deleting the minimum element, and peeking at the minimum element.
+
+// Example usage:
+// const maxHeap = new MaxHeap();
+// maxHeap.add(1);
+// maxHeap.add(2);
+// maxHeap.add(3);
+// console.log(maxHeap.peek()); // 3
+// console.log(maxHeap.remove()); // 3
+// console.log(maxHeap.size); // 2
+
 /**
  * @class Heap
  * @description A heap is a data structure that is a binary tree where the value of each node is greater than or equal to the values of its children.

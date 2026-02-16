@@ -1,3 +1,27 @@
+// Binary Tree
+
+// A binary tree is a data structure that is a tree where each node has at most two children.
+// The left child is called the left child and the right child is called the right child.
+// The root is called the root.
+// The leaf nodes are called the leaves.
+// The internal nodes are called the internal nodes.
+// The nodes that have no children are called the leaf nodes.
+// The nodes that have at least one child are called the internal nodes.
+
+// Example
+// const tree = new BinaryTree();
+// tree.insert(10); // Insert a node with data 10
+// tree.insert(5); // Insert a node with data 5
+// tree.insert(15); // Insert a node with data 15
+// console.log(tree.toString()); // Print the tree
+
+// Output
+// ┌── 10
+// │
+// └── 5
+//    │
+//    └── 15
+
 /**
  * Represents a node in a binary tree.
  *

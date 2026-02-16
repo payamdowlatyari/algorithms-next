@@ -1,3 +1,14 @@
+// Stack is a class that represents a stack data structure.
+// A stack follows the Last In First Out (LIFO) principle.
+// Items are added to the top of the stack and removed from the top.
+
+// Stack() creates a new empty stack.
+// push(item) adds an item to the top of the stack.
+// pop() removes and returns the item at the top of the stack.
+// peek() returns the item at the top of the stack without removing it.
+// isEmpty() returns true if the stack is empty, false otherwise.
+// size() returns the number of items in the stack.
+
 /**
  * A class representing a stack data structure.
  *
